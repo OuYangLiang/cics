@@ -19,8 +19,8 @@ public class RestResult<T> {
         return result;
     }
 
-    public static RestResult<?> fail(String errorCode, String errorMsg) {
-        RestResult<?> result = new RestResult<>();
+    public static <T> RestResult<T> fail(String errorCode, String errorMsg) {
+        RestResult<T> result = new RestResult<>();
         result.setSuccess(false);
         result.setErrorCode(errorCode);
         result.setErrorMsg(errorMsg);
