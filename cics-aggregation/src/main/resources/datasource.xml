@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="financialDataSource" class="com.dianping.zebra.group.jdbc.GroupDataSource" init-method="init" destroy-method="close">
+        <!-- 一般只需配置这个，其它使用默认即可（lion上会配置一套默认参数，本地有配置优先本地） -->
+        <property name="jdbcRef" value="yzg_saas_financial" />
+        <property name="routerType" value="master-only" />
+
+        <!-- 选择使用背后使用哪种数据源，"c3p0"、"tomcat-jdbc"、"druid"，可以不配，默认值为"c3p0"， 新版本默认"druid" -->
+<!--        <property name="poolType" value="c3p0" />-->
+
+        <!-- 最小数量--> <!-- 均生效 -->
+        <property name="minPoolSize" value="10" />
+        <!-- 最大数量 --> <!-- 均生效 -->
+        <property name="maxPoolSize" value="10" />
+        <!-- 初始数量 --> <!-- 均生效 -->
+        <property name="initialPoolSize" value="10" />
+
+        <!-- 获取连接等待时间-超时报错 --><!-- 处出于安全考虑暂不支持设置，但该数据很重要-确认lion统一配置 -->
+        <property name="checkoutTimeout" value="3000" />
+        <!-- 测试sql --> <!-- 均生效 -->
+        <property name="preferredTestQuery" value="SELECT 1" />
+
+        <!-- c3p0 生效 -->
+        <property name="maxIdleTime" value="1800" />
+        <property name="idleConnectionTestPeriod" value="60" />
+        <property name="acquireRetryAttempts" value="3" />
+        <property name="acquireRetryDelay" value="300" />
+        <property name="maxStatements" value="0" />
+        <property name="maxStatementsPerConnection" value="100" />
+        <property name="numHelperThreads" value="6" />
+        <property name="maxAdministrativeTaskTime" value="5" />
+
+        <!-- mysql jdbc 参数 叠加 定制 可选-->
+        <property name="socketTimeout" value="3000"/>
+        <property name="extraJdbcUrlParams" value="connectTimeout=3000&amp;useSSL=false" />
+
+    </bean>
+</beans>

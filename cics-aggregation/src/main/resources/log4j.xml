@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!-- console日志会判断环境，非生产环境，会打印出console日志 -->
+    <appender name="CONSOLE" class="com.ymm.common.log4j.YmmConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] [%t] %m%n"/>
+        </layout>
+    </appender>
+    <!-- 默认会打印日志到指定目录/data/ymmapplogs/项目名/logs/app.log.yyyy-MM-dd -->
+    <appender name="ymmlogAppender" class="com.ymm.common.log4j.YmmFileAppender" />
+    <appender name="catAppender" class="com.dianping.cat.log4j.CatAppender" />
+
+    <root>
+        <!-- 日志等级由业务方自行定义 -->
+        <level value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="catAppender"/>
+        <appender-ref ref="ymmlogAppender"/>
+    </root>
+</log4j:configuration>
