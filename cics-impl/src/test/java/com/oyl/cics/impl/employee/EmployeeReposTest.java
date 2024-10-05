@@ -12,8 +12,7 @@ import javax.annotation.Resource;
 
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -54,5 +53,31 @@ public class EmployeeReposTest {
         assertEquals("18652930168", result.getRecords().get(0).getPhone());
         assertEquals("喻敏8", result.getRecords().get(0).getEmployeeName());
         assertEquals(1900000, result.getRecords().get(0).getSalary().longValue());
+    }
+
+    @Test
+    public void test2() {
+        SearchCondition condition = new SearchCondition();
+        condition.setPageSize(0);
+        condition.setPage(3);
+        condition.setDepartment("研发中心");
+
+        boolean flag = false;
+        try {
+            SearchResult result = employeeRepos.search(null);
+        } catch (IllegalArgumentException e) {
+            assertEquals("查询对象不能为空", e.getMessage());
+            flag = true;
+        }
+        assertTrue(flag);
+
+        flag = false;
+        try {
+            SearchResult result = employeeRepos.search(condition);
+        } catch (IllegalArgumentException e) {
+            assertEquals("分页大小最小为1", e.getMessage());
+            flag = true;
+        }
+        assertTrue(flag);
     }
 }

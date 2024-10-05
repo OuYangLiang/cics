@@ -1,10 +1,13 @@
 package com.oyl.cics.model.employee;
 
+import com.oyl.cics.model.common.validation.ValidParam;
 import com.oyl.cics.model.employee.request.SearchCondition;
 import com.oyl.cics.model.employee.response.SearchResult;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Collections;
 
 @Component
@@ -18,7 +21,8 @@ public class EmployeeRepos {
      * @param searchCondition 查询条件
      * @return SearchResult 员工集合
      */
-    public SearchResult search(SearchCondition searchCondition) {
+    @ValidParam
+    public SearchResult search(@Valid @NotNull(message = "查询对象不能为空") SearchCondition searchCondition) {
         int numOfRecords = employeeDao.numOf(searchCondition);
 
         SearchResult result = new SearchResult();

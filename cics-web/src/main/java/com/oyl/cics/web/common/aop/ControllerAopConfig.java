@@ -52,6 +52,10 @@ public class ControllerAopConfig {
             }
         }
 
-        return pjp.proceed();
+        try {
+            return pjp.proceed();
+        } catch (Exception e) {
+            return RestResult.fail("1", e.getMessage());
+        }
     }
 }
