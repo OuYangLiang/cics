@@ -1,5 +1,7 @@
 package com.oyl.cics.model.guidaoheng;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +10,8 @@ import java.util.List;
 @Getter
 @Setter
 public class Guidaoheng {
+
+    private static final Gson gson = new GsonBuilder().create();
 
     /**
      * 明细磅单号
@@ -313,4 +317,7 @@ public class Guidaoheng {
      */
     private List<GuidaohengDetail> dtData;
 
+    public String toJson() {
+        return gson.toJson(this);
+    }
 }
