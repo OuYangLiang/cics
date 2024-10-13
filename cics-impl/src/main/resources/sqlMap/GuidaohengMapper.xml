@@ -3,7 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.guidaoheng.GuidaohengMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.guidaoheng.Guidaoheng">
-        <result column="zmxdocno" property="zmxdocno"/>
+        <result column="zmxdocno" property="zmxdocNo"/>
         <result column="ssejdw" property="ssejdw"/>
         <result column="ssejdwid" property="ssejdwid"/>
         <result column="sssjdw" property="sssjdw"/>
@@ -51,8 +51,8 @@
         <result column="fazhan" property="fazhan"/>
         <result column="zhongdao" property="zhongdao"/>
         <result column="sjtsdanwei" property="sjtsdanwei"/>
-        <result column="xtscjli" property="xtscjli"/>
-        <result column="xtscjlt" property="xtscjlt"/>
+        <result column="xtscjli" property="xtscjlI"/>
+        <result column="xtscjlt" property="xtscjlT"/>
         <result column="byzd1" property="byzd1"/>
         <result column="byzd2" property="byzd2"/>
         <result column="byzd3" property="byzd3"/>
@@ -67,9 +67,11 @@
 
     <select id="search" resultMap="BaseResultMap">
         select   `zmxdocno`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zczhandian`,  `zczhandianbm`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`,  `zname1`,  `zkunnr`,  `vtext`,  `vkorg`,  `shouchehao`,  `weichehao`,  `cheshu`,  `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`,  `wgmgys`,  `sjyxt`,  `cheyuan`,  `yundanhaoyundanhao`,  `jltypetype`,  `jlhqyt`,  `jlhqmc`,  `jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`,  `sjtsdanwei`,  `xtscjli`,  `xtscjlt`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`
-        from   `guidaoheng`;
+        from   `guidaoheng`
         <where>
-
+            <if test="zmxdocNo != null and zmxdocNo != ''">
+                AND zmxdocno like concat(#{zmxdocNo}, '%')
+            </if>
         </where>
         order by `zmxdocno` asc
         limit ${offset}, ${pageSize}
@@ -79,7 +81,9 @@
         select count(1)
         from `guidaoheng`
         <where>
-
+            <if test="zmxdocNo != null and zmxdocNo != ''">
+                AND zmxdocno like concat(#{zmxdocNo}, '%')
+            </if>
         </where>
     </select>
 </mapper>

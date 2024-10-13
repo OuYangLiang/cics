@@ -7,6 +7,8 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 @Aspect
 @Component
 public class ControllerAopConfig {
+    private static final Logger log = LoggerFactory.getLogger(ControllerAopConfig.class);
 
     @Pointcut("execution(com.oyl.cics.web.common.result.RestResult com.oyl.cics.web.*.*Controller.*(..))")
     public void controller() {
@@ -55,6 +58,7 @@ public class ControllerAopConfig {
         try {
             return pjp.proceed();
         } catch (Exception e) {
+            log.error(e.getMessage(), e);
             return RestResult.fail("1", e.getMessage());
         }
     }
