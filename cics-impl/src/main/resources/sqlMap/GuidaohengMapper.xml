@@ -8,18 +8,18 @@
         <result column="ssejdwid" property="ssejdwid"/>
         <result column="sssjdw" property="sssjdw"/>
         <result column="sssjdwid" property="sssjdwid"/>
-        <result column="zczhandian" property="zczhandian"/>
-        <result column="zczhandianbm" property="zczhandianbm"/>
+<!--        <result column="zczhandian" property="zczhandian"/>-->
+<!--        <result column="zczhandianbm" property="zczhandianbm"/>-->
         <result column="zccheci" property="zccheci"/>
         <result column="chexing" property="chexing"/>
         <result column="mykuangdianmc" property="mykuangdianmc"/>
         <result column="mykuangdianbm" property="mykuangdianbm"/>
         <result column="meitanlaiyuan" property="meitanlaiyuan"/>
         <result column="meitanlaiyuanbm" property="meitanlaiyuanbm"/>
-        <result column="zname1" property="zname1"/>
-        <result column="zkunnr" property="zkunnr"/>
-        <result column="vtext" property="vtext"/>
-        <result column="vkorg" property="vkorg"/>
+<!--        <result column="zname1" property="zname1"/>-->
+<!--        <result column="zkunnr" property="zkunnr"/>-->
+<!--        <result column="vtext" property="vtext"/>-->
+<!--        <result column="vkorg" property="vkorg"/>-->
         <result column="shouchehao" property="shouchehao"/>
         <result column="weichehao" property="weichehao"/>
         <result column="cheshu" property="cheshu"/>
@@ -39,38 +39,50 @@
         <result column="yewurq" property="yewurq"/>
         <result column="zcmeizhong" property="zcmeizhong"/>
         <result column="zcmeizhongbm" property="zcmeizhongbm"/>
-        <result column="wgmgys" property="wgmgys"/>
+<!--        <result column="wgmgys" property="wgmgys"/>-->
         <result column="sjyxt" property="sjyxt"/>
         <result column="cheyuan" property="cheyuan"/>
-        <result column="yundanhaoyundanhao" property="yundanhaoyundanhao"/>
+<!--        <result column="yundanhaoyundanhao" property="yundanhaoyundanhao"/>-->
         <result column="jltypetype" property="jltypetype"/>
         <result column="jlhqyt" property="jlhqyt"/>
         <result column="jlhqmc" property="jlhqmc"/>
-        <result column="jlhqmcid" property="jlhqmcid"/>
-        <result column="daozhan" property="daozhan"/>
-        <result column="fazhan" property="fazhan"/>
-        <result column="zhongdao" property="zhongdao"/>
+<!--        <result column="jlhqmcid" property="jlhqmcid"/>-->
+<!--        <result column="daozhan" property="daozhan"/>-->
+<!--        <result column="fazhan" property="fazhan"/>-->
+<!--        <result column="zhongdao" property="zhongdao"/>-->
         <result column="sjtsdanwei" property="sjtsdanwei"/>
-        <result column="xtscjli" property="xtscjlI"/>
-        <result column="xtscjlt" property="xtscjlT"/>
-        <result column="byzd1" property="byzd1"/>
-        <result column="byzd2" property="byzd2"/>
-        <result column="byzd3" property="byzd3"/>
-        <result column="byzd4" property="byzd4"/>
-        <result column="byzd5" property="byzd5"/>
-        <result column="byzd6" property="byzd6"/>
-        <result column="byzd7" property="byzd7"/>
-        <result column="byzd8" property="byzd8"/>
-        <result column="byzd9" property="byzd9"/>
-        <result column="byzd10" property="byzd10"/>
+<!--        <result column="xtscjli" property="xtscjlI"/>-->
+<!--        <result column="xtscjlt" property="xtscjlT"/>-->
+<!--        <result column="byzd1" property="byzd1"/>-->
+<!--        <result column="byzd2" property="byzd2"/>-->
+<!--        <result column="byzd3" property="byzd3"/>-->
+<!--        <result column="byzd4" property="byzd4"/>-->
+<!--        <result column="byzd5" property="byzd5"/>-->
+<!--        <result column="byzd6" property="byzd6"/>-->
+<!--        <result column="byzd7" property="byzd7"/>-->
+<!--        <result column="byzd8" property="byzd8"/>-->
+<!--        <result column="byzd9" property="byzd9"/>-->
+<!--        <result column="byzd10" property="byzd10"/>-->
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.guidaoheng.GuidaohengDetail">
+        <result column="zmxdocno" property="zmxdocNo"/>
+        <result column="dtSortno" property="dtSortno"/>
+        <result column="dtChehao" property="dtChehao"/>
+        <result column="dtChexing" property="dtChexing"/>
+        <result column="dtMaozhong" property="dtMaozhong"/>
+        <result column="dtPizhong" property="dtPizhong"/>
+        <result column="dtJingzhong" property="dtJingzhong"/>
+        <result column="dtPiaozhong" property="dtPiaozhong"/>
+        <!--<result column="shrq" property="shrq"/>-->
     </resultMap>
 
     <select id="search" resultMap="BaseResultMap">
-        select   `zmxdocno`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zczhandian`,  `zczhandianbm`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`,  `zname1`,  `zkunnr`,  `vtext`,  `vkorg`,  `shouchehao`,  `weichehao`,  `cheshu`,  `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`,  `wgmgys`,  `sjyxt`,  `cheyuan`,  `yundanhaoyundanhao`,  `jltypetype`,  `jlhqyt`,  `jlhqmc`,  `jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`,  `sjtsdanwei`,  `xtscjli`,  `xtscjlt`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`
+        select   `zmxdocno`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  <!--`zczhandian`,  `zczhandianbm`,-->  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`,  <!--`zname1`,  `zkunnr`,  `vtext`,  `vkorg`,-->  `shouchehao`,  `weichehao`,  `cheshu`,  `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`,  <!--`wgmgys`,-->  `sjyxt`,  `cheyuan`,  <!--`yundanhaoyundanhao`,-->  `jltypetype`,  `jlhqyt`,  `jlhqmc`,  <!--`jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`,-->  `sjtsdanwei`<!--,  `xtscjli`,  `xtscjlt`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`-->
         from   `guidaoheng`
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
-                AND zmxdocno like concat(#{zmxdocNo}, '%')
+                AND `zmxdocno` like concat(#{zmxdocNo}, '%')
             </if>
         </where>
         order by `zmxdocno` asc
@@ -82,8 +94,15 @@
         from `guidaoheng`
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
-                AND zmxdocno like concat(#{zmxdocNo}, '%')
+                AND `zmxdocno` like concat(#{zmxdocNo}, '%')
             </if>
         </where>
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select `zmxdocno`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtPiaozhong`
+        from   `guidaoheng_detail`
+        where `zmxdocno` = #{arg0}
+        order by `dtSortno` asc
     </select>
 </mapper>

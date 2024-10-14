@@ -16,7 +16,15 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
 
     @Override
     public List<Guidaoheng> search(SearchCondition condition) {
-        return guidaohengMapper.search(condition);
+        List<Guidaoheng> result = guidaohengMapper.search(condition);
+
+        if (null != result) {
+            for (Guidaoheng guidaoheng : result) {
+                guidaoheng.setDtData(guidaohengMapper.queryDetails(guidaoheng.getZmxdocNo()));
+            }
+        }
+
+        return result;
     }
 
     @Override
