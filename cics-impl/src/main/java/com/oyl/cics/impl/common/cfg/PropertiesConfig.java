@@ -13,4 +13,5 @@ public class PropertiesConfig {
     private String appId;
     private String appSecret;
     private String dataSecret;
+    private String url;
 }

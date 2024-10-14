@@ -10,9 +10,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public enum HttpUtil {
     inst;
@@ -25,7 +23,7 @@ public enum HttpUtil {
             .setDefaultRequestConfig(requestConfig)
             .build();
 
-        public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         String json = "{\n" +
                 "    \"page\":1,\n" +
@@ -52,7 +50,7 @@ public enum HttpUtil {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
     public String request(String url, String content, Map<String, String> headers) throws IOException {
         HttpPost request = new HttpPost(url);

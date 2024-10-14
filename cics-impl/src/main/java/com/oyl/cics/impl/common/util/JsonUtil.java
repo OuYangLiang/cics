@@ -1,4 +1,4 @@
-package com.oyl.cics.model.common.utils;
+package com.oyl.cics.impl.common.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,11 +8,11 @@ public enum JsonUtil {
 
     private Gson gson = new GsonBuilder().create();
 
-    private String toJson(Object obj) {
+    public String toJson(Object obj) {
         return gson.toJson(obj);
     }
 
-    private <T> T fromJson(String json, Class<T> t) {
+    public <T> T fromJson(String json, Class<T> t) {
         return gson.fromJson(json, t);
     }
 

@@ -1,9 +1,5 @@
 package com.oyl.cics.impl.common.util;
 
-import com.oyl.cics.model.common.utils.MD5Encryptor;
-import com.oyl.cics.model.common.utils.RandomGenerator;
-import sun.security.provider.MD5;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
