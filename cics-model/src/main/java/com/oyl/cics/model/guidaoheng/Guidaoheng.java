@@ -2,6 +2,7 @@ package com.oyl.cics.model.guidaoheng;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -316,6 +317,12 @@ public class Guidaoheng {
      * 详情数据
      */
     private List<GuidaohengDetail> dtData;
+
+    private UploadStatus uploadStatus;
+
+    public String getUploadStatusDesc() {
+        return null == uploadStatus ? null : uploadStatus.getDesc();
+    }
 
     public String toJson() {
         return gson.toJson(this);

@@ -17,6 +17,15 @@ create table if not exists `employee` (
     key (`department`)
 ) engine=innodb default charset=utf8;
 
+create table if not exists `upload_status` (
+    `id`                bigint          not null    auto_increment comment '主键',
+    `doctype`           tinyint         not null    comment '文档类型',
+    `docno`             varchar(100)    not null    comment '文档编号',
+    `status`            tinyint         not null    comment '上报状态：0 - 上报错误；1 - 上报成功',
+    primary key ( `id` ),
+    unique key ( `doctype`, `docno` )
+) engine=innodb default charset=utf8;
+
 --create table if not exists `guidaoheng` (
 --    `zmxdocno` VARCHAR(100) NOT NULL DEFAULT '',
 --    `ssejdw` VARCHAR(100) NOT NULL DEFAULT '',

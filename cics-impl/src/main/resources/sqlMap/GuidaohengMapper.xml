@@ -63,6 +63,7 @@
 <!--        <result column="byzd8" property="byzd8"/>-->
 <!--        <result column="byzd9" property="byzd9"/>-->
 <!--        <result column="byzd10" property="byzd10"/>-->
+        <result column="status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.guidaoheng.GuidaohengDetail">
@@ -78,8 +79,9 @@
     </resultMap>
 
     <select id="search" resultMap="BaseResultMap">
-        select   `zmxdocno`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  <!--`zczhandian`,  `zczhandianbm`,-->  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`,  <!--`zname1`,  `zkunnr`,  `vtext`,  `vkorg`,-->  `shouchehao`,  `weichehao`,  `cheshu`,  `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`,  <!--`wgmgys`,-->  `sjyxt`,  `cheyuan`,  <!--`yundanhaoyundanhao`,-->  `jltypetype`,  `jlhqyt`,  `jlhqmc`,  <!--`jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`,-->  `sjtsdanwei`<!--,  `xtscjli`,  `xtscjlt`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`-->
-        from   `guidaoheng`
+        select   `zmxdocno`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  <!--`zczhandian`,  `zczhandianbm`,-->  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`,  <!--`zname1`,  `zkunnr`,  `vtext`,  `vkorg`,-->  `shouchehao`,  `weichehao`,  `cheshu`,  `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`,  <!--`wgmgys`,-->  `sjyxt`,  `cheyuan`,  <!--`yundanhaoyundanhao`,-->  `jltypetype`,  `jlhqyt`,  `jlhqmc`,  <!--`jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`,-->  `sjtsdanwei`, <!--,  `xtscjli`,  `xtscjlt`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`--> `status`
+        from   `guidaoheng` a left join `upload_status` b
+        on a.`zmxdocno` = b.`docno` and b.doctype = 1
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
                 AND `zmxdocno` like concat(#{zmxdocNo}, '%')
