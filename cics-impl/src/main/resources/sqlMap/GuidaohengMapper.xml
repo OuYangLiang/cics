@@ -97,6 +97,9 @@
             <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
                 AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
             </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
         </where>
         order by `zmxdocno` asc
         limit ${offset}, ${pageSize}
@@ -104,7 +107,8 @@
 
     <select id="numOf" resultType="int">
         select count(1)
-        from `guidaoheng`
+        from `guidaoheng` a left join `upload_status` b
+        on a.`zmxdocno` = b.`docno` and b.doctype = 1
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
                 AND `zmxdocno` like concat(#{zmxdocNo}, '%')
@@ -117,6 +121,9 @@
             </if>
             <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
                 AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
+            </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
             </if>
         </where>
     </select>

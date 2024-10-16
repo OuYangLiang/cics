@@ -1,5 +1,6 @@
 package com.oyl.cics.model.guidaoheng.request;
 
+import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,6 +22,8 @@ public class SearchCondition {
     private String mykuangdianmc;
 
     private String[] yewurqRange;
+
+    private UploadStatus uploadStatus;
 
     public String getYewurqRangeStart() {
         return null == yewurqRange || yewurqRange.length == 0 ? null : yewurqRange[0];
