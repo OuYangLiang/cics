@@ -86,6 +86,15 @@
             <if test="zmxdocNo != null and zmxdocNo != ''">
                 AND `zmxdocno` like concat(#{zmxdocNo}, '%')
             </if>
+            <if test="sssjdw != null and sssjdw != ''">
+                AND `sssjdw` like concat(#{sssjdw}, '%')
+            </if>
+            <if test="mykuangdianmc != null and mykuangdianmc != ''">
+                AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
+            </if>
+            <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
+                AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
+            </if>
         </where>
         order by `zmxdocno` asc
         limit ${offset}, ${pageSize}
@@ -97,6 +106,15 @@
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
                 AND `zmxdocno` like concat(#{zmxdocNo}, '%')
+            </if>
+            <if test="sssjdw != null and sssjdw != ''">
+                AND `sssjdw` like concat(#{sssjdw}, '%')
+            </if>
+            <if test="mykuangdianmc != null and mykuangdianmc != ''">
+                AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
+            </if>
+            <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
+                AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
             </if>
         </where>
     </select>

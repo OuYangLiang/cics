@@ -16,6 +16,20 @@ public class SearchCondition {
 
     private String zmxdocNo;
 
+    private String sssjdw;
+
+    private String mykuangdianmc;
+
+    private String[] yewurqRange;
+
+    public String getYewurqRangeStart() {
+        return null == yewurqRange || yewurqRange.length == 0 ? null : yewurqRange[0];
+    }
+
+    public String getYewurqRangeEnd() {
+        return null == yewurqRange || yewurqRange.length == 0 ? null : yewurqRange[1];
+    }
+
     public int getOffset() {
         return (page - 1) * pageSize;
     }
