@@ -22,6 +22,8 @@ create table if not exists `upload_status` (
     `doctype`           tinyint         not null    comment '文档类型',
     `docno`             varchar(100)    not null    comment '文档编号',
     `status`            tinyint         not null    comment '上报状态：0 - 上报错误；1 - 上报成功',
+    `upload_time`       datetime        not null    comment '上报时间',
+    `operator`          varchar(100)    not null    comment '上报人',
     primary key ( `id` ),
     unique key ( `doctype`, `docno` )
 ) engine=innodb default charset=utf8;
