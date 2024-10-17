@@ -1,13 +1,20 @@
 package com.oyl.cics.model.qichecheng;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
 @Setter
 public class Qichecheng {
+
+    private static final Gson gson = new GsonBuilder().create();
+
     /**
      * 备用字段1
      */
@@ -230,4 +237,27 @@ public class Qichecheng {
      * 详情数据
      */
     private List<QichechengDetail> dtData;
+
+    /**
+     * 上报状态
+     */
+    private UploadStatus uploadStatus;
+
+    /**
+     * 上报时间
+     */
+    private Date uploadTime;
+
+    /**
+     * 上报操作人
+     */
+    private String operator;
+
+    public String getUploadStatusDesc() {
+        return null == uploadStatus ? null : uploadStatus.getDesc();
+    }
+
+    public String toJson() {
+        return gson.toJson(this);
+    }
 }

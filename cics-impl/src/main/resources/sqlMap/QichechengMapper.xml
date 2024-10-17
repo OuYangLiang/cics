@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.qichecheng.QichechengMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
+        <result column="zmxdocNo" property="zmxdocNo"/>
+        <result column="ssejdw" property="ssejdw"/>
+        <result column="ssejdwid" property="ssejdwid"/>
+        <result column="sssjdw" property="sssjdw"/>
+        <result column="sssjdwid" property="sssjdwid"/>
+        <result column="zsitename" property="zsitename"/>
+        <result column="zsitebm" property="zsitebm"/>
+        <result column="zname1" property="zname1"/>
+        <result column="zkunnr" property="zkunnr"/>
+        <result column="mykuangdianmc" property="mykuangdianmc"/>
+        <result column="mykuangdianbm" property="mykuangdianbm"/>
+        <result column="meitanlaiyuan" property="meitanlaiyuan"/>
+        <result column="meitanlaiyuanbm" property="meitanlaiyuanbm"/>
+        <result column="meizhong" property="meizhong"/>
+        <result column="meizhongbm" property="meizhongbm"/>
+        <result column="vtext" property="vtext"/>
+        <result column="vkorg" property="vkorg"/>
+        <result column="zbeginI" property="zbeginI"/>
+        <result column="zbeginT" property="zbeginT"/>
+        <result column="zendI" property="zendI"/>
+        <result column="zendT" property="zendT"/>
+        <result column="zname1Car" property="zname1Car"/>
+        <result column="zmeng" property="zmeng"/>
+        <result column="zmengpod" property="zmengpod"/>
+        <result column="jiliangdanwei" property="jiliangdanwei"/>
+        <result column="zmasterNo" property="zmasterNo"/>
+        <result column="cheshu" property="cheshu"/>
+        <result column="zongpiaozhong" property="zongpiaozhong"/>
+        <result column="zongmaozhong" property="zongmaozhong"/>
+        <result column="zongpizhong" property="zongpizhong"/>
+        <result column="zongjingzhong" property="zongjingzhong"/>
+        <result column="zongyingkui" property="zongyingkui"/>
+        <result column="zongyingdun" property="zongyingdun"/>
+        <result column="zongkuidun" property="zongkuidun"/>
+        <result column="zongyunsun" property="zongyunsun"/>
+        <result column="koudunzongliang" property="koudunzongliang"/>
+        <result column="jiesuanmeiliang" property="jiesuanmeiliang"/>
+        <result column="jlhqyt" property="jlhqyt"/>
+        <result column="kunnr" property="kunnr"/>
+        <result column="name1" property="name1"/>
+        <result column="zjhfs" property="zjhfs"/>
+        <result column="sjtsdanwei" property="sjtsdanwei"/>
+        <result column="xtscjlI" property="xtscjlI"/>
+        <result column="xtscjlT" property="xtscjlT"/>
+        <result column="byzd1" property="byzd1"/>
+        <result column="byzd2" property="byzd2"/>
+        <result column="byzd3" property="byzd3"/>
+        <result column="byzd4" property="byzd4"/>
+        <result column="byzd5" property="byzd5"/>
+        <result column="byzd6" property="byzd6"/>
+        <result column="byzd7" property="byzd7"/>
+        <result column="byzd8" property="byzd8"/>
+        <result column="byzd9" property="byzd9"/>
+        <result column="byzd10" property="byzd10"/>
+        <result column="status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
+        <result column="uploadTime" property="uploadTime"/>
+        <result column="operator" property="operator"/>
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.qichecheng.QichechengDetail">
+        <result column="zmxdocNo" property="zmxdocNo"/>
+        <result column="dtSortno" property="dtSortno"/>
+        <result column="dtChepaihao" property="dtChepaihao"/>
+        <result column="dtPiaozhong" property="dtPiaozhong"/>
+        <result column="dtMaozhong" property="dtMaozhong"/>
+        <result column="dtPizhong" property="dtPizhong"/>
+        <result column="dtJingzhong" property="dtJingzhong"/>
+        <result column="dtYingdun" property="dtYingdun"/>
+        <result column="dtKuidun" property="dtKuidun"/>
+        <result column="dtYunsun" property="dtYunsun"/>
+        <result column="dtKoudunl" property="dtKoudunl"/>
+        <result column="dtJzdate" property="dtJzdate"/>
+        <result column="dtJztime" property="dtJztime"/>
+        <result column="dtJqdate" property="dtJqdate"/>
+        <result column="dtJqtime" property="dtJqtime"/>
+        <result column="dtJzhmc" property="dtJzhmc"/>
+        <result column="dtJzhid" property="dtJzhid"/>
+        <result column="dtJqhmc" property="dtJqhmc"/>
+        <result column="dtJqhid" property="dtJqhid"/>
+        <result column="dtReserve1" property="dtReserve1"/>
+        <result column="dtReserve2" property="dtReserve2"/>
+        <result column="dtReserve3" property="dtReserve3"/>
+        <result column="dtReserve4" property="dtReserve4"/>
+        <result column="dtReserve5 " property="dtReserve5 "/>
+    </resultMap>
+
+    <select id="search" resultMap="BaseResultMap">
+        select `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `uploadTime`, `operator`
+        from   `qichecheng`
+        <where>
+            <if test="zmxdocNo != null and zmxdocNo != ''">
+                AND `zmxdocNo` like concat(#{zmxdocNo}, '%')
+            </if>
+            <if test="sssjdw != null and sssjdw != ''">
+                AND `sssjdw` like concat(#{sssjdw}, '%')
+            </if>
+            <if test="mykuangdianmc != null and mykuangdianmc != ''">
+                AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
+            </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
+        </where>
+        order by `zmxdocno` asc
+        limit ${offset}, ${pageSize}
+    </select>
+
+    <select id="numOf" resultType="int">
+        select count(1)
+        from `qichecheng`
+        <where>
+            <if test="zmxdocNo != null and zmxdocNo != ''">
+                AND `zmxdocNo` like concat(#{zmxdocNo}, '%')
+            </if>
+            <if test="sssjdw != null and sssjdw != ''">
+                AND `sssjdw` like concat(#{sssjdw}, '%')
+            </if>
+            <if test="mykuangdianmc != null and mykuangdianmc != ''">
+                AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
+            </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select `zmxdocNo`, `dtSortno`, `dtChepaihao`, `dtPiaozhong`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudunl`, `dtJzdate`, `dtJztime`, `dtJqdate`, `dtJqtime`, `dtJzhmc`, `dtJzhid`, `dtJqhmc`, `dtJqhid`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5 `
+        from   `qichecheng_detail`
+        where `zmxdocno` = #{arg0}
+        order by `dtSortno` asc
+    </select>
+</mapper>

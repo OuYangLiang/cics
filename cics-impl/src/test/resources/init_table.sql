@@ -86,7 +86,7 @@ create table if not exists `guidaoheng` (
     unique key ( `zmxdocNo`)
 ) engine=innodb default charset=utf8;
 
-create table if not exists guidaoheng_detail (
+create table if not exists `guidaoheng_detail` (
     `id`                bigint              not null    auto_increment comment '主键',
     `zmxdocNo`          varchar(100)        not null,
     `dtSortno`          varchar(100)        not null,
@@ -212,3 +212,32 @@ create table if not exists `qichecheng` (
     unique key ( `zmxdocNo`)
 ) engine=innodb default charset=utf8;
 
+create table if not exists `qichecheng_detail` (
+    `id`                bigint              not null    auto_increment comment '主键',
+    `zmxdocNo`          varchar(100)        not null,
+    `dtSortno`          varchar(100),
+    `dtChepaihao`       varchar(100),
+    `dtPiaozhong`       decimal(20,5),
+    `dtMaozhong`        decimal(20,5),
+    `dtPizhong`         decimal(20,5),
+    `dtJingzhong`       decimal(20,5),
+    `dtYingdun`         decimal(20,5),
+    `dtKuidun`          decimal(20,5),
+    `dtYunsun`          decimal(20,5),
+    `dtKoudunl`         decimal(20,5),
+    `dtJzdate`          varchar(100),
+    `dtJztime`          varchar(100),
+    `dtJqdate`          varchar(100),
+    `dtJqtime`          varchar(100),
+    `dtJzhmc`           varchar(100),
+    `dtJzhid`           varchar(100),
+    `dtJqhmc`           varchar(100),
+    `dtJqhid`           varchar(100),
+    `dtReserve1`        varchar(100),
+    `dtReserve2`        varchar(100),
+    `dtReserve3`        varchar(100),
+    `dtReserve4`        varchar(100),
+    `dtReserve5`        varchar(100),
+    primary key ( `id` ),
+    unique key ( `zmxdocNo`, `dtSortno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
