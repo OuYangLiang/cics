@@ -58,7 +58,7 @@
         <result column="byzd9" property="byzd9"/>
         <result column="byzd10" property="byzd10"/>
         <result column="status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
-        <result column="uploadTime" property="uploadTime"/>
+        <result column="upload_time" property="uploadTime"/>
         <result column="operator" property="operator"/>
     </resultMap>
 
@@ -86,11 +86,11 @@
         <result column="dtReserve2" property="dtReserve2"/>
         <result column="dtReserve3" property="dtReserve3"/>
         <result column="dtReserve4" property="dtReserve4"/>
-        <result column="dtReserve5 " property="dtReserve5 "/>
+        <result column="dtReserve5" property="dtReserve5"/>
     </resultMap>
 
     <select id="search" resultMap="BaseResultMap">
-        select `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `uploadTime`, `operator`
+        select `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from   `qichecheng`
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
@@ -130,7 +130,7 @@
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select `zmxdocNo`, `dtSortno`, `dtChepaihao`, `dtPiaozhong`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudunl`, `dtJzdate`, `dtJztime`, `dtJqdate`, `dtJqtime`, `dtJzhmc`, `dtJzhid`, `dtJqhmc`, `dtJqhid`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5 `
+        select `zmxdocNo`, `dtSortno`, `dtChepaihao`, `dtPiaozhong`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudunl`, `dtJzdate`, `dtJztime`, `dtJqdate`, `dtJqtime`, `dtJzhmc`, `dtJzhid`, `dtJqhmc`, `dtJqhid`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
         from   `qichecheng_detail`
         where `zmxdocno` = #{arg0}
         order by `dtSortno` asc
