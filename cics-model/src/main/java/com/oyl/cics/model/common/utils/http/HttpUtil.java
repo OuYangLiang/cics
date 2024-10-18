@@ -1,4 +1,4 @@
-package com.oyl.cics.impl.common.util;
+package com.oyl.cics.model.common.utils.http;
 
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;

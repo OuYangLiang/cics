@@ -15,6 +15,8 @@ public class Guidaoheng {
 
     private static final Gson gson = new GsonBuilder().create();
 
+    private Long id;
+
     /**
      * 明细磅单号
      */

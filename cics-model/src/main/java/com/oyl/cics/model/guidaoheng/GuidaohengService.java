@@ -1,28 +1,29 @@
-package com.oyl.cics.impl.common.util;
+package com.oyl.cics.model.guidaoheng;
 
 import com.oyl.cics.model.common.cfg.PropertiesConfig;
-import com.oyl.cics.model.common.utils.*;
+import com.oyl.cics.model.common.utils.AESUtil;
+import com.oyl.cics.model.common.utils.JsonUtil;
+import com.oyl.cics.model.common.utils.MD5Encryptor;
+import com.oyl.cics.model.common.utils.RandomGenerator;
 import com.oyl.cics.model.common.utils.http.HttpUtil;
-import com.oyl.cics.model.guidaoheng.Guidaoheng;
+import com.oyl.cics.model.common.utils.http.Result;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
-public class Submitter {
+public class GuidaohengService {
 
     @Resource
     private PropertiesConfig propertiesConfig;
 
-    public String submit(Guidaoheng guidaoheng) throws NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, IOException {
+    @Resource
+    private GuidaohengDao guidaohengDao;
+
+    public void upload(List<Guidaoheng> guidaohengs, String operator) throws Exception {
         String url = propertiesConfig.getUrl() + "/dlhg/guidaoheng";
         String millis = Long.toString(System.currentTimeMillis());
         String nonce = RandomGenerator.inst.strs(6);
@@ -34,12 +35,18 @@ public class Submitter {
         headers.put("sn", MD5Encryptor.inst.getMD5(propertiesConfig.getAppId() + propertiesConfig.getAppSecret() + millis + nonce).toLowerCase());
         headers.put("Content-Type", "application/json");
 
-        String json = JsonUtil.inst.toJson(guidaoheng);
+        String json = JsonUtil.inst.toJson(guidaohengs);
         String encrypted = AESUtil.inst.encrypt(json, propertiesConfig.getDataSecret());
 
-        String result = HttpUtil.inst.request(url, encrypted, headers);
+        String resultJson = HttpUtil.inst.request(url, encrypted, headers);
+        Result result = Result.fromJson(resultJson);
 
-        System.out.println(result);
-        return result;
+        if (!result.success()) {
+            guidaohengDao.uploadFailed(guidaohengs, operator);
+            throw new RuntimeException(String.format("code: %s, msg: %s, data %s.", result.getCode(), result.getMsg(), result.getData()));
+        }
+
+        guidaohengDao.uploadSucc(guidaohengs, operator);
     }
+
 }

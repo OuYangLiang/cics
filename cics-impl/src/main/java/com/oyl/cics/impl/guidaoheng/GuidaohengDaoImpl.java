@@ -31,4 +31,14 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
     public int numOf(SearchCondition condition) {
         return guidaohengMapper.numOf(condition);
     }
+
+    @Override
+    public void uploadSucc(List<Guidaoheng> guidaohengs, String operator) {
+        guidaohengMapper.uploadSucc(guidaohengs, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Guidaoheng> guidaohengs, String operator) {
+        guidaohengMapper.uploadFailed(guidaohengs, operator);
+    }
 }

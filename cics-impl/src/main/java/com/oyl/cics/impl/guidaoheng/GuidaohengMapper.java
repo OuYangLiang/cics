@@ -12,4 +12,8 @@ public interface GuidaohengMapper {
     int numOf(SearchCondition condition);
 
     List<GuidaohengDetail> queryDetails(String zmxdocNo);
+
+    void uploadSucc(List<Guidaoheng> guidaoheng, String operator);
+
+    void uploadFailed(List<Guidaoheng> guidaohengs, String operator);
 }

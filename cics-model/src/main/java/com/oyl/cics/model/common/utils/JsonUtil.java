@@ -1,4 +1,4 @@
-package com.oyl.cics.impl.common.util;
+package com.oyl.cics.model.common.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

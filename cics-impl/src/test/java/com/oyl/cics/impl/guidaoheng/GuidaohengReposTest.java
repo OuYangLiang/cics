@@ -1,6 +1,6 @@
 package com.oyl.cics.impl.guidaoheng;
 
-import com.oyl.cics.impl.common.cfg.PropertiesConfig;
+import com.oyl.cics.model.common.cfg.PropertiesConfig;
 import com.oyl.cics.model.guidaoheng.GuidaohengRepos;
 import com.oyl.cics.model.guidaoheng.request.SearchCondition;
 import com.oyl.cics.model.guidaoheng.response.SearchResult;

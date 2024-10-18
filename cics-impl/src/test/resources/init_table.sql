@@ -241,3 +241,77 @@ create table if not exists `qichecheng_detail` (
     primary key ( `id` ),
     unique key ( `zmxdocNo`, `dtSortno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+create table if not exists `meicaiyang` (
+    `id`                bigint          not null    auto_increment comment '主键',
+    `mybs`              varchar(100)    not null,
+    `ssejdw`            varchar(100),
+    `ssejdwid`          varchar(100),
+    `sssjdw`            varchar(100),
+    `sssjdwid`          varchar(100),
+    `cypml`             decimal(20,5),
+    `cydysl`            int,
+    `sjyxt`             varchar(100),
+    `sjtsdanwei`        varchar(100),
+    `xtscjlI`           varchar(100),
+    `xtscjlT`           varchar(100),
+    `byzd1`             varchar(100),
+    `byzd2`             varchar(100),
+    `byzd3`             varchar(100),
+    `byzd4`             varchar(100),
+    `byzd5`             varchar(100),
+    `byzd6`             varchar(100),
+    `byzd7`             varchar(100),
+    `byzd8`             varchar(100),
+    `byzd9`             varchar(100),
+    `byzd10`            varchar(100),
+    `status`            tinyint         not null    comment '上报状态：0 - 上报错误；1 - 上报成功; 2 - 上报失败',
+    `upload_time`       datetime        comment '上报时间',
+    `operator`          varchar(100)    comment '上报人',
+    primary key ( `id` ),
+    unique key ( `mybs`)
+) engine=innodb default charset=utf8;
+
+create table if not exists `meicaiyang_detail` (
+    `id`                bigint              not null    auto_increment comment '主键',
+    `mybs`              varchar(100)        not null,
+    `dtCydyxh`          varchar(100),
+    `dtCydybm`          varchar(100),
+    `dtCyfs`            varchar(100),
+    `dtCyquyu`          varchar(100),
+    `dtCysdate`         varchar(100),
+    `dtCystime`         varchar(100),
+    `dtCyedate`         varchar(100),
+    `dtCyetime`         varchar(100),
+    `dtCysbmc`          varchar(100),
+    `dtCysbid`          varchar(100),
+    `dtCydyml`          decimal(20,5),
+    `dtCydycs`          int,
+    `dtCydyds`          int,
+    `dtRengongcyzl`     decimal(20,5),
+    `dtCysd`            varchar(100),
+    `dtCjzyl`           decimal(20,5),
+    `dtYijisfsj`        int,
+    `dtYijisfjg`        int,
+    `dtYijisfcysj`      int,
+    `dtYijisfcs`        int,
+    `dtErjisfsj`        int,
+    `dtErjisfjg`        int,
+    `dtErjisfcysj`      int,
+    `dtErjisfcs`        int,
+    `dtCyzl`            decimal(20,5),
+    `dtLytonshu`        int,
+    `dtLyzl`            decimal(20,5),
+    `dtCydyreserve1`    varchar(100),
+    `dtCydyreserve2`    varchar(100),
+    `dtCydyreserve3`    varchar(100),
+    `dtCydyreserve4`    varchar(100),
+    `dtCydyreserve5`    varchar(100),
+    primary key ( `id` ),
+    unique key ( `mybs`, `dtCydyxh`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+

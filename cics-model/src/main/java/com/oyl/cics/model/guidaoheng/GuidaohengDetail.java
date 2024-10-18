@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class GuidaohengDetail {
+    private Long id;
     /**
      * 明细磅单号
      */

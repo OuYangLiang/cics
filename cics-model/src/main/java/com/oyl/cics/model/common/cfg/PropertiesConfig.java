@@ -1,4 +1,4 @@
-package com.oyl.cics.impl.common.cfg;
+package com.oyl.cics.model.common.cfg;
 
 import lombok.Getter;
 import lombok.Setter;

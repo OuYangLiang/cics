@@ -1,4 +1,4 @@
-package com.oyl.cics.impl.common.util;
+package com.oyl.cics.model.common.utils;
 
 import java.util.Random;
 
