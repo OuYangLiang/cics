@@ -4,6 +4,7 @@ import com.oyl.cics.model.guidaoheng.request.SearchCondition;
 import com.oyl.cics.model.guidaoheng.response.SearchResult;
 import com.oyl.cics.model.guidaoheng.GuidaohengRepos;
 import com.oyl.cics.web.common.result.RestResult;
+import com.oyl.cics.web.guidaoheng.request.UploadRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,5 +23,10 @@ public class GuidaohengController {
     @PostMapping("/guidaoheng/search")
     public RestResult<SearchResult> search(@RequestBody SearchCondition condition) {
         return RestResult.ok(guidaohengRepos.search(condition));
+    }
+
+    @PostMapping("/guidaoheng/upload")
+    public RestResult<Void> upload(@RequestBody UploadRequest request) {
+        return RestResult.ok(null);
     }
 }
