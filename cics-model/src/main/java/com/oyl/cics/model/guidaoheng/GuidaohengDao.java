@@ -13,4 +13,6 @@ public interface GuidaohengDao {
     void uploadSucc(List<Guidaoheng> guidaohengs, String operator);
 
     void uploadFailed(List<Guidaoheng> guidaohengs, String operator);
+
+    List<Guidaoheng> queryByKeys(long[] ids);
 }

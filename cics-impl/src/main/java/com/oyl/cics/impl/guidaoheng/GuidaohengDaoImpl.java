@@ -41,4 +41,16 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
     public void uploadFailed(List<Guidaoheng> guidaohengs, String operator) {
         guidaohengMapper.uploadFailed(guidaohengs, operator);
     }
+
+    @Override
+    public List<Guidaoheng> queryByKeys(long[] ids) {
+        List<Guidaoheng> result = guidaohengMapper.queryByKeys(ids);
+        if (null != result) {
+            for (Guidaoheng guidaoheng : result) {
+                guidaoheng.setDtData(guidaohengMapper.queryDetails(guidaoheng.getZmxdocNo()));
+            }
+        }
+
+        return result;
+    }
 }

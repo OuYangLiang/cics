@@ -16,4 +16,6 @@ public interface GuidaohengMapper {
     void uploadSucc(List<Guidaoheng> guidaoheng, String operator);
 
     void uploadFailed(List<Guidaoheng> guidaohengs, String operator);
+
+    List<Guidaoheng> queryByKeys(long[] ids);
 }

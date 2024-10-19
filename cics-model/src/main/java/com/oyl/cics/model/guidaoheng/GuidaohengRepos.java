@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
+import java.util.List;
 
 @Component
 public class GuidaohengRepos {
@@ -32,5 +33,9 @@ public class GuidaohengRepos {
         }
 
         return result;
+    }
+
+    public List<Guidaoheng> queryByKeys(long[] ids) {
+        return guidaohengDao.queryByKeys(ids);
     }
 }
