@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.guidaoheng.GuidaohengOracleMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.guidaoheng.Guidaoheng">
+        <result column="id" property="id" />
+        <result column="zmxdocNo" property="zmxdocNo"/>
+        <result column="ssejdw" property="ssejdw"/>
+        <result column="ssejdwid" property="ssejdwid"/>
+        <result column="sssjdw" property="sssjdw"/>
+        <result column="sssjdwid" property="sssjdwid"/>
+        <result column="zczhandian" property="zczhandian"/>
+        <result column="zczhandianbm" property="zczhandianbm"/>
+        <result column="zccheci" property="zccheci"/>
+        <result column="chexing" property="chexing"/>
+        <result column="mykuangdianmc" property="mykuangdianmc"/>
+        <result column="mykuangdianbm" property="mykuangdianbm"/>
+        <result column="meitanlaiyuan" property="meitanlaiyuan"/>
+        <result column="meitanlaiyuanbm" property="meitanlaiyuanbm"/>
+        <result column="zname1" property="zname1"/>
+        <result column="zkunnr" property="zkunnr"/>
+        <result column="vtext" property="vtext"/>
+        <result column="vkorg" property="vkorg"/>
+        <result column="shouchehao" property="shouchehao"/>
+        <result column="weichehao" property="weichehao"/>
+        <result column="cheshu" property="cheshu"/>
+        <result column="jiliangdanwei" property="jiliangdanwei"/>
+        <result column="zongpiaozhong" property="zongpiaozhong"/>
+        <result column="zongmaozhong" property="zongmaozhong"/>
+        <result column="zongpizhong" property="zongpizhong"/>
+        <result column="zongjingzhong" property="zongjingzhong"/>
+        <result column="koudunzongliang" property="koudunzongliang"/>
+        <result column="jiesuanmeiliang" property="jiesuanmeiliang"/>
+        <result column="zongyingkui" property="zongyingkui"/>
+        <result column="zongyingdun" property="zongyingdun"/>
+        <result column="zongkuidun" property="zongkuidun"/>
+        <result column="zongyunsun" property="zongyunsun"/>
+        <result column="duiweisj" property="duiweisj"/>
+        <result column="duiweirq" property="duiweirq"/>
+        <result column="yewurq" property="yewurq"/>
+        <result column="zcmeizhong" property="zcmeizhong"/>
+        <result column="zcmeizhongbm" property="zcmeizhongbm"/>
+        <result column="wgmgys" property="wgmgys"/>
+        <result column="sjyxt" property="sjyxt"/>
+        <result column="cheyuan" property="cheyuan"/>
+        <result column="yundanhaoyundanhao" property="yundanhaoyundanhao"/>
+        <result column="jltypetype" property="jltypetype"/>
+        <result column="jlhqyt" property="jlhqyt"/>
+        <result column="jlhqmc" property="jlhqmc"/>
+        <result column="jlhqmcid" property="jlhqmcid"/>
+        <result column="daozhan" property="daozhan"/>
+        <result column="fazhan" property="fazhan"/>
+        <result column="zhongdao" property="zhongdao"/>
+        <result column="sjtsdanwei" property="sjtsdanwei"/>
+        <result column="xtscjlI" property="xtscjlI"/>
+        <result column="xtscjlT" property="xtscjlT"/>
+        <result column="byzd1" property="byzd1"/>
+        <result column="byzd2" property="byzd2"/>
+        <result column="byzd3" property="byzd3"/>
+        <result column="byzd4" property="byzd4"/>
+        <result column="byzd5" property="byzd5"/>
+        <result column="byzd6" property="byzd6"/>
+        <result column="byzd7" property="byzd7"/>
+        <result column="byzd8" property="byzd8"/>
+        <result column="byzd9" property="byzd9"/>
+        <result column="byzd10" property="byzd10"/>
+        <result column="status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
+        <result column="upload_time" property="uploadTime"/>
+        <result column="operator" property="operator"/>
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.guidaoheng.GuidaohengDetail">
+        <result column="id" property="id"/>
+        <result column="zmxdocNo" property="zmxdocNo"/>
+        <result column="dtSortno" property="dtSortno"/>
+        <result column="dtChehao" property="dtChehao"/>
+        <result column="dtChexing" property="dtChexing"/>
+        <result column="dtMaozhong" property="dtMaozhong"/>
+        <result column="dtPizhong" property="dtPizhong"/>
+        <result column="dtJingzhong" property="dtJingzhong"/>
+        <result column="dtBzdunshu" property="dtBzdunshu"/>
+        <result column="dtPiaozhong" property="dtPiaozhong"/>
+        <result column="dtYingdun" property="dtYingdun"/>
+        <result column="dtKuidun" property="dtKuidun"/>
+        <result column="dtYunsun" property="dtYunsun"/>
+        <result column="dtKoudun" property="dtKoudun"/>
+        <result column="dtCztime" property="dtCztime"/>
+        <result column="dtCqtime" property="dtCqtime"/>
+        <result column="dtGhsudu" property="dtGhsudu"/>
+        <result column="dtReserve1" property="dtReserve1"/>
+        <result column="dtReserve2" property="dtReserve2"/>
+        <result column="dtReserve3" property="dtReserve3"/>
+        <result column="dtReserve4" property="dtReserve4"/>
+        <result column="dtReserve5" property="dtReserve5"/>
+        <!--<result column="shrq" property="shrq"/>-->
+    </resultMap>
+
+    <select id="search" resultMap="BaseResultMap">
+        select `id`, `zmxdocNo`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zczhandian`,  `zczhandianbm`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`, `zname1`,  `zkunnr`,  `vtext`,  `vkorg`, `shouchehao`,  `weichehao`,  `cheshu`, `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`, `wgmgys`, `sjyxt`,  `cheyuan`, `yundanhaoyundanhao`, `jltypetype`,  `jlhqyt`,  `jlhqmc`, `jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`, `sjtsdanwei`, `xtscjlI`,  `xtscjlT`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`, `status`, `upload_time`, `operator`
+        from   `guidaoheng`
+        <where>
+            <if test="zmxdocNo != null and zmxdocNo != ''">
+                AND `zmxdocNo` like concat(#{zmxdocNo}, '%')
+            </if>
+            <if test="sssjdw != null and sssjdw != ''">
+                AND `sssjdw` like concat(#{sssjdw}, '%')
+            </if>
+            <if test="mykuangdianmc != null and mykuangdianmc != ''">
+                AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
+            </if>
+            <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
+                AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
+            </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
+        </where>
+        order by `zmxdocno` asc
+        limit ${offset}, ${pageSize}
+    </select>
+
+    <select id="numOf" resultType="int">
+        select count(1)
+        from `guidaoheng`
+        <where>
+            <if test="zmxdocNo != null and zmxdocNo != ''">
+                AND `zmxdocNo` like concat(#{zmxdocNo}, '%')
+            </if>
+            <if test="sssjdw != null and sssjdw != ''">
+                AND `sssjdw` like concat(#{sssjdw}, '%')
+            </if>
+            <if test="mykuangdianmc != null and mykuangdianmc != ''">
+                AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
+            </if>
+            <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
+                AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
+            </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select `zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`, `dtPiaozhong`, `dtPiaozhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudun`, `dtCztime`, `dtCqtime`, `dtGhsudu`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
+        from  `guidaoheng_detail`
+        where `zmxdocno` = #{arg0}
+        order by `dtSortno` asc
+    </select>
+
+    <update id="uploadSucc">
+        update `guidaoheng` set
+        `status` = 1,
+        `upload_time` = now(),
+        `operator` = #{param2}
+        where `id` in
+        <foreach item="item" index="index" collection="param1" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <update id="uploadFailed">
+        update `guidaoheng` set
+        `status` = 2,
+        `upload_time` = now(),
+        `operator` = #{param2}
+        where `id` in
+        <foreach item="item" index="index" collection="param1" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <select id="queryByKeys" resultMap="BaseResultMap">
+        select `id`, `zmxdocNo`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zczhandian`,  `zczhandianbm`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`, `zname1`,  `zkunnr`,  `vtext`,  `vkorg`, `shouchehao`,  `weichehao`,  `cheshu`, `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`, `wgmgys`, `sjyxt`,  `cheyuan`, `yundanhaoyundanhao`, `jltypetype`,  `jlhqyt`,  `jlhqmc`, `jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`, `sjtsdanwei`, `xtscjlI`,  `xtscjlT`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`, `status`, `upload_time`, `operator`
+        from   `guidaoheng`
+        where `id` in
+        <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+</mapper>

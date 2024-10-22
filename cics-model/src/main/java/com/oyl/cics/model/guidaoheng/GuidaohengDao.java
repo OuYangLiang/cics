@@ -15,4 +15,6 @@ public interface GuidaohengDao {
     void uploadFailed(List<Guidaoheng> guidaohengs, String operator);
 
     List<Guidaoheng> queryByKeys(long[] ids);
+
+    List<Guidaoheng> queryRecentRecords(int recentDays);
 }
