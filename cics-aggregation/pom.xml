@@ -11,6 +11,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>oracle</groupId>
+            <artifactId>oracle</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.oyl</groupId>
             <artifactId>cics-model</artifactId>
             <exclusions>

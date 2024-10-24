@@ -61,37 +61,49 @@ public class GuidaohengController {
     @Resource
     private PropertiesConfig propertiesConfig;
 
+//    @GetMapping("/guidaoheng/test")
+//    public RestResult<String> test() {
+//        Guidaoheng guidaoheng = GuidaohengGenerator.generateRandomGuidaoheng();
+//
+//        String url = propertiesConfig.getUrl() + "/api/dlhg/guidaoheng";
+//        String millis = Long.toString(System.currentTimeMillis());
+//        String nonce = RandomGenerator.inst.strs(6);
+//
+//        Map<String, String> headers = new HashMap<>();
+//        headers.put("appId", propertiesConfig.getAppId());
+//        headers.put("millis", millis);
+//        headers.put("nonce", nonce);
+//        headers.put("sn", MD5Encryptor.inst.getMD5(propertiesConfig.getAppId() + propertiesConfig.getAppSecret() + millis + nonce).toLowerCase());
+//        headers.put("Content-Type", "application/json");
+//
+//        String json = JsonUtil.inst.toJson(Collections.singleton(guidaoheng));
+//        String encrypted = null;
+//        try {
+//            encrypted = AESUtil.inst.encrypt(json, propertiesConfig.getDataSecret());
+//        } catch (Exception e) {
+//            log.error(e.getMessage(), e);
+//            return RestResult.fail("Error", e.getMessage());
+//        }
+//
+//        try {
+//            String resultJson = HttpUtil.inst.request(url, encrypted, headers);
+//            log.info(resultJson);
+//            return RestResult.ok(resultJson);
+//        } catch (IOException e) {
+//            log.error(e.getMessage(), e);
+//            return RestResult.fail("Error", e.getMessage());
+//        }
+//    }
+
     @GetMapping("/guidaoheng/test")
-    public RestResult<String> test() {
-        Guidaoheng guidaoheng = GuidaohengGenerator.generateRandomGuidaoheng();
+    public RestResult<Guidaoheng> test2() {
+        List<Guidaoheng> list = guidaohengRepos.queryFromOldSystem();
+        log.info("{} records found", list == null ? 0 : list.size());
 
-        String url = propertiesConfig.getUrl() + "/api/dlhg/guidaoheng";
-        String millis = Long.toString(System.currentTimeMillis());
-        String nonce = RandomGenerator.inst.strs(6);
-
-        Map<String, String> headers = new HashMap<>();
-        headers.put("appId", propertiesConfig.getAppId());
-        headers.put("millis", millis);
-        headers.put("nonce", nonce);
-        headers.put("sn", MD5Encryptor.inst.getMD5(propertiesConfig.getAppId() + propertiesConfig.getAppSecret() + millis + nonce).toLowerCase());
-        headers.put("Content-Type", "application/json");
-
-        String json = JsonUtil.inst.toJson(Collections.singleton(guidaoheng));
-        String encrypted = null;
-        try {
-            encrypted = AESUtil.inst.encrypt(json, propertiesConfig.getDataSecret());
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            return RestResult.fail("Error", e.getMessage());
+        if (list != null && !list.isEmpty()) {
+            return RestResult.ok(list.get(0));
         }
 
-        try {
-            String resultJson = HttpUtil.inst.request(url, encrypted, headers);
-            log.info(resultJson);
-            return RestResult.ok(resultJson);
-        } catch (IOException e) {
-            log.error(e.getMessage(), e);
-            return RestResult.fail("Error", e.getMessage());
-        }
+        return RestResult.ok(null);
     }
 }

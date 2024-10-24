@@ -81,4 +81,14 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
 
         return list;
     }
+
+    @Override
+    public void override(Guidaoheng guidaoheng) {
+        guidaohengMapper.removeDetails(guidaoheng.getZmxdocNo());
+        for (GuidaohengDetail detail : guidaoheng.getDtData()) {
+            guidaohengMapper.addDetail(detail);
+        }
+
+        guidaohengMapper.override(guidaoheng);
+    }
 }

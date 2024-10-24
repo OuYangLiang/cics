@@ -8,6 +8,9 @@ import com.oyl.cics.model.common.utils.RandomGenerator;
 import com.oyl.cics.model.common.utils.http.HttpUtil;
 import com.oyl.cics.model.common.utils.http.Result;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -47,6 +50,14 @@ public class GuidaohengService {
         }
 
         guidaohengDao.uploadSucc(guidaohengs, operator);
+    }
+
+    @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+    public void override(Guidaoheng guidaoheng) {
+        if (null == guidaoheng.getZmxdocNo() || guidaoheng.getZmxdocNo().isEmpty()) {
+            throw new IllegalStateException();
+        }
+        guidaohengDao.override(guidaoheng);
     }
 
 }

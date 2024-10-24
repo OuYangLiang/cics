@@ -34,11 +34,11 @@ public class DataSourceConfig {
     @Bean
     public DataSource dataSourceForOracle() throws PropertyVetoException {
         ComboPooledDataSource rlt = new ComboPooledDataSource();
-//        rlt.setDriverClass("com.mysql.jdbc.Driver");
-        rlt.setDriverClass("com.mysql.cj.jdbc.Driver");
-        rlt.setUser("root");
-        rlt.setPassword("pwd12345");
-        rlt.setJdbcUrl("jdbc:mysql://localhost:3306/cics");
+        rlt.setDriverClass("oracle.jdbc.driver.OracleDriver");
+        rlt.setUser("FMIS9999");
+        rlt.setPassword("FMIS9999");
+//        rlt.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+        rlt.setJdbcUrl("jdbc:oracle:thin:@//localhost:1521/fmis9999");
         rlt.setInitialPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMaxPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMinPoolSize(DEFAULT_POOL_SIZE);

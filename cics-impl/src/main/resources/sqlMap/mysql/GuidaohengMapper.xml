@@ -178,4 +178,130 @@
             #{id}
         </foreach>
     </select>
+
+    <delete id="removeDetails">
+        delete from  `guidaoheng_detail`
+        where `zmxdocNo` = #{arg0}
+    </delete>
+
+    <insert id="addDetail">
+        insert into `guidaoheng_detail` (`zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`)
+        values (
+            #{zmxdocNo},
+            #{dtSortno},
+            #{dtChehao},
+            #{dtChexing},
+            #{dtMaozhong},
+            #{dtPizhong},
+            #{dtJingzhong},
+            #{dtBzdunshu}
+        )
+    </insert>
+
+    <insert id="override">
+        insert into `guidaoheng` (
+            `zmxdocNo`,
+            `ssejdw`,
+            `ssejdwid`,
+            `sssjdw`,
+            `sssjdwid`,
+            `zccheci`,
+            `chexing`,
+            `mykuangdianmc`,
+            `mykuangdianbm`,
+            `shouchehao`,
+            `weichehao`,
+            `cheshu`,
+            `jiliangdanwei`,
+            `zongpiaozhong`,
+            `zongmaozhong`,
+            `zongpizhong`,
+            `zongjingzhong`,
+            `koudunzongliang`,
+            `jiesuanmeiliang`,
+            `zongyingkui`,
+            `zongyingdun`,
+            `zongkuidun`,
+            `zongyunsun`,
+            `duiweisj`,
+            `duiweirq`,
+            `yewurq`,
+            `zcmeizhong`,
+            `zcmeizhongbm`,
+            `sjyxt`,
+            `cheyuan`,
+            `jltypetype`,
+            `jlhqyt`,
+            `jlhqmc`,
+            `sjtsdanwei`
+        ) values (
+            #{zmxdocNo},
+            #{ssejdw},
+            #{ssejdwid},
+            #{sssjdw},
+            #{sssjdwid},
+            #{zccheci},
+            #{chexing},
+            #{mykuangdianmc},
+            #{mykuangdianbm},
+            #{shouchehao},
+            #{weichehao},
+            #{cheshu},
+            #{jiliangdanwei},
+            #{zongpiaozhong},
+            #{zongmaozhong},
+            #{zongpizhong},
+            #{zongjingzhong},
+            #{koudunzongliang},
+            #{jiesuanmeiliang},
+            #{zongyingkui},
+            #{zongyingdun},
+            #{zongkuidun},
+            #{zongyunsun},
+            #{duiweisj},
+            #{duiweirq},
+            #{yewurq},
+            #{zcmeizhong},
+            #{zcmeizhongbm},
+            #{sjyxt},
+            #{cheyuan},
+            #{jltypetype},
+            #{jlhqyt},
+            #{jlhqmc},
+            #{sjtsdanwei}
+        ) ON DUPLICATE KEY UPDATE
+            `ssejdw` = #{ssejdw},
+            `ssejdwid` = #{ssejdwid},
+            `sssjdw` = #{sssjdw},
+            `sssjdwid` = #{sssjdwid},
+            `zccheci` = #{zccheci},
+            `chexing` = #{chexing},
+            `mykuangdianmc` = #{mykuangdianmc},
+            `mykuangdianbm` = #{mykuangdianbm},
+            `shouchehao` = #{shouchehao},
+            `weichehao` = #{weichehao},
+            `cheshu` = #{cheshu},
+            `jiliangdanwei` = #{jiliangdanwei},
+            `zongpiaozhong` = #{zongpiaozhong},
+            `zongmaozhong` = #{zongmaozhong},
+            `zongpizhong` = #{zongpizhong},
+            `zongjingzhong` = #{zongjingzhong},
+            `koudunzongliang` = #{koudunzongliang},
+            `jiesuanmeiliang` = #{jiesuanmeiliang},
+            `zongyingkui` = #{zongyingkui},
+            `zongyingdun` = #{zongyingdun},
+            `zongkuidun` = #{zongkuidun},
+            `zongyunsun` = #{zongyunsun},
+            `duiweisj` = #{duiweisj},
+            `duiweirq` = #{duiweirq},
+            `yewurq` = #{yewurq},
+            `zcmeizhong` = #{zcmeizhong},
+            `zcmeizhongbm` = #{zcmeizhongbm},
+            `sjyxt` = #{sjyxt},
+            `cheyuan` = #{cheyuan},
+            `jltypetype` = #{jltypetype},
+            `jlhqyt` = #{jlhqyt},
+            `jlhqmc` = #{jlhqmc},
+            `sjtsdanwei` = #{sjtsdanwei}
+    </insert>
 </mapper>

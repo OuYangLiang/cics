@@ -18,4 +18,10 @@ public interface GuidaohengMapper {
     void uploadFailed(List<Guidaoheng> guidaohengs, String operator);
 
     List<Guidaoheng> queryByKeys(long[] ids);
+
+    void removeDetails(String zmxdocNo);
+
+    void addDetail(GuidaohengDetail detail);
+
+    void override(Guidaoheng guidaoheng);
 }
