@@ -16,5 +16,5 @@ public interface GuidaohengDao {
 
     List<Guidaoheng> queryByKeys(long[] ids);
 
-    List<Guidaoheng> queryRecentRecords(int recentDays);
+    List<Guidaoheng> queryRecentRecords(String startDay);
 }
