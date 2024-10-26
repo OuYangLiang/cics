@@ -343,4 +343,142 @@ public class Guidaoheng {
     public String toJson() {
         return gson.toJson(this);
     }
+
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == this.getZmxdocNo() || this.getZmxdocNo().trim().isEmpty()) {
+            this.setZmxdocNo(valString);
+        }
+
+        if (null == this.getSsejdw() || this.getSsejdw().trim().isEmpty()) {
+            this.setSssjdw(valString);
+        }
+
+        if (null == this.getSsejdwid() || this.getSsejdwid().trim().isEmpty()) {
+            this.setSsejdwid(valString);
+        }
+
+        if (null == this.getSssjdw() || this.getSssjdw().trim().isEmpty()) {
+            this.setSssjdw(valString);
+        }
+
+        if (null == this.getSssjdwid() || this.getSssjdwid().trim().isEmpty()) {
+            this.setSssjdwid(valString);
+        }
+
+        if (null == this.getZczhandian() || this.getZczhandian().trim().isEmpty()) {
+            this.setZczhandian(valString);
+        }
+
+        if (null == this.getZczhandianbm() || this.getZczhandianbm().trim().isEmpty()) {
+            this.setZczhandianbm(valString);
+        }
+
+        if (null == this.getZccheci() || this.getZccheci().trim().isEmpty()) {
+            this.setZccheci(valString);
+        }
+
+        if (null == this.getChexing() || this.getChexing().trim().isEmpty()) {
+            this.setChexing(valString);
+        }
+
+        if (null == this.mykuangdianmc || this.mykuangdianmc.trim().isEmpty()) {
+            this.mykuangdianmc = valString;
+        }
+
+        if (null == this.mykuangdianbm || this.mykuangdianbm.trim().isEmpty()) {
+            this.mykuangdianbm = valString;
+        }
+
+        if (null == this.shouchehao || this.shouchehao.trim().isEmpty()) {
+            this.shouchehao = valString;
+        }
+
+        if (null == this.weichehao || this.weichehao.trim().isEmpty()) {
+            this.weichehao = valString;
+        }
+
+        if (null == this.cheshu) {
+            this.cheshu = valLong;
+        }
+
+        if (null == this.jiliangdanwei || this.jiliangdanwei.trim().isEmpty()) {
+            this.jiliangdanwei = valString;
+        }
+
+        if (null == this.zongmaozhong) {
+            this.zongmaozhong = valDouble;
+        }
+
+        if (null == this.zongpizhong) {
+            this.zongpizhong = valDouble;
+        }
+
+        if (null == this.zongjingzhong) {
+            this.zongjingzhong = valDouble;
+        }
+
+        if (null == this.koudunzongliang) {
+            this.koudunzongliang = valDouble;
+        }
+
+        if (null == this.duiweisj || this.duiweisj.trim().isEmpty()) {
+            this.duiweisj = valDate;
+        }
+
+        if (null == this.duiweirq || this.duiweirq.trim().isEmpty()) {
+            this.duiweirq = valTime;
+        }
+
+        if (null == this.yewurq || this.yewurq.trim().isEmpty()) {
+            this.yewurq = valDate;
+        }
+
+        if (null == this.zcmeizhong || this.zcmeizhong.trim().isEmpty()) {
+            this.zcmeizhong = valString;
+        }
+
+        if (null == this.zcmeizhongbm || this.zcmeizhongbm.trim().isEmpty()) {
+            this.zcmeizhongbm = valString;
+        }
+
+        if (null == this.sjyxt || this.sjyxt.trim().isEmpty()) {
+            this.sjyxt = valString;
+        }
+
+        if (null == this.jltypetype || this.jltypetype.trim().isEmpty()) {
+            this.jltypetype = valString;
+        }
+
+        if (null == this.jlhqyt || this.jlhqyt.trim().isEmpty()) {
+            this.jlhqyt = valString;
+        }
+
+        if (null == this.jlhqmc || this.jlhqmc.trim().isEmpty()) {
+            this.jlhqmc = valString;
+        }
+
+        if (null == this.sjtsdanwei || this.sjtsdanwei.trim().isEmpty()) {
+            this.sjtsdanwei = valString;
+        }
+
+        if (null == this.xtscjlI || this.xtscjlI.trim().isEmpty()) {
+            this.xtscjlI = valDate;
+        }
+
+        if (null == this.xtscjlT || this.xtscjlT.trim().isEmpty()) {
+            this.xtscjlT = valTime;
+        }
+
+        if (null != this.getDtData()) {
+            for (GuidaohengDetail item : this.getDtData()) {
+                item.setDefaultValues();
+            }
+        }
+    }
 }

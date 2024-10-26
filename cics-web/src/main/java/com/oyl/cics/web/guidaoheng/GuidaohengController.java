@@ -1,13 +1,9 @@
 package com.oyl.cics.web.guidaoheng;
 
 import com.oyl.cics.model.common.cfg.PropertiesConfig;
-import com.oyl.cics.model.common.utils.AESUtil;
-import com.oyl.cics.model.common.utils.JsonUtil;
-import com.oyl.cics.model.common.utils.MD5Encryptor;
-import com.oyl.cics.model.common.utils.RandomGenerator;
-import com.oyl.cics.model.common.utils.http.HttpUtil;
+
+import com.oyl.cics.model.common.utils.http.Result;
 import com.oyl.cics.model.guidaoheng.Guidaoheng;
-import com.oyl.cics.model.guidaoheng.GuidaohengGenerator;
 import com.oyl.cics.model.guidaoheng.GuidaohengService;
 import com.oyl.cics.model.guidaoheng.request.SearchCondition;
 import com.oyl.cics.model.guidaoheng.response.SearchResult;
@@ -22,12 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 @RestController
@@ -46,16 +36,17 @@ public class GuidaohengController {
     }
 
     @PostMapping("/guidaoheng/upload")
-    public RestResult<Void> upload(@RequestBody UploadRequest request) {
+    public RestResult<Result> upload(@RequestBody UploadRequest request) {
         List<Guidaoheng> guidaohengs = guidaohengRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            guidaohengService.upload(guidaohengs, request.getOperator());
+            Result result = guidaohengService.upload(guidaohengs, request.getOperator());
+
+            return RestResult.ok(result);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        return RestResult.ok(null);
     }
 
     @Resource
@@ -97,12 +88,19 @@ public class GuidaohengController {
 
     @GetMapping("/guidaoheng/test")
     public RestResult<Guidaoheng> test2() {
-        List<Guidaoheng> list = guidaohengRepos.queryFromOldSystem();
-        log.info("{} records found", list == null ? 0 : list.size());
+        log.info("DataPullingJob Started...");
 
-        if (list != null && !list.isEmpty()) {
-            return RestResult.ok(list.get(0));
+        List<Guidaoheng> list = guidaohengRepos.queryFromOldSystem();
+
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+
+            for (Guidaoheng item : list) {
+                guidaohengService.override(item);
+            }
         }
+
+        log.info("DataPullingJob Ended...");
 
         return RestResult.ok(null);
     }

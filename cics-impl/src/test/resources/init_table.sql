@@ -79,7 +79,7 @@ create table if not exists `guidaoheng` (
     `byzd8`             varchar(100),
     `byzd9`             varchar(100),
     `byzd10`            varchar(100),
-    `status`            tinyint         not null    comment '上报状态：0 - 上报错误；1 - 上报成功; 2 - 上报失败',
+    `status`            tinyint         not null    comment '上报状态：0 - 未上报；1 - 上报成功; 2 - 上报失败',
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
@@ -112,42 +112,6 @@ create table if not exists `guidaoheng_detail` (
     primary key ( `id` ),
     unique key ( `zmxdocNo`, `dtSortno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---CREATE TABLE IF NOT EXISTS guidaoheng (
---    zmxdocNo VARCHAR(100) NOT NULL DEFAULT '',
---    ssejdw VARCHAR(100) NOT NULL DEFAULT '',
---    ssejdwid VARCHAR(100) NOT NULL DEFAULT '',
---    sssjdw VARCHAR(100) NOT NULL DEFAULT '',
---    sssjdwid VARCHAR(100) NOT NULL DEFAULT '',
---    zccheci VARCHAR(100) NOT NULL DEFAULT '',
---    chexing VARCHAR(100) NOT NULL DEFAULT '',
---    mykuangdianmc VARCHAR(100) NOT NULL DEFAULT '',
---    mykuangdianbm VARCHAR(100) NOT NULL DEFAULT '',
---    shouchehao VARCHAR(100) NOT NULL DEFAULT '',
---    weichehao VARCHAR(100) NOT NULL DEFAULT '',
---    cheshu INT NOT NULL DEFAULT 0,  -- 通常对于整数类型，默认值为0更合适
---    jiliangdanwei VARCHAR(100) NOT NULL DEFAULT '',
---    zongpiaozhong DECIMAL(20,5) NOT NULL DEFAULT 0.00000,  -- 对于decimal类型，提供一个具体的数值作为默认值
---    zongmaozhong DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    zongpizhong DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    zongjingzhong DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    koudunzongliang DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    jiesuanmeiliang DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    zongyingkui DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    zongyingdun DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    zongyunsun DECIMAL(20,5) NOT NULL DEFAULT 0.00000,
---    duiweisj TIME NOT NULL DEFAULT '00:00:00',  -- 为TIME类型提供一个合理的默认值
---    duiweirq DATE NOT NULL DEFAULT '0000-00-00',  -- 或者使用'CURRENT_DATE'作为默认值，取决于您的需求
---    yewurq DATE NOT NULL DEFAULT '0000-00-00',
---    zcmeizhong VARCHAR(100) NOT NULL DEFAULT '',
---    zcmeizhongbm VARCHAR(100) NOT NULL DEFAULT '',
---    sjyxt VARCHAR(100) NOT NULL DEFAULT '',
---    cheyuan VARCHAR(100) NOT NULL DEFAULT '',
---    jltypetype VARCHAR(100) NOT NULL DEFAULT '',
---    jlhqyt VARCHAR(100) NOT NULL DEFAULT '',
---    jlhqmc VARCHAR(100) NOT NULL DEFAULT '',
---    sjtsdanwei VARCHAR(100) NOT NULL DEFAULT ''
---) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table if not exists `qichecheng` (
     `id`                bigint          not null    auto_increment comment '主键',
@@ -205,7 +169,7 @@ create table if not exists `qichecheng` (
     `byzd8`             varchar(100),
     `byzd9`             varchar(100),
     `byzd10`            varchar(100),
-    `status`            tinyint         not null    comment '上报状态：0 - 上报错误；1 - 上报成功; 2 - 上报失败',
+    `status`            tinyint         not null    comment '上报状态：0 - 未上报；1 - 上报成功; 2 - 上报失败',
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
@@ -267,7 +231,7 @@ create table if not exists `meicaiyang` (
     `byzd8`             varchar(100),
     `byzd9`             varchar(100),
     `byzd10`            varchar(100),
-    `status`            tinyint         not null    comment '上报状态：0 - 上报错误；1 - 上报成功; 2 - 上报失败',
+    `status`            tinyint         not null    comment '上报状态：0 - 未上报；1 - 上报成功; 2 - 上报失败',
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),

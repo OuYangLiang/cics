@@ -112,4 +112,39 @@ public class GuidaohengDetail {
      */
     private String dtReserve5;
 
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == this.dtSortno || this.dtSortno.trim().isEmpty()) {
+            this.dtSortno = valString;
+        }
+
+        if (null == this.dtChehao || this.dtChehao.trim().isEmpty()) {
+            this.dtChehao = valString;
+        }
+
+        if (null == this.dtChexing || this.dtChexing.trim().isEmpty()) {
+            this.dtChexing = valString;
+        }
+
+        if (null == this.dtMaozhong) {
+            this.dtMaozhong = valDouble;
+        }
+
+        if (null == this.dtPizhong) {
+            this.dtPizhong = valDouble;
+        }
+
+        if (null == this.dtJingzhong) {
+            this.dtJingzhong = valDouble;
+        }
+
+        if (null == this.dtBzdunshu) {
+            this.dtBzdunshu = valDouble;
+        }
+    }
 }

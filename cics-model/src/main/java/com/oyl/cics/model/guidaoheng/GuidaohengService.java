@@ -26,8 +26,8 @@ public class GuidaohengService {
     @Resource
     private GuidaohengDao guidaohengDao;
 
-    public void upload(List<Guidaoheng> guidaohengs, String operator) throws Exception {
-        String url = propertiesConfig.getUrl() + "/dlhg/guidaoheng";
+    public Result upload(List<Guidaoheng> guidaohengs, String operator) throws Exception {
+        String url = propertiesConfig.getUrl() + "/api/dlhg/guidaoheng";
         String millis = Long.toString(System.currentTimeMillis());
         String nonce = RandomGenerator.inst.strs(6);
 
@@ -38,18 +38,25 @@ public class GuidaohengService {
         headers.put("sn", MD5Encryptor.inst.getMD5(propertiesConfig.getAppId() + propertiesConfig.getAppSecret() + millis + nonce).toLowerCase());
         headers.put("Content-Type", "application/json");
 
+        if (null != guidaohengs) {
+            for (Guidaoheng item : guidaohengs) {
+                item.setDefaultValues();
+            }
+        }
+
         String json = JsonUtil.inst.toJson(guidaohengs);
         String encrypted = AESUtil.inst.encrypt(json, propertiesConfig.getDataSecret());
 
         String resultJson = HttpUtil.inst.request(url, encrypted, headers);
         Result result = Result.fromJson(resultJson);
 
-        if (!result.success()) {
+        if (result.success()) {
+            guidaohengDao.uploadSucc(guidaohengs, operator);
+        } else {
             guidaohengDao.uploadFailed(guidaohengs, operator);
-            throw new RuntimeException(String.format("code: %s, msg: %s, data %s.", result.getCode(), result.getMsg(), result.getData()));
         }
 
-        guidaohengDao.uploadSucc(guidaohengs, operator);
+        return result;
     }
 
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
