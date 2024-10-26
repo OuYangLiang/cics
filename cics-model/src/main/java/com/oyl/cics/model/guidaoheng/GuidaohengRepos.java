@@ -43,7 +43,7 @@ public class GuidaohengRepos {
     }
 
     public List<Guidaoheng> queryFromOldSystem() {
-        return guidaohengDao.queryRecentRecords(thirtyDaysAgo());
+        return guidaohengDao.queryRecentRecords();
     }
 
     private String thirtyDaysAgo() {

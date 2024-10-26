@@ -24,7 +24,6 @@
         <result column="jiesuanmeiliang" property="jiesuanmeiliang"/>
         <result column="zongyingkui" property="zongyingkui"/>
         <result column="zongyingdun" property="zongyingdun"/>
-        <result column="zongkuidun" property="zongkuidun"/>
         <result column="zongyunsun" property="zongyunsun"/>
         <result column="duiweisj" property="duiweisj"/>
         <result column="duiweirq" property="duiweirq"/> <!-- date -->
@@ -51,18 +50,18 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select `zmxdocNo`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,
-        `shouchehao`,  `weichehao`,  `cheshu`, `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,
-        `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`, `sjyxt`,
-        `cheyuan`, `jltypetype`,  `jlhqyt`,  `jlhqmc`, `sjtsdanwei`
-        from   `t_guidaoheng`
-        where AND `yewurq` >= #{arg0}
+        select zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,
+        shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,
+        zongyingkui,  zongyingdun, zongyunsun,  duiweisj,  duiweirq,  yewurq,  zcmeizhong,  zcmeizhongbm, sjyxt,
+        cheyuan, jltypetype,  jlhqyt,  jlhqmc, sjtsdanwei
+        from   guidaoheng
+        <!--where AND `yewurq` >= #{arg0}-->
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select `zmxdocno`, `dtsortno`, `dtchehao`, `dtchexing`, `dtmaozhong`, `dtpizhong`, `dtjingzhong`, `dtbzdunshu`
-        from  `t_guidaoheng_mcxqxx`
-        where `zmxdocno` = #{arg0}
+        select zmxdocno, dtsortno, dtchehao, dtchexing, dtmaozhong, dtpizhong, dtjingzhong, dtbzdunshu
+        from  guidaoheng_mcxqxx
+        where zmxdocno = #{arg0}
     </select>
 
 </mapper>

@@ -64,8 +64,8 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
     }
 
     @Override
-    public List<Guidaoheng> queryRecentRecords(String startDay) {
-        List<Guidaoheng> list = guidaohengOracleMapper.queryRecentRecords(startDay);
+    public List<Guidaoheng> queryRecentRecords() {
+        List<Guidaoheng> list = guidaohengOracleMapper.queryRecentRecords();
 
         if (null == list || list.isEmpty()) {
             return Collections.emptyList();

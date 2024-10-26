@@ -16,7 +16,7 @@ public interface GuidaohengDao {
 
     List<Guidaoheng> queryByKeys(long[] ids);
 
-    List<Guidaoheng> queryRecentRecords(String startDay);
+    List<Guidaoheng> queryRecentRecords();
 
     void override(Guidaoheng guidaoheng);
 }
