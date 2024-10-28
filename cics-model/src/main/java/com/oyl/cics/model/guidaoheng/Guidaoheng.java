@@ -25,22 +25,22 @@ public class Guidaoheng {
     /**
      * 所属二级公司
      */
-    private String ssejdw;
+    private transient String ssejdw;
 
     /**
      * 所属二级公司代码
      */
-    private String ssejdwid;
+    private transient String ssejdwid;
 
     /**
      * 所属三级公司
      */
-    private String sssjdw;
+    private transient String sssjdw;
 
     /**
      * 所属三级公司代码
      */
-    private String sssjdwid;
+    private transient String sssjdwid;
 
     /**
      * 装车站点

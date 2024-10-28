@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -29,7 +30,14 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
 
         if (null != result) {
             for (Guidaoheng guidaoheng : result) {
-                guidaoheng.setDtData(guidaohengMapper.queryDetails(guidaoheng.getZmxdocNo()));
+                List<GuidaohengDetail> details = guidaohengMapper.queryDetails(guidaoheng.getZmxdocNo());
+                details.sort(new Comparator<GuidaohengDetail>() {
+                    @Override
+                    public int compare(GuidaohengDetail o1, GuidaohengDetail o2) {
+                        return Integer.parseInt(o1.getDtSortno()) - Integer.parseInt(o2.getDtSortno());
+                    }
+                });
+                guidaoheng.setDtData(details);
             }
         }
 

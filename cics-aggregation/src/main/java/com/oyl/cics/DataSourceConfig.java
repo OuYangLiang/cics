@@ -17,16 +17,17 @@ public class DataSourceConfig {
     @Primary
     public DataSource dataSource() throws PropertyVetoException {
         ComboPooledDataSource rlt = new ComboPooledDataSource();
-//        rlt.setDriverClass("com.mysql.jdbc.Driver");
-        rlt.setDriverClass("com.mysql.cj.jdbc.Driver");
+        rlt.setDriverClass("com.mysql.jdbc.Driver");
+//        rlt.setDriverClass("com.mysql.cj.jdbc.Driver");
         rlt.setUser("root");
-        rlt.setPassword("pwd12345");
+        rlt.setPassword("pwd123");
         rlt.setJdbcUrl("jdbc:mysql://localhost:3306/cics");
         rlt.setInitialPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMaxPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMinPoolSize(DEFAULT_POOL_SIZE);
         rlt.setTestConnectionOnCheckin(true);
         rlt.setPreferredTestQuery("select 1");
+
 
         return rlt;
     }

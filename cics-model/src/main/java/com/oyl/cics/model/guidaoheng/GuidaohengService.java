@@ -7,6 +7,8 @@ import com.oyl.cics.model.common.utils.MD5Encryptor;
 import com.oyl.cics.model.common.utils.RandomGenerator;
 import com.oyl.cics.model.common.utils.http.HttpUtil;
 import com.oyl.cics.model.common.utils.http.Result;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +21,8 @@ import java.util.Map;
 
 @Component
 public class GuidaohengService {
+
+    private static final Logger log = LoggerFactory.getLogger(GuidaohengService.class);
 
     @Resource
     private PropertiesConfig propertiesConfig;
@@ -53,6 +57,7 @@ public class GuidaohengService {
         if (result.success()) {
             guidaohengDao.uploadSucc(guidaohengs, operator);
         } else {
+            log.warn("上报失败，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
             guidaohengDao.uploadFailed(guidaohengs, operator);
         }
 

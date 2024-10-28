@@ -96,7 +96,11 @@ public class GuidaohengController {
             log.info("{} Records found.", list.size());
 
             for (Guidaoheng item : list) {
-                guidaohengService.override(item);
+                try {
+                    guidaohengService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                }
             }
         }
 

@@ -110,7 +110,7 @@ create table if not exists `guidaoheng_detail` (
     `dtReserve4`        varchar(100),
     `dtReserve5`        varchar(100),
     primary key ( `id` ),
-    unique key ( `zmxdocNo`, `dtSortno`)
+    key ( `zmxdocNo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table if not exists `qichecheng` (

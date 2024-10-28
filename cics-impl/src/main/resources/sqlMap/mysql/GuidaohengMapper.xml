@@ -145,7 +145,6 @@
         select `zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`, `dtPiaozhong`, `dtPiaozhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudun`, `dtCztime`, `dtCqtime`, `dtGhsudu`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
         from  `guidaoheng_detail`
         where `zmxdocno` = #{arg0}
-        order by `dtSortno` asc
     </select>
 
     <update id="uploadSucc">
@@ -233,7 +232,8 @@
             `jltypetype`,
             `jlhqyt`,
             `jlhqmc`,
-            `sjtsdanwei`
+            `sjtsdanwei`,
+            `status`
         ) values (
             #{zmxdocNo},
             #{ssejdw},
@@ -268,7 +268,8 @@
             #{jltypetype},
             #{jlhqyt},
             #{jlhqmc},
-            #{sjtsdanwei}
+            #{sjtsdanwei},
+            0
         ) ON DUPLICATE KEY UPDATE
             `ssejdw` = #{ssejdw},
             `ssejdwid` = #{ssejdwid},
