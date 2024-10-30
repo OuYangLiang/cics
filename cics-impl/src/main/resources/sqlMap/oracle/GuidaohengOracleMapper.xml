@@ -47,6 +47,7 @@
         <result column="dtpizhong" property="dtPizhong"/>
         <result column="dtjingzhong" property="dtJingzhong"/>
         <result column="dtbzdunshu" property="dtBzdunshu"/>
+        <result column="dtghsudu" property="dtGhsudu"/>
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
@@ -59,7 +60,7 @@
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select zmxdocno, dtsortno, dtchehao, dtchexing, dtmaozhong, dtpizhong, dtjingzhong, dtbzdunshu
+        select zmxdocno, dtsortno, dtchehao, dtchexing, dtmaozhong, dtpizhong, dtjingzhong, dtbzdunshu, dtghsudu
         from  guidaoheng_mcxqxx
         where zmxdocno = #{arg0}
     </select>

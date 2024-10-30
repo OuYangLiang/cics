@@ -184,7 +184,7 @@
     </delete>
 
     <insert id="addDetail">
-        insert into `guidaoheng_detail` (`zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`)
+        insert into `guidaoheng_detail` (`zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`, `dtGhsudu`)
         values (
             #{zmxdocNo},
             #{dtSortno},
@@ -193,7 +193,8 @@
             #{dtMaozhong},
             #{dtPizhong},
             #{dtJingzhong},
-            #{dtBzdunshu}
+            #{dtBzdunshu},
+            #{dtGhsudu}
         )
     </insert>
 
