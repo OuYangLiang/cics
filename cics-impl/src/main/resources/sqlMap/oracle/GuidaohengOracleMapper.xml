@@ -53,10 +53,9 @@
     <select id="queryRecentRecords" resultMap="BaseResultMap">
         select zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,
         shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,
-        zongyingkui,  zongyingdun, zongyunsun,  duiweisj,  to_char(duiweirq, 'yyyymmdd') as duiweirq,  to_char(yewurq, 'yyyymmdd') as yewurq,  zcmeizhong,  zcmeizhongbm, sjyxt,
+        zongyingkui,  zongyingdun, zongyunsun,  duiweisj, duiweirq, to_char(yewurq, 'yyyymmdd') as yewurq,  zcmeizhong,  zcmeizhongbm, sjyxt,
         cheyuan, jltypetype,  jlhqyt,  jlhqmc, sjtsdanwei
         from guidaoheng
-        <!--where AND `yewurq` >= #{arg0}-->
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
