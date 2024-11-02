@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.qichecheng.QichechengMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
+        <result column="id" property="id"/>
         <result column="zmxdocNo" property="zmxdocNo"/>
         <result column="ssejdw" property="ssejdw"/>
         <result column="ssejdwid" property="ssejdwid"/>

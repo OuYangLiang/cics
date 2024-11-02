@@ -6,6 +6,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MeicaiyangDetail {
+
+    private Long id;
+
     /**
      * 采样单元详情-初级子样量
      */
@@ -139,4 +142,68 @@ public class MeicaiyangDetail {
      */
     private String mybs;
 
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == mybs || this.mybs.trim().isEmpty()) {
+            this.mybs = valString;
+        }
+
+        if (null == dtCydyxh || this.dtCydyxh.trim().isEmpty()) {
+            this.dtCydyxh = valString;
+        }
+
+        if (null == dtCydybm || this.dtCydybm.trim().isEmpty()) {
+            this.dtCydybm = valString;
+        }
+
+        if (null == dtCyfs || this.dtCyfs.trim().isEmpty()) {
+            this.dtCyfs = valString;
+        }
+
+        if (null == dtCysdate || this.dtCysdate.trim().isEmpty()) {
+            this.dtCysdate = valDate;
+        }
+
+        if (null == dtCystime || this.dtCystime.trim().isEmpty()) {
+            this.dtCystime = valTime;
+        }
+
+        if (null == dtCyedate || this.dtCyedate.trim().isEmpty()) {
+            this.dtCyedate = valDate;
+        }
+
+        if (null == dtCyetime || this.dtCyetime.trim().isEmpty()) {
+            this.dtCyetime = valTime;
+        }
+
+        if (null == dtCysbmc || this.dtCysbmc.trim().isEmpty()) {
+            this.dtCysbmc = valString;
+        }
+
+        if (null == dtCysbid || this.dtCysbid.trim().isEmpty()) {
+            this.dtCysbid = valString;
+        }
+
+        if (null == dtCydyml) {
+            this.dtCydyml = valDouble;
+        }
+
+        if (null == dtCydycs) {
+            this.dtCydycs = valLong;
+        }
+
+        if (null == dtCydyds) {
+            this.dtCydyds = valLong;
+        }
+
+        if (null == dtCysd || this.dtCysd.trim().isEmpty()) {
+            this.dtCysd = valString;
+        }
+
+    }
 }
