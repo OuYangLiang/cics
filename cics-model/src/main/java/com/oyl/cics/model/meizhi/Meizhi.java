@@ -8,6 +8,9 @@ import java.util.List;
 @Getter
 @Setter
 public class Meizhi {
+
+    private Long id;
+
     /**
      * 化验日期
      */
@@ -332,4 +335,138 @@ public class Meizhi {
      * 证书编号
      */
     private String zsbh;
+
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == mybs || this.mybs.trim().isEmpty()) {
+            this.mybs = valString;
+        }
+
+        if (null == hypml) {
+            this.hypml = valDouble;
+        }
+
+        if (null == meizhong || this.meizhong.trim().isEmpty()) {
+            this.meizhong = valString;
+        }
+
+        if (null == meizhongbm || this.meizhongbm.trim().isEmpty()) {
+            this.meizhongbm = valString;
+        }
+
+        if (null == hyorgname || this.hyorgname.trim().isEmpty()) {
+            this.hyorgname = valString;
+        }
+
+        if (null == jiancefangshi || this.jiancefangshi.trim().isEmpty()) {
+            this.jiancefangshi = valString;
+        }
+
+        if (null == jiancesbmc || this.jiancesbmc.trim().isEmpty()) {
+            this.jiancesbmc = valString;
+        }
+
+        if (null == jiancesbid || this.jiancesbid.trim().isEmpty()) {
+            this.jiancesbid = valString;
+        }
+
+        if (null == assayI || this.assayI.trim().isEmpty()) {
+            this.assayI = valDate;
+        }
+
+        if (null == assayT || this.assayT.trim().isEmpty()) {
+            this.assayT = valTime;
+        }
+
+        if (null == ngymt) {
+            this.ngymt = valDouble;
+        }
+
+        if (null == ngymad) {
+            this.ngymad = valDouble;
+        }
+
+        if (null == nlcfaar) {
+            this.nlcfaar = valDouble;
+        }
+
+        if (null == ngyaad) {
+            this.ngyaad = valDouble;
+        }
+
+        if (null == nlcfad) {
+            this.nlcfad = valDouble;
+        }
+
+        if (null == nlcfvar) {
+            this.nlcfvar = valDouble;
+        }
+
+        if (null == ngyvad) {
+            this.ngyvad = valDouble;
+        }
+
+        if (null == nlcfvd) {
+            this.nlcfvd = valDouble;
+        }
+
+        if (null == ngyvdaf) {
+            this.ngyvdaf = valDouble;
+        }
+
+        if (null == nlcfstar) {
+            this.nlcfstar = valDouble;
+        }
+
+        if (null == nlcfstad) {
+            this.nlcfstad = valDouble;
+        }
+
+        if (null == nlcfstd) {
+            this.nlcfstd = valDouble;
+        }
+
+        if (null == nqgrdmj) {
+            this.nqgrdmj = valDouble;
+        }
+
+        if (null == nyshar) {
+            this.nyshar = valDouble;
+        }
+
+        if (null == nyshad) {
+            this.nyshad = valDouble;
+        }
+
+        if (null == nyshd) {
+            this.nyshd = valDouble;
+        }
+
+        if (null == sjtsdanwei || this.sjtsdanwei.trim().isEmpty()) {
+            this.sjtsdanwei = valString;
+        }
+
+        if (null == xtscjlI || this.xtscjlI.trim().isEmpty()) {
+            this.xtscjlI = valDate;
+        }
+
+        if (null == xtscjlT || this.xtscjlT.trim().isEmpty()) {
+            this.xtscjlT = valTime;
+        }
+
+        if (null == hydsl || this.hydsl.trim().isEmpty()) {
+            this.hydsl = valString;
+        }
+
+        if (null != this.getDtHydbhxq()) {
+            for (MeizhiDetail item : this.getDtHydbhxq()) {
+                item.setDefaultValues();
+            }
+        }
+    }
 }
