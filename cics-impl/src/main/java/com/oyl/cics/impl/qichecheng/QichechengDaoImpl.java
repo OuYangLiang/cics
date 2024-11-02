@@ -31,4 +31,16 @@ public class QichechengDaoImpl implements QichechengDao {
     public int numOf(SearchCondition condition) {
         return qichechengMapper.numOf(condition);
     }
+
+    @Override
+    public List<Qichecheng> queryByKeys(long[] ids) {
+        List<Qichecheng> result = qichechengMapper.queryByKeys(ids);
+        if (null != result) {
+            for (Qichecheng qichecheng : result) {
+                qichecheng.setDtData(qichechengMapper.queryDetails(qichecheng.getZmxdocNo()));
+            }
+        }
+
+        return result;
+    }
 }

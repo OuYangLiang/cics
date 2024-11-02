@@ -12,4 +12,6 @@ public interface QichechengMapper {
     int numOf(SearchCondition condition);
 
     List<QichechengDetail> queryDetails(String zmxdocNo);
+
+    List<Qichecheng> queryByKeys(long[] ids);
 }

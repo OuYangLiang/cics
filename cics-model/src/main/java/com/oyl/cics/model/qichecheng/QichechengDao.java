@@ -8,4 +8,6 @@ public interface QichechengDao {
     List<Qichecheng> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Qichecheng> queryByKeys(long[] ids);
 }

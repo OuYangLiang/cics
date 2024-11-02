@@ -142,7 +142,7 @@
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select `zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`, `dtPiaozhong`, `dtPiaozhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudun`, `dtCztime`, `dtCqtime`, `dtGhsudu`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
+        select `id`, `zmxdocNo`, `dtSortno`, `dtChehao`, `dtChexing`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtBzdunshu`, `dtPiaozhong`, `dtPiaozhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudun`, `dtCztime`, `dtCqtime`, `dtGhsudu`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
         from  `guidaoheng_detail`
         where `zmxdocno` = #{arg0}
     </select>

@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class QichechengDetail {
+    private Long id;
     /**
      * 每车详情-车牌号
      */

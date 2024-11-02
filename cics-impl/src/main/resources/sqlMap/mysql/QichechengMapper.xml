@@ -63,6 +63,7 @@
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.qichecheng.QichechengDetail">
+        <result column="id" property="id"/>
         <result column="zmxdocNo" property="zmxdocNo"/>
         <result column="dtSortno" property="dtSortno"/>
         <result column="dtChepaihao" property="dtChepaihao"/>
@@ -90,8 +91,8 @@
     </resultMap>
 
     <select id="search" resultMap="BaseResultMap">
-        select `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
-        from   `qichecheng`
+        select `id`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        from `qichecheng`
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
                 AND `zmxdocNo` like concat(#{zmxdocNo}, '%')
@@ -130,9 +131,18 @@
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select `zmxdocNo`, `dtSortno`, `dtChepaihao`, `dtPiaozhong`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudunl`, `dtJzdate`, `dtJztime`, `dtJqdate`, `dtJqtime`, `dtJzhmc`, `dtJzhid`, `dtJqhmc`, `dtJqhid`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
+        select `id`, `zmxdocNo`, `dtSortno`, `dtChepaihao`, `dtPiaozhong`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtYingdun`, `dtKuidun`, `dtYunsun`, `dtKoudunl`, `dtJzdate`, `dtJztime`, `dtJqdate`, `dtJqtime`, `dtJzhmc`, `dtJzhid`, `dtJqhmc`, `dtJqhid`, `dtReserve1`, `dtReserve2`, `dtReserve3`, `dtReserve4`, `dtReserve5`
         from   `qichecheng_detail`
         where `zmxdocno` = #{arg0}
         order by `dtSortno` asc
+    </select>
+
+    <select id="queryByKeys" resultMap="BaseResultMap">
+        select `id`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        from   `qichecheng`
+        where `id` in
+        <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
     </select>
 </mapper>

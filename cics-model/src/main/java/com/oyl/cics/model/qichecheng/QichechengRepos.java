@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
+import java.util.List;
 
 @Component
 public class QichechengRepos {
@@ -32,5 +33,9 @@ public class QichechengRepos {
         }
 
         return result;
+    }
+
+    public List<Qichecheng> queryByKeys(long[] ids) {
+        return qichechengDao.queryByKeys(ids);
     }
 }
