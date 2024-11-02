@@ -8,6 +8,9 @@ import java.util.List;
 @Getter
 @Setter
 public class Pidaimeicaiyang {
+
+    private Long id;
+
     /**
      * 备用字段1
      */
@@ -96,4 +99,46 @@ public class Pidaimeicaiyang {
      * 数据推送时间
      */
     private String xtscjlT;
+
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == mybs || this.mybs.trim().isEmpty()) {
+            this.mybs = valString;
+        }
+
+        if (null == cypml) {
+            this.cypml = valDouble;
+        }
+
+        if (null == cydysl) {
+            this.cydysl = valLong;
+        }
+
+        if (null == sjyxt || this.sjyxt.trim().isEmpty()) {
+            this.sjyxt = valString;
+        }
+
+        if (null == sjtsdanwei || this.sjtsdanwei.trim().isEmpty()) {
+            this.sjtsdanwei = valString;
+        }
+
+        if (null == xtscjlI || this.xtscjlI.trim().isEmpty()) {
+            this.xtscjlI = valDate;
+        }
+
+        if (null == xtscjlT || this.xtscjlT.trim().isEmpty()) {
+            this.xtscjlT = valTime;
+        }
+
+        if (null != this.getDtCydy()) {
+            for (PidaimeicaiyangDetail item : this.getDtCydy()) {
+                item.setDefaultValues();
+            }
+        }
+    }
 }
