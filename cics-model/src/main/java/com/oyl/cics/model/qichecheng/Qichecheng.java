@@ -1,7 +1,5 @@
 package com.oyl.cics.model.qichecheng;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,8 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Qichecheng {
-
-    private static final Gson gson = new GsonBuilder().create();
 
     /**
      * 备用字段1
@@ -257,7 +253,97 @@ public class Qichecheng {
         return null == uploadStatus ? null : uploadStatus.getDesc();
     }
 
-    public String toJson() {
-        return gson.toJson(this);
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == zmxdocNo || this.zmxdocNo.trim().isEmpty()) {
+            this.zmxdocNo = valString;
+        }
+
+        if (null == zsitename || this.zsitename.trim().isEmpty()) {
+            this.zsitename = valString;
+        }
+
+        if (null == mykuangdianmc || this.mykuangdianmc.trim().isEmpty()) {
+            this.mykuangdianmc = valString;
+        }
+
+        if (null == mykuangdianbm || this.mykuangdianbm.trim().isEmpty()) {
+            this.mykuangdianbm = valString;
+        }
+
+        if (null == meizhong || this.meizhong.trim().isEmpty()) {
+            this.meizhong = valString;
+        }
+
+        if (null == meizhongbm || this.meizhongbm.trim().isEmpty()) {
+            this.meizhongbm = valString;
+        }
+
+        if (null == zbeginI || this.zbeginI.trim().isEmpty()) {
+            this.zbeginI = valDate;
+        }
+
+        if (null == zbeginT || this.zbeginT.trim().isEmpty()) {
+            this.zbeginT = valTime;
+        }
+
+        if (null == zendI || this.zendI.trim().isEmpty()) {
+            this.zendI = valDate;
+        }
+
+        if (null == zendT || this.zendT.trim().isEmpty()) {
+            this.zendT = valTime;
+        }
+
+        if (null == zmeng) {
+            this.zmeng = valDouble;
+        }
+
+        if (null == jiliangdanwei || this.jiliangdanwei.trim().isEmpty()) {
+            this.jiliangdanwei = valString;
+        }
+
+        if (null == cheshu) {
+            this.cheshu = valDouble;
+        }
+
+        if (null == zongmaozhong) {
+            this.zongmaozhong = valDouble;
+        }
+
+        if (null == zongpizhong) {
+            this.zongpizhong = valDouble;
+        }
+
+        if (null == zongjingzhong) {
+            this.zongjingzhong = valDouble;
+        }
+
+        if (null == koudunzongliang) {
+            this.koudunzongliang = valDouble;
+        }
+
+        if (null == sjtsdanwei || this.sjtsdanwei.trim().isEmpty()) {
+            this.sjtsdanwei = valString;
+        }
+
+        if (null == xtscjlI || this.xtscjlI.trim().isEmpty()) {
+            this.xtscjlI = valDate;
+        }
+
+        if (null == xtscjlT || this.xtscjlT.trim().isEmpty()) {
+            this.xtscjlT = valTime;
+        }
+
+        if (null != this.getDtData()) {
+            for (QichechengDetail item : this.getDtData()) {
+                item.setDefaultValues();
+            }
+        }
     }
 }

@@ -1,7 +1,5 @@
 package com.oyl.cics.model.guidaoheng;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,8 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Guidaoheng {
-
-    private static final Gson gson = new GsonBuilder().create();
 
     private Long id;
 
@@ -338,10 +334,6 @@ public class Guidaoheng {
 
     public String getUploadStatusDesc() {
         return null == uploadStatus ? null : uploadStatus.getDesc();
-    }
-
-    public String toJson() {
-        return gson.toJson(this);
     }
 
     public void setDefaultValues() {

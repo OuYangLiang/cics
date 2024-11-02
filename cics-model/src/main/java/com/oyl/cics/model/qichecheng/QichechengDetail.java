@@ -103,4 +103,69 @@ public class QichechengDetail {
      * 明细磅单号
      */
     private String zmxdocNo;
+
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == this.dtSortno || this.dtSortno.trim().isEmpty()) {
+            this.dtSortno = valString;
+        }
+
+        if (null == this.dtChepaihao || this.dtChepaihao.trim().isEmpty()) {
+            this.dtChepaihao = valString;
+        }
+
+        if (null == dtMaozhong) {
+            this.dtMaozhong = valDouble;
+        }
+
+        if (null == dtPizhong) {
+            this.dtPizhong = valDouble;
+        }
+
+        if (null == dtJingzhong) {
+            this.dtJingzhong = valDouble;
+        }
+
+        if (null == dtKoudunl) {
+            this.dtKoudunl = valDouble;
+        }
+
+        if (null == dtJzdate || this.dtJzdate.trim().isEmpty()) {
+            this.dtJzdate = valDate;
+        }
+
+        if (null == dtJztime || this.dtJztime.trim().isEmpty()) {
+            this.dtJztime = valTime;
+        }
+
+        if (null == dtJqdate || this.dtJqdate.trim().isEmpty()) {
+            this.dtJqdate = valDate;
+        }
+
+        if (null == dtJqtime || this.dtJqtime.trim().isEmpty()) {
+            this.dtJqtime = valTime;
+        }
+
+        if (null == this.dtJzhmc || this.dtJzhmc.trim().isEmpty()) {
+            this.dtJzhmc = valString;
+        }
+
+        if (null == this.dtJzhid || this.dtJzhid.trim().isEmpty()) {
+            this.dtJzhid = valString;
+        }
+
+        if (null == this.dtJqhmc || this.dtJqhmc.trim().isEmpty()) {
+            this.dtJqhmc = valString;
+        }
+
+        if (null == this.dtJqhid || this.dtJqhid.trim().isEmpty()) {
+            this.dtJqhid = valString;
+        }
+    }
+
 }
