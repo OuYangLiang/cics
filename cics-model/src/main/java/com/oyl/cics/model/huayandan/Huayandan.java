@@ -6,6 +6,9 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Huayandan {
+
+    private Long id;
+
     /**
      * 化验编号
      */
@@ -267,4 +270,140 @@ public class Huayandan {
      */
     private String xtscjlT;
 
+    public void setDefaultValues() {
+        String valString = "9999";
+        String valDate = "99999999";
+        String valTime = "000000";
+        long valLong = -1L;
+        double valDouble = -1;
+
+        if (null == mybs || this.mybs.trim().isEmpty()) {
+            this.mybs = valString;
+        }
+
+        if (null == dtHydid || this.dtHydid.trim().isEmpty()) {
+            this.dtHydid = valString;
+        }
+
+        if (null == dtHydxh || this.dtHydxh.trim().isEmpty()) {
+            this.dtHydxh = valString;
+        }
+
+        if (null == jiancejieguoyt || this.jiancejieguoyt.trim().isEmpty()) {
+            this.jiancejieguoyt = valString;
+        }
+
+        if (null == jiancefangshi || this.jiancefangshi.trim().isEmpty()) {
+            this.jiancefangshi = valString;
+        }
+
+        if (null == jiancesbmc || this.jiancesbmc.trim().isEmpty()) {
+            this.jiancesbmc = valString;
+        }
+
+        if (null == jiancesbid || this.jiancesbid.trim().isEmpty()) {
+            this.jiancesbid = valString;
+        }
+
+        if (null == meizhong || this.meizhong.trim().isEmpty()) {
+            this.meizhong = valString;
+        }
+
+        if (null == meizhongbm || this.meizhongbm.trim().isEmpty()) {
+            this.meizhongbm = valString;
+        }
+
+        if (null == dtAssayI || this.dtAssayI.trim().isEmpty()) {
+            this.dtAssayI = valDate;
+        }
+
+        if (null == dtAssayT || this.dtAssayT.trim().isEmpty()) {
+            this.dtAssayT = valTime;
+        }
+
+        if (null == dtDuiyingml) {
+            this.dtDuiyingml = valDouble;
+        }
+
+        if (null == dtNgymt) {
+            this.dtNgymt = valDouble;
+        }
+
+        if (null == dtNgymad) {
+            this.dtNgymad = valDouble;
+        }
+
+        if (null == dtNlcfaar) {
+            this.dtNlcfaar = valDouble;
+        }
+
+        if (null == dtNgyaad) {
+            this.dtNgyaad = valDouble;
+        }
+
+        if (null == dtNlcfad) {
+            this.dtNlcfad = valDouble;
+        }
+
+        if (null == dtNlcfvar) {
+            this.dtNlcfvar = valDouble;
+        }
+
+        if (null == dtNgyvad) {
+            this.dtNgyvad = valDouble;
+        }
+
+        if (null == dtNlcfvd) {
+            this.dtNlcfvd = valDouble;
+        }
+
+        if (null == dtNgyvdaf) {
+            this.dtNgyvdaf = valDouble;
+        }
+
+        if (null == dtNlcfstar) {
+            this.dtNlcfstar = valDouble;
+        }
+
+        if (null == dtNlcfstad) {
+            this.dtNlcfstad = valDouble;
+        }
+
+        if (null == dtNlcfstd) {
+            this.dtNlcfstd = valDouble;
+        }
+
+        if (null == dtNqgrdmj) {
+            this.dtNqgrdmj = valDouble;
+        }
+
+        if (null == dtNqnetarmj) {
+            this.dtNqnetarmj = valDouble;
+        }
+
+        if (null == dtNyshar) {
+            this.dtNyshar = valDouble;
+        }
+
+        if (null == dtNyshad) {
+            this.dtNyshad = valDouble;
+        }
+
+        if (null == dtKuaimanhui || this.dtKuaimanhui.trim().isEmpty()) {
+            this.dtKuaimanhui = valString;
+        }
+
+        if (null == sjtsdanwei || this.sjtsdanwei.trim().isEmpty()) {
+            this.sjtsdanwei = valString;
+        }
+
+        if (null == xtscjlI || this.xtscjlI.trim().isEmpty()) {
+            this.xtscjlI = valDate;
+        }
+
+        if (null == xtscjlT || this.xtscjlT.trim().isEmpty()) {
+            this.xtscjlT = valTime;
+        }
+
+    }
 }
