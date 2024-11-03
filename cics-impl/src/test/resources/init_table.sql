@@ -203,7 +203,7 @@ create table if not exists `qichecheng_detail` (
     `dtReserve4`        varchar(100),
     `dtReserve5`        varchar(100),
     primary key ( `id` ),
-    unique key ( `zmxdocNo`, `dtSortno`)
+    key ( `zmxdocNo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -274,7 +274,7 @@ create table if not exists `meicaiyang_detail` (
     `dtCydyreserve4`    varchar(100),
     `dtCydyreserve5`    varchar(100),
     primary key ( `id` ),
-    unique key ( `mybs`, `dtCydyxh`)
+    key ( `mybs`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
