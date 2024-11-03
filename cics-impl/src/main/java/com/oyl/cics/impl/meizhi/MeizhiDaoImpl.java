@@ -1,0 +1,35 @@
+package com.oyl.cics.impl.meizhi;
+
+import com.oyl.cics.model.meizhi.Meizhi;
+import com.oyl.cics.model.meizhi.MeizhiDao;
+import com.oyl.cics.model.meizhi.request.SearchCondition;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+import java.util.Collections;
+import java.util.List;
+
+@Component
+public class MeizhiDaoImpl implements MeizhiDao {
+
+    @Resource
+    private MeizhiMapper meizhiMapper;
+
+    @Override
+    public List<Meizhi> search(SearchCondition condition) {
+        List<Meizhi> result = meizhiMapper.search(condition);
+
+        if (null != result) {
+            for (Meizhi meizhi : result) {
+                meizhi.setDtHydbhxq(meizhiMapper.queryDetails(meizhi.getMybs()));
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public int numOf(SearchCondition condition) {
+        return meizhiMapper.numOf(condition);
+    }
+}
