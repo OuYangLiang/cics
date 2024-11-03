@@ -1,8 +1,8 @@
-package com.oyl.cics.model.meicaiyang;
+package com.oyl.cics.model.kjhuayandan;
 
 import com.oyl.cics.model.common.validation.ValidParam;
-import com.oyl.cics.model.meicaiyang.request.SearchCondition;
-import com.oyl.cics.model.meicaiyang.response.SearchResult;
+import com.oyl.cics.model.kjhuayandan.request.SearchCondition;
+import com.oyl.cics.model.kjhuayandan.response.SearchResult;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -11,13 +11,13 @@ import javax.validation.constraints.NotNull;
 import java.util.Collections;
 
 @Component
-public class MeicaoyangRepos {
+public class KjhuayandanRepos {
     @Resource
-    private MeicaiyangDao meicaiyangDao;
+    private KjhuayandanDao kjhuayandanDao;
 
     @ValidParam
     public SearchResult search(@Valid @NotNull(message = "查询对象不能为空") SearchCondition searchCondition) {
-        int numOfRecords = meicaiyangDao.numOf(searchCondition);
+        int numOfRecords = kjhuayandanDao.numOf(searchCondition);
 
         SearchResult result = new SearchResult();
         result.setPage(searchCondition.getPage());
@@ -27,7 +27,7 @@ public class MeicaoyangRepos {
         if (( (searchCondition.getPage() - 1) * searchCondition.getPageSize()) >= numOfRecords) {
             result.setRecords(Collections.emptyList());
         } else {
-            result.setRecords(meicaiyangDao.search(searchCondition));
+            result.setRecords(kjhuayandanDao.search(searchCondition));
         }
 
         return result;
