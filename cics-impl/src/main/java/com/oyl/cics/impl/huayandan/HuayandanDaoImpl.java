@@ -23,4 +23,9 @@ public class HuayandanDaoImpl implements HuayandanDao {
     public int numOf(SearchCondition condition) {
         return huayandanMapper.numOf(condition);
     }
+
+    @Override
+    public List<Huayandan> queryByKeys(long[] ids) {
+        return huayandanMapper.queryByKeys(ids);
+    }
 }

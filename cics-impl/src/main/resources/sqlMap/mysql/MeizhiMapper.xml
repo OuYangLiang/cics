@@ -130,4 +130,13 @@
         where `mybs` = #{arg0}
     </select>
 
+    <select id="queryByKeys" resultMap="BaseResultMap">
+        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `status`, `upload_time`, `operator`
+        from   `meizhi`
+        where `id` in
+        <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
 </mapper>

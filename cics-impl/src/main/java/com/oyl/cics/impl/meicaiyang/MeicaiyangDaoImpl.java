@@ -32,4 +32,15 @@ public class MeicaiyangDaoImpl implements MeicaiyangDao {
         return meicaiyangMapper.numOf(condition);
     }
 
+    @Override
+    public List<Meicaiyang> queryByKeys(long[] ids) {
+        List<Meicaiyang> result = meicaiyangMapper.queryByKeys(ids);
+        if (null != result) {
+            for (Meicaiyang item : result) {
+                item.setDtCydy(meicaiyangMapper.queryDetails(item.getMybs()));
+            }
+        }
+        return result;
+    }
+
 }

@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
+import java.util.List;
 
 @Component
 public class KjhuayandanRepos {
@@ -31,5 +32,9 @@ public class KjhuayandanRepos {
         }
 
         return result;
+    }
+
+    public List<Kjhuayandan> queryByKeys(long[] ids) {
+        return kjhuayandanDao.queryByKeys(ids);
     }
 }

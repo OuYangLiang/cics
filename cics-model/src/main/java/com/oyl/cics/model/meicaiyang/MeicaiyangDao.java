@@ -8,4 +8,6 @@ public interface MeicaiyangDao {
     List<Meicaiyang> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Meicaiyang> queryByKeys(long[] ids);
 }

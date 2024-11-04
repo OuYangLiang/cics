@@ -8,4 +8,6 @@ public interface KjhuayandanDao {
     List<Kjhuayandan> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Kjhuayandan> queryByKeys(long[] ids);
 }

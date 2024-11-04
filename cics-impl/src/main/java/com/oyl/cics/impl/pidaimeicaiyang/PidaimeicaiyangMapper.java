@@ -12,4 +12,6 @@ public interface PidaimeicaiyangMapper {
     int numOf(SearchCondition condition);
 
     List<PidaimeicaiyangDetail> queryDetails(String mybs);
+
+    List<Pidaimeicaiyang> queryByKeys(long[] ids);
 }

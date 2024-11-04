@@ -8,4 +8,6 @@ public interface PidaimeicaiyangDao {
     List<Pidaimeicaiyang> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Pidaimeicaiyang> queryByKeys(long[] ids);
 }

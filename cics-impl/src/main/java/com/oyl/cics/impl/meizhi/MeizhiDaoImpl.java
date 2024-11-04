@@ -32,4 +32,16 @@ public class MeizhiDaoImpl implements MeizhiDao {
     public int numOf(SearchCondition condition) {
         return meizhiMapper.numOf(condition);
     }
+
+    @Override
+    public List<Meizhi> queryByKeys(long[] ids) {
+        List<Meizhi> result = meizhiMapper.queryByKeys(ids);
+        if (null != result) {
+            for (Meizhi item : result) {
+                item.setDtHydbhxq(meizhiMapper.queryDetails(item.getMybs()));
+            }
+        }
+
+        return result;
+    }
 }

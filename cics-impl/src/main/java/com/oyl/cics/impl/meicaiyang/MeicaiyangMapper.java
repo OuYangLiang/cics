@@ -12,4 +12,6 @@ public interface MeicaiyangMapper {
     int numOf(SearchCondition condition);
 
     List<MeicaiyangDetail> queryDetails(String mybs);
+
+    List<Meicaiyang> queryByKeys(long[] ids);
 }

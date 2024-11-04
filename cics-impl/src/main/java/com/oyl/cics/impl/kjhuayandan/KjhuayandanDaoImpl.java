@@ -23,4 +23,9 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
     public int numOf(SearchCondition condition) {
         return kjhuayandanMapper.numOf(condition);
     }
+
+    @Override
+    public List<Kjhuayandan> queryByKeys(long[] ids) {
+        return kjhuayandanMapper.queryByKeys(ids);
+    }
 }

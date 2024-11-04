@@ -12,4 +12,6 @@ public interface MeizhiMapper {
     int numOf(SearchCondition condition);
 
     List<MeizhiDetail> queryDetails(String mybs);
+
+    List<Meizhi> queryByKeys(long[] ids);
 }

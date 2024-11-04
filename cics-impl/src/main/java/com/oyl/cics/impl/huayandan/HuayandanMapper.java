@@ -9,4 +9,6 @@ public interface HuayandanMapper {
     List<Huayandan> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Huayandan> queryByKeys(long[] ids);
 }

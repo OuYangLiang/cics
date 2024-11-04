@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
+import java.util.List;
 
 @Configuration
 public class MeizhiRepos {
@@ -31,5 +32,9 @@ public class MeizhiRepos {
         }
 
         return result;
+    }
+
+    public List<Meizhi> queryByKeys(long[] ids) {
+        return meizhiDao.queryByKeys(ids);
     }
 }

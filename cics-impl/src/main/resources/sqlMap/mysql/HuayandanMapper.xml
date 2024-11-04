@@ -96,4 +96,13 @@
         </where>
     </select>
 
+    <select id="queryByKeys" resultMap="BaseResultMap">
+        select `id`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
+        from   `huayandan`
+        where `id` in
+        <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
 </mapper>

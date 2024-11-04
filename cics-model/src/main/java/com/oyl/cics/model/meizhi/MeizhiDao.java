@@ -8,4 +8,6 @@ public interface MeizhiDao {
     List<Meizhi> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Meizhi> queryByKeys(long[] ids);
 }

@@ -8,4 +8,6 @@ public interface HuayandanDao {
     List<Huayandan> search(SearchCondition condition);
 
     int numOf(SearchCondition condition);
+
+    List<Huayandan> queryByKeys(long[] ids);
 }

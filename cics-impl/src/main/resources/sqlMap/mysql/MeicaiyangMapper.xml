@@ -96,4 +96,13 @@
         where `mybs` = #{arg0}
     </select>
 
+    <select id="queryByKeys" resultMap="BaseResultMap">
+        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `sjscfs`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        from   `meicaiyang`
+        where `id` in
+        <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
 </mapper>
