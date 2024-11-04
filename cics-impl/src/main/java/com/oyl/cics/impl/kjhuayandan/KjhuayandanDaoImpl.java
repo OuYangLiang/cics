@@ -28,4 +28,14 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
     public List<Kjhuayandan> queryByKeys(long[] ids) {
         return kjhuayandanMapper.queryByKeys(ids);
     }
+
+    @Override
+    public void uploadSucc(List<Kjhuayandan> kjhuayandans, String operator) {
+        kjhuayandanMapper.uploadSucc(kjhuayandans, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Kjhuayandan> kjhuayandans, String operator) {
+        kjhuayandanMapper.uploadFailed(kjhuayandans, operator);
+    }
 }

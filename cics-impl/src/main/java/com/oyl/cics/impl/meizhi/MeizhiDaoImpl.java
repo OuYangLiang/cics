@@ -44,4 +44,14 @@ public class MeizhiDaoImpl implements MeizhiDao {
 
         return result;
     }
+
+    @Override
+    public void uploadSucc(List<Meizhi> meizhis, String operator) {
+        meizhiMapper.uploadSucc(meizhis, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Meizhi> meizhis, String operator) {
+        meizhiMapper.uploadFailed(meizhis, operator);
+    }
 }

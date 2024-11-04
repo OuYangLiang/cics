@@ -43,4 +43,14 @@ public class MeicaiyangDaoImpl implements MeicaiyangDao {
         return result;
     }
 
+    @Override
+    public void uploadSucc(List<Meicaiyang> meicaiyangs, String operator) {
+        meicaiyangMapper.uploadSucc(meicaiyangs, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Meicaiyang> meicaiyangs, String operator) {
+        meicaiyangMapper.uploadFailed(meicaiyangs, operator);
+    }
+
 }

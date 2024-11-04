@@ -105,4 +105,26 @@
         </foreach>
     </select>
 
+    <update id="uploadSucc">
+        update `meicaiyang` set
+        `status` = 1,
+        `upload_time` = now(),
+        `operator` = #{param2}
+        where `id` in
+        <foreach item="item" index="index" collection="param1" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <update id="uploadFailed">
+        update `meicaiyang` set
+        `status` = 2,
+        `upload_time` = now(),
+        `operator` = #{param2}
+        where `id` in
+        <foreach item="item" index="index" collection="param1" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
 </mapper>

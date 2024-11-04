@@ -41,12 +41,10 @@ public class GuidaohengController {
 
         try {
             Result result = guidaohengService.upload(guidaohengs, request.getOperator());
-
             return RestResult.ok(result);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Resource

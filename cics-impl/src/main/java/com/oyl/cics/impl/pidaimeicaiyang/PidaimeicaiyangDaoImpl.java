@@ -42,4 +42,14 @@ public class PidaimeicaiyangDaoImpl implements PidaimeicaiyangDao {
         }
         return result;
     }
+
+    @Override
+    public void uploadSucc(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator) {
+        pidaimeicaiyangMapper.uploadSucc(pidaimeicaiyangs, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator) {
+        pidaimeicaiyangMapper.uploadFailed(pidaimeicaiyangs, operator);
+    }
 }

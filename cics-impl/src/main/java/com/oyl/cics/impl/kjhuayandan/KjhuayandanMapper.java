@@ -11,4 +11,8 @@ public interface KjhuayandanMapper {
     int numOf(SearchCondition condition);
 
     List<Kjhuayandan> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Kjhuayandan> kjhuayandans, String operator);
+
+    void uploadFailed(List<Kjhuayandan> kjhuayandans, String operator);
 }

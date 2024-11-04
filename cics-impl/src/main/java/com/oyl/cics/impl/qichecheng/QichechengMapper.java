@@ -14,4 +14,8 @@ public interface QichechengMapper {
     List<QichechengDetail> queryDetails(String zmxdocNo);
 
     List<Qichecheng> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Qichecheng> qichechengs, String operator);
+
+    void uploadFailed(List<Qichecheng> qichechengs, String operator);
 }

@@ -10,4 +10,8 @@ public interface MeizhiDao {
     int numOf(SearchCondition condition);
 
     List<Meizhi> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Meizhi> meizhis, String operator);
+
+    void uploadFailed(List<Meizhi> meizhis, String operator);
 }

@@ -28,4 +28,14 @@ public class HuayandanDaoImpl implements HuayandanDao {
     public List<Huayandan> queryByKeys(long[] ids) {
         return huayandanMapper.queryByKeys(ids);
     }
+
+    @Override
+    public void uploadSucc(List<Huayandan> huayandans, String operator) {
+        huayandanMapper.uploadSucc(huayandans, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Huayandan> huayandans, String operator) {
+        huayandanMapper.uploadFailed(huayandans, operator);
+    }
 }

@@ -10,4 +10,8 @@ public interface PidaimeicaiyangDao {
     int numOf(SearchCondition condition);
 
     List<Pidaimeicaiyang> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
+
+    void uploadFailed(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
 }

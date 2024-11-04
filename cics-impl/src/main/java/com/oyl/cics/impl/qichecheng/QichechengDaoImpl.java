@@ -43,4 +43,14 @@ public class QichechengDaoImpl implements QichechengDao {
 
         return result;
     }
+
+    @Override
+    public void uploadSucc(List<Qichecheng> qichechengs, String operator) {
+        qichechengMapper.uploadSucc(qichechengs, operator);
+    }
+
+    @Override
+    public void uploadFailed(List<Qichecheng> qichechengs, String operator) {
+        qichechengMapper.uploadFailed(qichechengs, operator);
+    }
 }

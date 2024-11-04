@@ -10,4 +10,8 @@ public interface QichechengDao {
     int numOf(SearchCondition condition);
 
     List<Qichecheng> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Qichecheng> qichechengs, String operator);
+
+    void uploadFailed(List<Qichecheng> qichechengs, String operator);
 }

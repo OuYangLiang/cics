@@ -10,4 +10,8 @@ public interface HuayandanDao {
     int numOf(SearchCondition condition);
 
     List<Huayandan> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Huayandan> huayandans, String operator);
+
+    void uploadFailed(List<Huayandan> huayandans, String operator);
 }

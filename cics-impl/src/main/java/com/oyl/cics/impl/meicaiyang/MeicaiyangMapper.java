@@ -14,4 +14,8 @@ public interface MeicaiyangMapper {
     List<MeicaiyangDetail> queryDetails(String mybs);
 
     List<Meicaiyang> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Meicaiyang> meicaiyangs, String operator);
+
+    void uploadFailed(List<Meicaiyang> meicaiyangs, String operator);
 }

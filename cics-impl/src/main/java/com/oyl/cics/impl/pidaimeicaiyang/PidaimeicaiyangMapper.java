@@ -14,4 +14,8 @@ public interface PidaimeicaiyangMapper {
     List<PidaimeicaiyangDetail> queryDetails(String mybs);
 
     List<Pidaimeicaiyang> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
+
+    void uploadFailed(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
 }

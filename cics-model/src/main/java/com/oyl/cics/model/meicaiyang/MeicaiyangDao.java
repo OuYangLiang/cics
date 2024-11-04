@@ -10,4 +10,8 @@ public interface MeicaiyangDao {
     int numOf(SearchCondition condition);
 
     List<Meicaiyang> queryByKeys(long[] ids);
+
+    void uploadSucc(List<Meicaiyang> meicaiyangs, String operator);
+
+    void uploadFailed(List<Meicaiyang> meicaiyangs, String operator);
 }

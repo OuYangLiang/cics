@@ -1,9 +1,14 @@
 package com.oyl.cics.web.qichecheng;
 
+import com.oyl.cics.model.common.utils.http.Result;
+import com.oyl.cics.model.guidaoheng.Guidaoheng;
+import com.oyl.cics.model.qichecheng.Qichecheng;
+import com.oyl.cics.model.qichecheng.QichechengService;
 import com.oyl.cics.model.qichecheng.request.SearchCondition;
 import com.oyl.cics.model.qichecheng.response.SearchResult;
 import com.oyl.cics.model.qichecheng.QichechengRepos;
 import com.oyl.cics.web.common.result.RestResult;
+import com.oyl.cics.web.qichecheng.request.UploadRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 public class QichechengController {
@@ -19,8 +26,23 @@ public class QichechengController {
     @Resource
     private QichechengRepos qichechengRepos;
 
+    @Resource
+    private QichechengService qichechengService;
+
     @PostMapping("/qichecheng/search")
     public RestResult<SearchResult> search(@RequestBody SearchCondition condition) {
         return RestResult.ok(qichechengRepos.search(condition));
+    }
+
+    @PostMapping("/qichecheng/upload")
+    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+        List<Qichecheng> qichechengs = qichechengRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
+
+        try {
+            Result result = qichechengService.upload(qichechengs, request.getOperator());
+            return RestResult.ok(result);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
