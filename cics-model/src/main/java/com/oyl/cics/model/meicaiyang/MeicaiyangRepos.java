@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Component
-public class MeicaoyangRepos {
+public class MeicaiyangRepos {
     @Resource
     private MeicaiyangDao meicaiyangDao;
 
