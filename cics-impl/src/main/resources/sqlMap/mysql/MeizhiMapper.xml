@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.meizhi.MeizhiMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.meizhi.Meizhi">
+        <result column="id" property="id" />
+        <result column="mybs" property="mybs" />
+        <result column="ssejdw" property="ssejdw" />
+        <result column="ssejdwid" property="ssejdwid" />
+        <result column="sssjdw" property="sssjdw" />
+        <result column="sssjdwid" property="sssjdwid" />
+        <result column="hypml" property="hypml" />
+        <result column="meizhong" property="meizhong" />
+        <result column="meizhongbm" property="meizhongbm" />
+        <result column="hyorgname" property="hyorgname" />
+        <result column="jiancefangshi" property="jiancefangshi" />
+        <result column="jiancesbmc" property="jiancesbmc" />
+        <result column="jiancesbid" property="jiancesbid" />
+        <result column="assayI" property="assayI" />
+        <result column="assayT" property="assayT" />
+        <result column="ngymt" property="ngymt" />
+        <result column="ngymad" property="ngymad" />
+        <result column="nlcfaar" property="nlcfaar" />
+        <result column="ngyaad" property="ngyaad" />
+        <result column="nlcfad" property="nlcfad" />
+        <result column="nlcfvar" property="nlcfvar" />
+        <result column="ngyvad" property="ngyvad" />
+        <result column="nlcfvd" property="nlcfvd" />
+        <result column="ngyvdaf" property="ngyvdaf" />
+        <result column="nlcfstar" property="nlcfstar" />
+        <result column="nlcfstad" property="nlcfstad" />
+        <result column="nlcfstd" property="nlcfstd" />
+        <result column="nqgrdmj" property="nqgrdmj" />
+        <result column="nqnetarmj" property="nqnetarmj" />
+        <result column="nqnetmarkc" property="nqnetmarkc" />
+        <result column="nqbadmj" property="nqbadmj" />
+        <result column="nqgradmj" property="nqgradmj" />
+        <result column="nqgradkc" property="nqgradkc" />
+        <result column="nqgrdkc" property="nqgrdkc" />
+        <result column="nqgrarmj" property="nqgrarmj" />
+        <result column="bondindex" property="bondindex" />
+        <result column="nhrDt" property="nhrDt" />
+        <result column="nhrSt" property="nhrSt" />
+        <result column="nhrHt" property="nhrHt" />
+        <result column="nhrFt" property="nhrFt" />
+        <result column="nymqcrc" property="nymqcrc" />
+        <result column="nyshar" property="nyshar" />
+        <result column="nyshad" property="nyshad" />
+        <result column="nyshd" property="nyshd" />
+        <result column="nyhdaf" property="nyhdaf" />
+        <result column="nyscad" property="nyscad" />
+        <result column="nyscd" property="nyscd" />
+        <result column="nycdaf" property="nycdaf" />
+        <result column="hgi" property="hgi" />
+        <result column="nysfcad" property="nysfcad" />
+        <result column="nyshfcd" property="nyshfcd" />
+        <result column="mhcfAlo" property="mhcfAlo" />
+        <result column="mhcfCao" property="mhcfCao" />
+        <result column="mhcfMgo" property="mhcfMgo" />
+        <result column="mhcfSo" property="mhcfSo" />
+        <result column="mhcfTio" property="mhcfTio" />
+        <result column="mhcfPo" property="mhcfPo" />
+        <result column="mhcfKo" property="mhcfKo" />
+        <result column="mhcfNao" property="mhcfNao" />
+        <result column="mhcfSio" property="mhcfSio" />
+        <result column="mhcfFeo" property="mhcfFeo" />
+        <result column="zcdanhao" property="zcdanhao" />
+        <result column="xiecheid" property="xiecheid" />
+        <result column="loadStartNo" property="loadStartNo" />
+        <result column="loadEndNo" property="loadEndNo" />
+        <result column="bzId" property="bzId" />
+        <result column="status" property="status" />
+        <result column="kuaimanhui" property="kuaimanhui" />
+        <result column="wtdh" property="wtdh" />
+        <result column="czrq" property="czrq" />
+        <result column="zsbh" property="zsbh" />
+        <result column="beizhu" property="beizhu" />
+        <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="xtscjlI" property="xtscjlI" />
+        <result column="xtscjlT" property="xtscjlT" />
+        <result column="byzd1" property="byzd1" />
+        <result column="byzd2" property="byzd2" />
+        <result column="byzd3" property="byzd3" />
+        <result column="byzd4" property="byzd4" />
+        <result column="byzd5" property="byzd5" />
+        <result column="hydsl" property="hydsl" />
+        <result column="status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
+        <result column="upload_time" property="uploadTime"/>
+        <result column="operator" property="operator"/>
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.meizhi.MeizhiDetail">
+        <result column="id" property="id"/>
+        <result column="mybs" property="mybs" />
+        <result column="dtHyd1id" property="dtHyd1id" />
+        <result column="dtHyd2id" property="dtHyd2id" />
+        <result column="dtHyd3id" property="dtHyd3id" />
+        <result column="dtHyd4id" property="dtHyd4id" />
+        <result column="dtHyd5id" property="dtHyd5id" />
+        <result column="dtHyd6id" property="dtHyd6id" />
+        <result column="dtHyd7id" property="dtHyd7id" />
+        <result column="dtHyd8id" property="dtHyd8id" />
+    </resultMap>
+
+    <select id="search" resultMap="BaseResultMap">
+        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `status`, `upload_time`, `operator`
+        from   `meizhi`
+        <where>
+            <if test="mybs != null and mybs != ''">
+                AND `mybs` like concat(#{mybs}, '%')
+            </if>
+        </where>
+        order by `mybs` desc
+        limit ${offset}, ${pageSize}
+    </select>
+
+    <select id="numOf" resultType="int">
+        select count(1)
+        from `meizhi`
+        <where>
+            <if test="mybs != null and mybs != ''">
+                AND `mybs` like concat(#{mybs}, '%')
+            </if>
+        </where>
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select `id`, `mybs`, `dtHyd1id`, `dtHyd2id`, `dtHyd3id`, `dtHyd4id`, `dtHyd5id`, `dtHyd6id`, `dtHyd7id`, `dtHyd8id`
+        from  `meizhi_detail`
+        where `mybs` = #{arg0}
+    </select>
+
+</mapper>
