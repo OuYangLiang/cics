@@ -1,5 +1,9 @@
 package com.oyl.cics.model.kjhuayandan;
 
+import com.oyl.cics.model.shared.UploadStatus;
+
+import java.util.Date;
+
 public class Kjhuayandan {
     private Long id;
     private String mybs;
@@ -85,6 +89,25 @@ public class Kjhuayandan {
     private String reserve5;
     private String reserve6;
     private String reserve7;
+
+    /**
+     * 上报状态
+     */
+    private UploadStatus uploadStatus;
+
+    /**
+     * 上报时间
+     */
+    private Date uploadTime;
+
+    /**
+     * 上报操作人
+     */
+    private String operator;
+
+    public String getUploadStatusDesc() {
+        return null == uploadStatus ? null : uploadStatus.getDesc();
+    }
 
     public void setDefaultValues() {
         String valString = "9999";

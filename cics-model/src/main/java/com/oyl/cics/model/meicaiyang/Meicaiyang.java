@@ -1,8 +1,10 @@
 package com.oyl.cics.model.meicaiyang;
 
+import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -99,6 +101,25 @@ public class Meicaiyang {
      * 数据推送时间
      */
     private String xtscjlT;
+
+    /**
+     * 上报状态
+     */
+    private UploadStatus uploadStatus;
+
+    /**
+     * 上报时间
+     */
+    private Date uploadTime;
+
+    /**
+     * 上报操作人
+     */
+    private String operator;
+
+    public String getUploadStatusDesc() {
+        return null == uploadStatus ? null : uploadStatus.getDesc();
+    }
 
     public void setDefaultValues() {
         String valString = "9999";

@@ -1,7 +1,10 @@
 package com.oyl.cics.model.huayandan;
 
+import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Setter
 @Getter
@@ -269,6 +272,25 @@ public class Huayandan {
      * 数据推送时间
      */
     private String xtscjlT;
+
+    /**
+     * 上报状态
+     */
+    private UploadStatus uploadStatus;
+
+    /**
+     * 上报时间
+     */
+    private Date uploadTime;
+
+    /**
+     * 上报操作人
+     */
+    private String operator;
+
+    public String getUploadStatusDesc() {
+        return null == uploadStatus ? null : uploadStatus.getDesc();
+    }
 
     public void setDefaultValues() {
         String valString = "9999";

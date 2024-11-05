@@ -84,7 +84,7 @@
         <result column="byzd4" property="byzd4" />
         <result column="byzd5" property="byzd5" />
         <result column="hydsl" property="hydsl" />
-        <result column="status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
+        <result column="upload_status" property="uploadStatus" typeHandler="com.oyl.cics.impl.shared.UploadStatusTypeHandler" />
         <result column="upload_time" property="uploadTime"/>
         <result column="operator" property="operator"/>
     </resultMap>
@@ -103,7 +103,7 @@
     </resultMap>
 
     <select id="search" resultMap="BaseResultMap">
-        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `status`, `upload_time`, `operator`
+        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `upload_status`, `upload_time`, `operator`
         from   `meizhi`
         <where>
             <if test="mybs != null and mybs != ''">
@@ -131,7 +131,7 @@
     </select>
 
     <select id="queryByKeys" resultMap="BaseResultMap">
-        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `status`, `upload_time`, `operator`
+        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `upload_status`, `upload_time`, `operator`
         from   `meizhi`
         where `id` in
         <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
@@ -141,7 +141,7 @@
 
     <update id="uploadSucc">
         update `meizhi` set
-        `status` = 1,
+        `upload_status` = 1,
         `upload_time` = now(),
         `operator` = #{param2}
         where `id` in
@@ -152,7 +152,7 @@
 
     <update id="uploadFailed">
         update `meizhi` set
-        `status` = 2,
+        `upload_status` = 2,
         `upload_time` = now(),
         `operator` = #{param2}
         where `id` in
