@@ -14,4 +14,7 @@ public class PropertiesConfig {
     private String appSecret;
     private String dataSecret;
     private String url;
+    private String mysqlDriverClass;
+    private String mysqlUser;
+    private String mysqlPwd;
 }
