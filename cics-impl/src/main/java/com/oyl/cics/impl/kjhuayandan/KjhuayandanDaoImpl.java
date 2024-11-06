@@ -15,8 +15,8 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
     @Resource
     private KjhuayandanMapper kjhuayandanMapper;
 
-    @Resource
-    private KjhuayandanOracleMapper kjhuayandanOracleMapper;
+//    @Resource
+//    private KjhuayandanOracleMapper kjhuayandanOracleMapper;
 
     @Override
     public List<Kjhuayandan> search(SearchCondition condition) {
@@ -50,6 +50,7 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
 
     @Override
     public List<Kjhuayandan> queryRecentRecords() {
-        return kjhuayandanOracleMapper.queryRecentRecords();
+//        return kjhuayandanOracleMapper.queryRecentRecords();
+        throw new IllegalStateException("Not Implemented");
     }
 }

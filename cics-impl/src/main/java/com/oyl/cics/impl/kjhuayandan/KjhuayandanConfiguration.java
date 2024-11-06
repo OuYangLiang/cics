@@ -19,11 +19,11 @@ public class KjhuayandanConfiguration {
         return factory.getObject();
     }
 
-    @Bean
-    public KjhuayandanOracleMapper kjhuayandanOracleMapper(@Qualifier("sqlSessionFactoryForOracle") SqlSessionFactory sqlSessionFactoryForOracle) throws Exception {
-        MapperFactoryBean<KjhuayandanOracleMapper> factory = new MapperFactoryBean<>();
-        factory.setSqlSessionFactory(sqlSessionFactoryForOracle);
-        factory.setMapperInterface(KjhuayandanOracleMapper.class);
-        return factory.getObject();
-    }
+//    @Bean
+//    public KjhuayandanOracleMapper kjhuayandanOracleMapper(@Qualifier("sqlSessionFactoryForOracle") SqlSessionFactory sqlSessionFactoryForOracle) throws Exception {
+//        MapperFactoryBean<KjhuayandanOracleMapper> factory = new MapperFactoryBean<>();
+//        factory.setSqlSessionFactory(sqlSessionFactoryForOracle);
+//        factory.setMapperInterface(KjhuayandanOracleMapper.class);
+//        return factory.getObject();
+//    }
 }

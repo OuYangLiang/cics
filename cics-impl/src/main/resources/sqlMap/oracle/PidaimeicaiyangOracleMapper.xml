@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.oyl.cics.impl.meicaiyang.MeicaiyangOracleMapper">
+<mapper namespace="com.oyl.cics.impl.pidaimeicaiyang.PidaimeicaiyangOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang">
         <result column="mybs" property="mybs" />
