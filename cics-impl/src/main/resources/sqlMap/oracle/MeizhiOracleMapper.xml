@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.meizhi.MeizhiOracleMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.meizhi.Meizhi">
+        <result column="mybs" property="mybs" />
+        <result column="ssejdw" property="ssejdw" />
+        <result column="ssejdwid" property="ssejdwid" />
+        <result column="sssjdw" property="sssjdw" />
+        <result column="sssjdwid" property="sssjdwid" />
+        <result column="hypml" property="hypml" />
+        <result column="meizhong" property="meizhong" />
+        <result column="meizhongbm" property="meizhongbm" />
+        <result column="hyorgname" property="hyorgname" />
+        <result column="jiancefangshi" property="jiancefangshi" />
+        <result column="jiancesbmc" property="jiancesbmc" />
+        <result column="jiancesbid" property="jiancesbid" />
+        <result column="assayi" property="assayi" />
+        <result column="assayt" property="assayt" />
+        <result column="ngymt" property="ngymt" />
+        <result column="ngymad" property="ngymad" />
+        <result column="nlcfaar" property="nlcfaar" />
+        <result column="ngyaad" property="ngyaad" />
+        <result column="nlcfad" property="nlcfad" />
+        <result column="nlcfvar" property="nlcfvar" />
+        <result column="ngyvad" property="ngyvad" />
+        <result column="nlcfvd" property="nlcfvd" />
+        <result column="ngyvdaf" property="ngyvdaf" />
+        <result column="nlcfstar" property="nlcfstar" />
+        <result column="nlcfstad" property="nlcfstad" />
+        <result column="nlcfstd" property="nlcfstd" />
+        <result column="nqgrdmj" property="nqgrdmj" />
+        <result column="nqnetarmj" property="nqnetarmj" />
+        <result column="nqnetmarkc" property="nqnetmarkc" />
+        <result column="nqbadmj" property="nqbadmj" />
+        <result column="nyshar" property="nyshar" />
+        <result column="nyshad" property="nyshad" />
+        <result column="nyshd" property="nyshd" />
+        <result column="nyhdaf" property="nyhdaf" />
+        <result column="kuaimanhui" property="kuaimanhui" />
+        <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="hydsl" property="hydsl" />
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.meizhi.MeizhiDetail">
+        <result column="mybs" property="mybs" />
+        <result column="dthyd1id" property="dtHyd1id" />
+        <result column="dthyd2id" property="dtHyd2id" />
+        <result column="dthyd3id" property="dtHyd3id" />
+        <result column="dthyd4id" property="dtHyd4id" />
+        <result column="dthyd5id" property="dtHyd5id" />
+        <result column="dthyd6id" property="dtHyd6id" />
+        <result column="dthyd7id" property="dtHyd7id" />
+        <result column="dthyd8id" property="dtHyd8id" />
+    </resultMap>
+
+    <select id="queryRecentRecords" resultMap="BaseResultMap">
+        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayi, assayt, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
+        from meizhi
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select dtHyd1id, dtHyd2id, dtHyd3id, dtHyd4id, dtHyd5id, dtHyd6id, dtHyd7id, dtHyd8id
+        from  meizhi_hydbhxq
+        where mybs = #{arg0}
+    </select>
+
+</mapper>
