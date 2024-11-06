@@ -168,4 +168,123 @@
             #{item.id}
         </foreach>
     </update>
+
+    <delete id="removeDetails">
+        delete from  `qichecheng_detail`
+        where `zmxdocNo` = #{arg0}
+    </delete>
+
+    <insert id="addDetail">
+        insert into `qichecheng_detail` (`zmxdocNo`, `dtSortno`, `dtChepaihao`, `dtPiaozhong`, `dtMaozhong`, `dtPizhong`, `dtJingzhong`, `dtKoudunl`, `dtJzdate`, `dtJztime`, `dtJqdate`, `dtJqtime`, `dtJzhmc`, `dtJzhid`, `dtJqhmc`, `dtJqhid`)
+        values (
+        #{zmxdocNo},
+        #{dtSortno},
+        #{dtChepaihao},
+        #{dtPiaozhong},
+        #{dtMaozhong},
+        #{dtPizhong},
+        #{dtJingzhong},
+        #{dtKoudunl},
+        #{dtJzdate},
+        #{dtJztime},
+        #{dtJqdate},
+        #{dtJqtime},
+        #{dtJzhmc},
+        #{dtJzhid},
+        #{dtJqhmc},
+        #{dtJqhid}
+        )
+    </insert>
+
+    <insert id="override">
+        insert into `qichecheng` (
+        `zmxdocNo`,
+        `ssejdw`,
+        `ssejdwid`,
+        `sssjdw`,
+        `sssjdwid`,
+        `zsitename`,
+        `zsitebm`,
+        `zname1`,
+        `zkunnr`,
+        `mykuangdianmc`,
+        `mykuangdianbm`,
+        `meitanlaiyuan`,
+        `meitanlaiyuanbm`,
+        `meizhong`,
+        `meizhongbm`,
+        `zbeginI`,
+        `zbeginT`,
+        `zendI`,
+        `zendT`,
+        `zmeng`,
+        `jiliangdanwei`,
+        `cheshu`,
+        `zongpiaozhong`,
+        `zongmaozhong`,
+        `zongpizhong`,
+        `zongjingzhong`,
+        `koudunzongliang`,
+        `sjtsdanwei`,
+        `status`
+        ) values (
+        #{zmxdocNo},
+        #{ssejdw},
+        #{ssejdwid},
+        #{sssjdw},
+        #{sssjdwid},
+        #{zsitename},
+        #{zsitebm},
+        #{zname1},
+        #{zkunnr},
+        #{mykuangdianmc},
+        #{mykuangdianbm},
+        #{meitanlaiyuan},
+        #{meitanlaiyuanbm},
+        #{meizhong},
+        #{meizhongbm},
+        #{zbeginI},
+        #{zbeginT},
+        #{zendI},
+        #{zendT},
+        #{zmeng},
+        #{jiliangdanwei},
+        #{cheshu},
+        #{zongpiaozhong},
+        #{zongmaozhong},
+        #{zongpizhong},
+        #{zongjingzhong},
+        #{koudunzongliang},
+        #{sjtsdanwei},
+        0
+        ) ON DUPLICATE KEY UPDATE
+        `zmxdocNo` = #{zmxdocNo},
+        `ssejdw` = #{ssejdw},
+        `ssejdwid` = #{ssejdwid},
+        `sssjdw` = #{sssjdw},
+        `sssjdwid` = #{sssjdwid},
+        `zsitename` = #{zsitename},
+        `zsitebm` = #{zsitebm},
+        `zname1` = #{zname1},
+        `zkunnr` = #{zkunnr},
+        `mykuangdianmc` = #{mykuangdianmc},
+        `mykuangdianbm` = #{mykuangdianbm},
+        `meitanlaiyuan` = #{meitanlaiyuan},
+        `meitanlaiyuanbm` = #{meitanlaiyuanbm},
+        `meizhong` = #{meizhong},
+        `meizhongbm` = #{meizhongbm},
+        `zbeginI` = #{zbeginI},
+        `zbeginT` = #{zbeginT},
+        `zendI` = #{zendI},
+        `zendT` = #{zendT},
+        `zmeng` = #{zmeng},
+        `jiliangdanwei` = #{jiliangdanwei},
+        `cheshu` = #{cheshu},
+        `zongpiaozhong` = #{zongpiaozhong},
+        `zongmaozhong` = #{zongmaozhong},
+        `zongpizhong` = #{zongpizhong},
+        `zongjingzhong` = #{zongjingzhong},
+        `koudunzongliang` = #{koudunzongliang},
+        `sjtsdanwei` = #{sjtsdanwei}
+    </insert>
 </mapper>

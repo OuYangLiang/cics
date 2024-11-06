@@ -127,4 +127,64 @@
         </foreach>
     </update>
 
+    <delete id="removeDetails">
+        delete from  `meicaiyang_detail`
+        where `zmxdocNo` = #{arg0}
+    </delete>
+
+    <insert id="addDetail">
+        insert into `meicaiyang_detail` (`mybs`, `dtCydyxh`, `dtCydybm`, `dtCyfs`, `dtCysdate`, `dtCystime`, `dtCyedate`, `dtCyetime`, `dtCysbmc`, `dtCysbid`, `dtCydyml`, `dtCydycs`, `dtCydyds`, `dtCysd`)
+        values (
+        #{mybs},
+        #{dtCydyxh},
+        #{dtCydybm},
+        #{dtCyfs},
+        #{dtCysdate},
+        #{dtCystime},
+        #{dtCyedate},
+        #{dtCyetime},
+        #{dtCysbmc},
+        #{dtCysbid},
+        #{dtCydyml},
+        #{dtCydycs},
+        #{dtCydyds},
+        #{dtCysd}
+        )
+    </insert>
+
+    <insert id="override">
+        insert into `meicaiyang` (
+        `mybs`,
+        `ssejdw`,
+        `ssejdwid`,
+        `sssjdw`,
+        `sssjdwid`,
+        `cypml`,
+        `cydysl`,
+        `sjyxt`,
+        `sjtsdanwei`,
+        `status`
+        ) values (
+        #{mybs},
+        #{ssejdw},
+        #{ssejdwid},
+        #{sssjdw},
+        #{sssjdwid},
+        #{cypml},
+        #{cydysl},
+        #{sjyxt},
+        #{sjtsdanwei},
+        0
+        ) ON DUPLICATE KEY UPDATE
+        `mybs` = #{mybs},
+        `ssejdw` = #{ssejdw},
+        `ssejdwid` = #{ssejdwid},
+        `sssjdw` = #{sssjdw},
+        `sssjdwid` = #{sssjdwid},
+        `cypml` = #{cypml},
+        `cydysl` = #{cydysl},
+        `sjyxt` = #{sjyxt},
+        `sjtsdanwei` = #{sjtsdanwei}
+    </insert>
+
 </mapper>

@@ -18,10 +18,10 @@
         <result column="eitanlaiyuanbm" property="eitanlaiyuanbm" />
         <result column="eizhong" property="eizhong" />
         <result column="eizhongbm" property="eizhongbm" />
-        <result column="begini" property="begini" />
-        <result column="begint" property="begint" />
-        <result column="endi" property="endi" />
-        <result column="endt" property="endt" />
+        <result column="begini" property="beginI" />
+        <result column="begint" property="beginT" />
+        <result column="endi" property="endI" />
+        <result column="endt" property="endT" />
         <result column="meng" property="meng" />
         <result column="iliangdanwei" property="iliangdanwei" />
         <result column="heshu" property="heshu" />

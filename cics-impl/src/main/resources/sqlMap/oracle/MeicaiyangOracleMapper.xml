@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.meicaiyang.MeicaiyangOracleMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.meicaiyang.Meicaiyang">
+        <result column="mybs" property="mybs" />
+        <result column="ssejdw" property="ssejdw" />
+        <result column="ssejdwid" property="ssejdwid" />
+        <result column="sssjdw" property="sssjdw" />
+        <result column="sssjdwid" property="sssjdwid" />
+        <result column="cypml" property="cypml" />
+        <result column="cydysl" property="cydysl" />
+        <result column="sjyxt" property="sjyxt" />
+        <result column="sjtsdanwei" property="sjtsdanwei" />
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.meicaiyang.MeicaiyangDetail">
+        <result column="dtcydyxh" property="dtCydyxh" />
+        <result column="dtcydybm" property="dtCydybm" />
+        <result column="dtcyfs" property="dtCyfs" />
+        <result column="dtcysdate" property="dtCysdate" />
+        <result column="dtcystime" property="dtCystime" />
+        <result column="dtcyedate" property="dtCyedate" />
+        <result column="dtcyetime" property="dtCyetime" />
+        <result column="dtcysbmc" property="dtCysbmc" />
+        <result column="dtcysbid" property="dtCysbid" />
+        <result column="dtcydyml" property="dtCydyml" />
+        <result column="dtcydycs" property="dtCydycs" />
+        <result column="dtcydyds" property="dtCydyds" />
+        <result column="dtcysd" property="dtCysd" />
+    </resultMap>
+
+    <select id="queryRecentRecords" resultMap="BaseResultMap">
+        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei
+        from meicaiyang
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select dtcydyxh, dtcydybm, dtcyfs, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbmc, dtcysbid, dtcydyml, dtcydycs, dtcydyds, dtcysd
+        from  meicaiyang_cydyxq
+        where mybs = #{arg0}
+    </select>
+
+</mapper>
