@@ -123,4 +123,71 @@
             #{item.id}
         </foreach>
     </update>
+
+    <delete id="removeDetails">
+        delete from  `pidaimeicaiyang_detail`
+        where `mybs` = #{arg0}
+    </delete>
+
+    <insert id="addDetail">
+        insert into `pidaimeicaiyang_detail` (mybs <!--dtgid-->, dtcydyxh, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs)
+        values (
+        #{mybs},
+        <!--#{dtgid},-->
+        #{dtcydyxh},
+        #{dtcysbmc},
+        #{dtcyfs},
+        #{dtcydybm},
+        #{dtcysdate},
+        #{dtcystime},
+        #{dtcyedate},
+        #{dtcyetime},
+        #{dtcysbid},
+        #{dtcydyml},
+        #{dtcyjgsj},
+        #{dtcjzyl},
+        #{dtyijisfsj},
+        #{dtyijisfjg},
+        #{dtyijisfcysj},
+        #{dtyijisfcs}
+        )
+    </insert>
+
+    <insert id="override">
+        insert into `pidaimeicaiyang` (
+        `mybs`,
+        `ssejdw`,
+        `ssejdwid`,
+        `sssjdw`,
+        `sssjdwid`,
+        `cypml`,
+        `cydysl`,
+        `sjyxt`,
+        `sjtsdanwei`,
+        `sjscfs`,
+        `status`
+        ) values (
+        #{mybs},
+        #{ssejdw},
+        #{ssejdwid},
+        #{sssjdw},
+        #{sssjdwid},
+        #{cypml},
+        #{cydysl},
+        #{sjyxt},
+        #{sjtsdanwei},
+        #{sjscfs},
+        0
+        ) ON DUPLICATE KEY UPDATE
+        `mybs` = #{mybs},
+        `ssejdw` = #{ssejdw},
+        `ssejdwid` = #{ssejdwid},
+        `sssjdw` = #{sssjdw},
+        `sssjdwid` = #{sssjdwid},
+        `cypml` = #{cypml},
+        `cydysl` = #{cydysl},
+        `sjyxt` = #{sjyxt},
+        `sjtsdanwei` = #{sjtsdanwei},
+        `sjscfs` = #{sjscfs}
+    </insert>
 </mapper>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.oyl.cics.impl.meicaiyang.MeicaiyangOracleMapper">
 
-    <resultMap id="BaseResultMap" type="com.oyl.cics.model.meicaiyang.Meicaiyang">
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang">
         <result column="mybs" property="mybs" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
@@ -12,33 +12,38 @@
         <result column="cydysl" property="cydysl" />
         <result column="sjyxt" property="sjyxt" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="sjscfs" property="sjscfs" />
     </resultMap>
 
-    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.meicaiyang.MeicaiyangDetail">
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.pidaimeicaiyang.PidaimeicaiyangDetail">
         <result column="mybs" property="mybs" />
+<!--        <result column="dtgid" property="dtgid" />-->
         <result column="dtcydyxh" property="dtCydyxh" />
-        <result column="dtcydybm" property="dtCydybm" />
+        <result column="dtcysbmc" property="dtCysbmc" />
         <result column="dtcyfs" property="dtCyfs" />
+        <result column="dtcydybm" property="dtCydybm" />
         <result column="dtcysdate" property="dtCysdate" />
         <result column="dtcystime" property="dtCystime" />
         <result column="dtcyedate" property="dtCyedate" />
         <result column="dtcyetime" property="dtCyetime" />
-        <result column="dtcysbmc" property="dtCysbmc" />
         <result column="dtcysbid" property="dtCysbid" />
         <result column="dtcydyml" property="dtCydyml" />
-        <result column="dtcydycs" property="dtCydycs" />
-        <result column="dtcydyds" property="dtCydyds" />
-        <result column="dtcysd" property="dtCysd" />
+        <result column="dtcyjgsj" property="dtCyjgsj" />
+        <result column="dtcjzyl" property="dtCjzyl" />
+        <result column="dtyijisfsj" property="dtYijisfsj" />
+        <result column="dtyijisfjg" property="dtYijisfjg" />
+        <result column="dtyijisfcysj" property="dtYijisfcysj" />
+        <result column="dtyijisfcs" property="dtYijisfcs" />
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei
-        from meicaiyang
+        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, sjscfs
+        from pidaimeicaiyang
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select dtcydyxh, dtcydybm, dtcyfs, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbmc, dtcysbid, dtcydyml, dtcydycs, dtcydyds, dtcysd
-        from  meicaiyang_cydyxq
+        select mybs <!--dtgid-->, dtcydyxh, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs
+        from  pidaimeicaiyang_cydyxq
         where mybs = #{arg0}
     </select>
 

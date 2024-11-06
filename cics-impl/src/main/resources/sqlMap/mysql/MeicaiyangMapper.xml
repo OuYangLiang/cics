@@ -129,7 +129,7 @@
 
     <delete id="removeDetails">
         delete from  `meicaiyang_detail`
-        where `zmxdocNo` = #{arg0}
+        where `mybs` = #{arg0}
     </delete>
 
     <insert id="addDetail">
