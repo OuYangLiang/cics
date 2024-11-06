@@ -2,6 +2,7 @@ package com.oyl.cics.impl.pidaimeicaiyang;
 
 import com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang;
 import com.oyl.cics.model.pidaimeicaiyang.PidaimeicaiyangDao;
+import com.oyl.cics.model.pidaimeicaiyang.PidaimeicaiyangDetail;
 import com.oyl.cics.model.pidaimeicaiyang.request.SearchCondition;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,10 @@ public class PidaimeicaiyangDaoImpl implements PidaimeicaiyangDao {
 
     @Resource
     private PidaimeicaiyangMapper pidaimeicaiyangMapper;
+
+    @Resource
+    private PidaimeicaiyangOracleMapper pidaimeicaiyangOracleMapper;
+
     @Override
     public List<Pidaimeicaiyang> search(SearchCondition condition) {
         List<Pidaimeicaiyang> result = pidaimeicaiyangMapper.search(condition);
@@ -51,5 +56,34 @@ public class PidaimeicaiyangDaoImpl implements PidaimeicaiyangDao {
     @Override
     public void uploadFailed(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator) {
         pidaimeicaiyangMapper.uploadFailed(pidaimeicaiyangs, operator);
+    }
+
+    @Override
+    public void override(Pidaimeicaiyang pidaimeicaiyang) {
+        pidaimeicaiyangMapper.removeDetails(pidaimeicaiyang.getMybs());
+        for (PidaimeicaiyangDetail detail : pidaimeicaiyang.getDtCydy()) {
+            pidaimeicaiyangMapper.addDetail(detail);
+        }
+
+        pidaimeicaiyangMapper.override(pidaimeicaiyang);
+    }
+
+    @Override
+    public List<Pidaimeicaiyang> queryRecentRecords() {
+        List<Pidaimeicaiyang> list = pidaimeicaiyangOracleMapper.queryRecentRecords();
+
+        if (null == list || list.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        for (Pidaimeicaiyang item : list) {
+            if (null == item.getMybs() || item.getMybs().trim().isEmpty()) {
+                continue;
+            }
+            List<PidaimeicaiyangDetail> details = pidaimeicaiyangOracleMapper.queryDetails(item.getMybs());
+            item.setDtCydy(null == details ? Collections.emptyList() : details);
+        }
+
+        return list;
     }
 }

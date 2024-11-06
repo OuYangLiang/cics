@@ -18,4 +18,10 @@ public interface MeicaiyangMapper {
     void uploadSucc(List<Meicaiyang> meicaiyangs, String operator);
 
     void uploadFailed(List<Meicaiyang> meicaiyangs, String operator);
+
+    void removeDetails(String mybs);
+
+    void addDetail(MeicaiyangDetail detail);
+
+    void override(Meicaiyang meicaiyang);
 }

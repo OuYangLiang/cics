@@ -14,4 +14,8 @@ public interface QichechengDao {
     void uploadSucc(List<Qichecheng> qichechengs, String operator);
 
     void uploadFailed(List<Qichecheng> qichechengs, String operator);
+
+    List<Qichecheng> queryRecentRecords();
+
+    void override(Qichecheng qichecheng);
 }

@@ -37,4 +37,8 @@ public class HuayandanRepos {
     public List<Huayandan> queryByKeys(long[] ids) {
         return huayandanDao.queryByKeys(ids);
     }
+
+    public List<Huayandan> queryFromOldSystem() {
+        return huayandanDao.queryRecentRecords();
+    }
 }

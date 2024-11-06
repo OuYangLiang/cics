@@ -18,4 +18,10 @@ public interface PidaimeicaiyangMapper {
     void uploadSucc(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
 
     void uploadFailed(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
+
+    void removeDetails(String mybs);
+
+    void addDetail(PidaimeicaiyangDetail detail);
+
+    void override(Pidaimeicaiyang pidaimeicaiyang);
 }

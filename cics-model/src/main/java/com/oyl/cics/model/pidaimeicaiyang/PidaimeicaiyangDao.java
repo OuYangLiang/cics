@@ -14,4 +14,8 @@ public interface PidaimeicaiyangDao {
     void uploadSucc(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
 
     void uploadFailed(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator);
+
+    List<Pidaimeicaiyang> queryRecentRecords();
+
+    void override(Pidaimeicaiyang pidaimeicaiyang);
 }

@@ -37,4 +37,8 @@ public class MeicaiyangRepos {
     public List<Meicaiyang> queryByKeys(long[] ids) {
         return meicaiyangDao.queryByKeys(ids);
     }
+
+    public List<Meicaiyang> queryFromOldSystem() {
+        return meicaiyangDao.queryRecentRecords();
+    }
 }

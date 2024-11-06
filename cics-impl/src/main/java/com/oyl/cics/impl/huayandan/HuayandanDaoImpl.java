@@ -14,6 +14,9 @@ public class HuayandanDaoImpl implements HuayandanDao {
     @Resource
     private HuayandanMapper huayandanMapper;
 
+    @Resource
+    private HuayandanOracleMapper huayandanOracleMapper;
+
     @Override
     public List<Huayandan> search(SearchCondition condition) {
         return huayandanMapper.search(condition);
@@ -37,5 +40,15 @@ public class HuayandanDaoImpl implements HuayandanDao {
     @Override
     public void uploadFailed(List<Huayandan> huayandans, String operator) {
         huayandanMapper.uploadFailed(huayandans, operator);
+    }
+
+    @Override
+    public void override(Huayandan huayandan) {
+        huayandanMapper.override(huayandan);
+    }
+
+    @Override
+    public List<Huayandan> queryRecentRecords() {
+        return huayandanOracleMapper.queryRecentRecords();
     }
 }

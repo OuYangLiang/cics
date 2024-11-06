@@ -14,4 +14,8 @@ public interface MeicaiyangDao {
     void uploadSucc(List<Meicaiyang> meicaiyangs, String operator);
 
     void uploadFailed(List<Meicaiyang> meicaiyangs, String operator);
+
+    List<Meicaiyang> queryRecentRecords();
+
+    void override(Meicaiyang meicaiyang);
 }

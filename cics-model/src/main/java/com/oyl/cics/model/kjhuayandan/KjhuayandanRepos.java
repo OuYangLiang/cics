@@ -37,4 +37,8 @@ public class KjhuayandanRepos {
     public List<Kjhuayandan> queryByKeys(long[] ids) {
         return kjhuayandanDao.queryByKeys(ids);
     }
+
+    public List<Kjhuayandan> queryFromOldSystem() {
+        return kjhuayandanDao.queryRecentRecords();
+    }
 }

@@ -14,4 +14,8 @@ public interface MeizhiDao {
     void uploadSucc(List<Meizhi> meizhis, String operator);
 
     void uploadFailed(List<Meizhi> meizhis, String operator);
+
+    List<Meizhi> queryRecentRecords();
+
+    void override(Meizhi meizhi);
 }

@@ -2,6 +2,7 @@ package com.oyl.cics.impl.meizhi;
 
 import com.oyl.cics.model.meizhi.Meizhi;
 import com.oyl.cics.model.meizhi.MeizhiDao;
+import com.oyl.cics.model.meizhi.MeizhiDetail;
 import com.oyl.cics.model.meizhi.request.SearchCondition;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,9 @@ public class MeizhiDaoImpl implements MeizhiDao {
 
     @Resource
     private MeizhiMapper meizhiMapper;
+
+    @Resource
+    private MeizhiOracleMapper meizhiOracleMapper;
 
     @Override
     public List<Meizhi> search(SearchCondition condition) {
@@ -53,5 +57,34 @@ public class MeizhiDaoImpl implements MeizhiDao {
     @Override
     public void uploadFailed(List<Meizhi> meizhis, String operator) {
         meizhiMapper.uploadFailed(meizhis, operator);
+    }
+
+    @Override
+    public void override(Meizhi meizhi) {
+        meizhiMapper.removeDetails(meizhi.getMybs());
+        for (MeizhiDetail detail : meizhi.getDtHydbhxq()) {
+            meizhiMapper.addDetail(detail);
+        }
+
+        meizhiMapper.override(meizhi);
+    }
+
+    @Override
+    public List<Meizhi> queryRecentRecords() {
+        List<Meizhi> list = meizhiOracleMapper.queryRecentRecords();
+
+        if (null == list || list.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        for (Meizhi item : list) {
+            if (null == item.getMybs() || item.getMybs().trim().isEmpty()) {
+                continue;
+            }
+            List<MeizhiDetail> details = meizhiOracleMapper.queryDetails(item.getMybs());
+            item.setDtHydbhxq(null == details ? Collections.emptyList() : details);
+        }
+
+        return list;
     }
 }

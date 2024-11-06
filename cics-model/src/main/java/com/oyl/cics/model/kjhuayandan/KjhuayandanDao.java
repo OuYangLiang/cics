@@ -14,4 +14,8 @@ public interface KjhuayandanDao {
     void uploadSucc(List<Kjhuayandan> kjhuayandans, String operator);
 
     void uploadFailed(List<Kjhuayandan> kjhuayandans, String operator);
+
+    List<Kjhuayandan> queryRecentRecords();
+
+    void override(Kjhuayandan kjhuayandan);
 }

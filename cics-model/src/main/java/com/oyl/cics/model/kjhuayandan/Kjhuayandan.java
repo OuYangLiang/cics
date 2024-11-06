@@ -1,9 +1,13 @@
 package com.oyl.cics.model.kjhuayandan;
 
 import com.oyl.cics.model.shared.UploadStatus;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Getter
+@Setter
 public class Kjhuayandan {
     private Long id;
     private String mybs;

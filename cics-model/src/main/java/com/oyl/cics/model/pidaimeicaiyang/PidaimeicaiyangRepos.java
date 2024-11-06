@@ -37,4 +37,8 @@ public class PidaimeicaiyangRepos {
     public List<Pidaimeicaiyang> queryByKeys(long[] ids) {
         return pidaimeicaiyangDao.queryByKeys(ids);
     }
+
+    public List<Pidaimeicaiyang> queryFromOldSystem() {
+        return pidaimeicaiyangDao.queryRecentRecords();
+    }
 }

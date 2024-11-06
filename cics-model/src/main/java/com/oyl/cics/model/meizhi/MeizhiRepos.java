@@ -37,4 +37,8 @@ public class MeizhiRepos {
     public List<Meizhi> queryByKeys(long[] ids) {
         return meizhiDao.queryByKeys(ids);
     }
+
+    public List<Meizhi> queryFromOldSystem() {
+        return meizhiDao.queryRecentRecords();
+    }
 }

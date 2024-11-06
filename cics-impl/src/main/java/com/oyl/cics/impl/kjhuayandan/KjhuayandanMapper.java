@@ -15,4 +15,6 @@ public interface KjhuayandanMapper {
     void uploadSucc(List<Kjhuayandan> kjhuayandans, String operator);
 
     void uploadFailed(List<Kjhuayandan> kjhuayandans, String operator);
+
+    void override(Kjhuayandan kjhuayandan);
 }

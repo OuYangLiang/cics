@@ -38,4 +38,8 @@ public class QichechengRepos {
     public List<Qichecheng> queryByKeys(long[] ids) {
         return qichechengDao.queryByKeys(ids);
     }
+
+    public List<Qichecheng> queryFromOldSystem() {
+        return qichechengDao.queryRecentRecords();
+    }
 }

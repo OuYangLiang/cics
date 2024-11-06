@@ -18,4 +18,10 @@ public interface MeizhiMapper {
     void uploadSucc(List<Meizhi> meizhis, String operator);
 
     void uploadFailed(List<Meizhi> meizhis, String operator);
+
+    void removeDetails(String mybs);
+
+    void addDetail(MeizhiDetail detail);
+
+    void override(Meizhi meizhi);
 }

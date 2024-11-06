@@ -14,4 +14,8 @@ public interface HuayandanDao {
     void uploadSucc(List<Huayandan> huayandans, String operator);
 
     void uploadFailed(List<Huayandan> huayandans, String operator);
+
+    List<Huayandan> queryRecentRecords();
+
+    void override(Huayandan huayandan);
 }

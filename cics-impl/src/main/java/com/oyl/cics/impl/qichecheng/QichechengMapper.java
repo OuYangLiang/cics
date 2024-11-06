@@ -18,4 +18,10 @@ public interface QichechengMapper {
     void uploadSucc(List<Qichecheng> qichechengs, String operator);
 
     void uploadFailed(List<Qichecheng> qichechengs, String operator);
+
+    void removeDetails(String zmxdocNo);
+
+    void addDetail(QichechengDetail detail);
+
+    void override(Qichecheng qichecheng);
 }

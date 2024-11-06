@@ -3,6 +3,7 @@ package com.oyl.cics.impl.kjhuayandan;
 import com.oyl.cics.model.kjhuayandan.Kjhuayandan;
 import com.oyl.cics.model.kjhuayandan.KjhuayandanDao;
 import com.oyl.cics.model.kjhuayandan.request.SearchCondition;
+
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -13,6 +14,9 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
 
     @Resource
     private KjhuayandanMapper kjhuayandanMapper;
+
+    @Resource
+    private KjhuayandanOracleMapper kjhuayandanOracleMapper;
 
     @Override
     public List<Kjhuayandan> search(SearchCondition condition) {
@@ -37,5 +41,15 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
     @Override
     public void uploadFailed(List<Kjhuayandan> kjhuayandans, String operator) {
         kjhuayandanMapper.uploadFailed(kjhuayandans, operator);
+    }
+
+    @Override
+    public void override(Kjhuayandan kjhuayandan) {
+        kjhuayandanMapper.override(kjhuayandan);
+    }
+
+    @Override
+    public List<Kjhuayandan> queryRecentRecords() {
+        return kjhuayandanOracleMapper.queryRecentRecords();
     }
 }

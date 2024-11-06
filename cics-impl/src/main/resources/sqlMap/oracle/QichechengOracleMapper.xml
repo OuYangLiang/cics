@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.qichecheng.QichechengOracleMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
+        <result column="mxdocno" property="zmxdocNo" />
+        <result column="sejdw" property="sejdw" />
+        <result column="sejdwid" property="sejdwid" />
+        <result column="ssjdw" property="ssjdw" />
+        <result column="ssjdwid" property="ssjdwid" />
+        <result column="sitename" property="sitename" />
+        <result column="sitebm" property="sitebm" />
+        <result column="name1" property="name1" />
+        <result column="kunnr" property="kunnr" />
+        <result column="ykuangdianmc" property="ykuangdianmc" />
+        <result column="ykuangdianbm" property="ykuangdianbm" />
+        <result column="eitanlaiyuan" property="eitanlaiyuan" />
+        <result column="eitanlaiyuanbm" property="eitanlaiyuanbm" />
+        <result column="eizhong" property="eizhong" />
+        <result column="eizhongbm" property="eizhongbm" />
+        <result column="begini" property="begini" />
+        <result column="begint" property="begint" />
+        <result column="endi" property="endi" />
+        <result column="endt" property="endt" />
+        <result column="meng" property="meng" />
+        <result column="iliangdanwei" property="iliangdanwei" />
+        <result column="heshu" property="heshu" />
+        <result column="ongpiaozhong" property="ongpiaozhong" />
+        <result column="ongmaozhong" property="ongmaozhong" />
+        <result column="ongpizhong" property="ongpizhong" />
+        <result column="ongjingzhong" property="ongjingzhong" />
+        <result column="oudunzongliang" property="oudunzongliang" />
+        <result column="jtsdanwei" property="jtsdanwei" />
+    </resultMap>
+
+    <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.qichecheng.QichechengDetail">
+        <result column="mxdocno" property="zmxdocNo" />
+        <result column="dtsortno" property="dtSortno" />
+        <result column="dtchepaihao" property="dtChepaihao" />
+        <result column="dtpiaozhong" property="dtPiaozhong" />
+        <result column="dtmaozhong" property="dtMaozhong" />
+        <result column="dtpizhong" property="dtPizhong" />
+        <result column="dtjingzhong" property="dtJingzhong" />
+        <result column="dtkoudunl" property="dtKoudunl" />
+        <result column="dtjzdate" property="dtJzdate" />
+        <result column="dtjztime" property="dtJztime" />
+        <result column="dtjqdate" property="dtJqdate" />
+        <result column="dtjqtime" property="dtJqtime" />
+        <result column="dtjzhmc" property="dtJzhmc" />
+        <result column="dtjzhid" property="dtJzhid" />
+        <result column="dtjqhmc" property="dtJqhmc" />
+        <result column="dtjqhid" property="dtJqhid" />
+    </resultMap>
+
+    <select id="queryRecentRecords" resultMap="BaseResultMap">
+        select mxdocno, sejdw, sejdwid, ssjdw, ssjdwid, sitename, sitebm, name1, kunnr, ykuangdianmc, ykuangdianbm, eitanlaiyuan, eitanlaiyuanbm, eizhong, eizhongbm, begini, begint, endi, endt, meng, iliangdanwei, heshu, ongpiaozhong, ongmaozhong, ongpizhong, ongjingzhong, oudunzongliang, jtsdanwei
+        from qichecheng
+    </select>
+
+    <select id="queryDetails" resultMap="BaseResultDetailMap">
+        select dtsortno, dtchepaihao, dtpiaozhong, dtmaozhong, dtpizhong, dtjingzhong, dtkoudunl, dtjzdate, dtjztime, dtjqdate, dtjqtime, dtjzhmc, dtjzhid, dtjqhmc, dtjqhid
+        from  qichecheng_xqsj
+        where zmxdocno = #{arg0}
+    </select>
+
+</mapper>
