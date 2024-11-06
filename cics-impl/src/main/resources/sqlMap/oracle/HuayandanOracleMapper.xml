@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.huayandan.HuayandanOracleMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.huayandan.Huayandan">
+        <result column="mybs" property="mybs" />
+        <result column="dthydid" property="dthydid" />
+        <result column="dthydxh" property="dthydxh" />
+        <result column="ssejdw" property="ssejdw" />
+        <result column="ssejdwid" property="ssejdwid" />
+        <result column="sssjdw" property="sssjdw" />
+        <result column="sssjdwid" property="sssjdwid" />
+        <result column="hyorgname" property="hyorgname" />
+        <result column="sampeldate" property="sampeldate" />
+        <result column="sampleid" property="sampleid" />
+        <result column="assayid" property="assayid" />
+        <result column="jiancejieguoyt" property="jiancejieguoyt" />
+        <result column="jiancefangshi" property="jiancefangshi" />
+        <result column="jiancesbmc" property="jiancesbmc" />
+        <result column="jiancesbid" property="jiancesbid" />
+        <result column="meizhong" property="meizhong" />
+        <result column="meizhongbm" property="meizhongbm" />
+        <result column="dtassayi" property="dtassayi" />
+        <result column="dtassayt" property="dtassayt" />
+        <result column="dtduiyingml" property="dtduiyingml" />
+        <result column="dtngymt" property="dtngymt" />
+        <result column="dtngymad" property="dtngymad" />
+        <result column="dtnlcfaar" property="dtnlcfaar" />
+        <result column="dtngyaad" property="dtngyaad" />
+        <result column="dtnlcfad" property="dtnlcfad" />
+        <result column="dtnlcfvar" property="dtnlcfvar" />
+        <result column="dtngyvad" property="dtngyvad" />
+        <result column="dtnlcfvd" property="dtnlcfvd" />
+        <result column="dtngyvdaf" property="dtngyvdaf" />
+        <result column="dtnlcfstar" property="dtnlcfstar" />
+        <result column="dtnlcfstad" property="dtnlcfstad" />
+        <result column="dtnlcfstd" property="dtnlcfstd" />
+        <result column="dtnqgrdmj" property="dtnqgrdmj" />
+        <result column="dtnqnetarmj" property="dtnqnetarmj" />
+        <result column="dtnqnetmarkc" property="dtnqnetmarkc" />
+        <result column="dtnqbadmj" property="dtnqbadmj" />
+        <result column="dtnyshar" property="dtnyshar" />
+        <result column="dtnyshad" property="dtnyshad" />
+        <result column="dtnyshd" property="dtnyshd" />
+        <result column="dtnyhdaf" property="dtnyhdaf" />
+        <result column="dtkuaimanhui" property="dtkuaimanhui" />
+        <result column="sjtsdanwei" property="sjtsdanwei" />
+    </resultMap>
+
+    <select id="queryRecentRecords" resultMap="BaseResultMap">
+        select mybs, dthydid, dthydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtassayi, dtassayt, dtduiyingml, dtngymt, dtngymad, dtnlcfaar, dtngyaad, dtnlcfad, dtnlcfvar, dtngyvad, dtnlcfvd, dtngyvdaf, dtnlcfstar, dtnlcfstad, dtnlcfstd, dtnqgrdmj, dtnqnetarmj, dtnqnetmarkc, dtnqbadmj, dtnyshar, dtnyshad, dtnyshd, dtnyhdaf, dtkuaimanhui, sjtsdanwei
+        from huayandan
+    </select>
+
+</mapper>
