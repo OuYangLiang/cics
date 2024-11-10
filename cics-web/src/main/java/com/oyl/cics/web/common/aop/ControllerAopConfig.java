@@ -32,7 +32,7 @@ public class ControllerAopConfig {
         assert attrs != null;
         HttpServletRequest request = attrs.getRequest();
 
-        if (!"/guidaoheng/test".equals(request.getRequestURI()) && !"/login".equals(request.getRequestURI())) {
+        if (!request.getRequestURI().startsWith("/guidaoheng/test") && !"/login".equals(request.getRequestURI())) {
             // 校验是否登录
             String token = request.getHeader("Authorization");
             if (null == token) {
