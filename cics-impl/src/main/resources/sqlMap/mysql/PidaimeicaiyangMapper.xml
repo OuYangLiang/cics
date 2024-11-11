@@ -134,22 +134,22 @@
         values (
         #{mybs},
         <!--#{dtgid},-->
-        #{dtcydyxh},
-        #{dtcysbmc},
-        #{dtcyfs},
-        #{dtcydybm},
-        #{dtcysdate},
-        #{dtcystime},
-        #{dtcyedate},
-        #{dtcyetime},
-        #{dtcysbid},
-        #{dtcydyml},
-        #{dtcyjgsj},
-        #{dtcjzyl},
-        #{dtyijisfsj},
-        #{dtyijisfjg},
-        #{dtyijisfcysj},
-        #{dtyijisfcs}
+        #{dtCydyxh},
+        #{dtCysbmc},
+        #{dtCyfs},
+        #{dtCydybm},
+        #{dtCysdate},
+        #{dtCystime},
+        #{dtCyedate},
+        #{dtCyetime},
+        #{dtCysbid},
+        #{dtCydyml},
+        #{dtCyjgsj},
+        #{dtCjzyl},
+        #{dtYijisfsj},
+        #{dtYijisfjg},
+        #{dtYijisfcysj},
+        #{dtYijisfcs}
         )
     </insert>
 

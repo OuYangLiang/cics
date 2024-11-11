@@ -10,7 +10,7 @@
         <result column="sssjdwid" property="sssjdwid" />
         <result column="zsitename" property="zsitename" />
         <result column="zsitebm" property="zsitebm" />
-        <result column="name1" property="name1" />
+        <result column="zname1" property="zname1" />
         <result column="zkunnr" property="zkunnr" />
         <result column="mykuangdianmc" property="mykuangdianmc" />
         <result column="mykuangdianbm" property="mykuangdianbm" />
@@ -53,7 +53,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, name1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, koudunzongliang, sjtsdanwei
+        select zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, koudunzongliang, sjtsdanwei
         from qichecheng
     </select>
 
