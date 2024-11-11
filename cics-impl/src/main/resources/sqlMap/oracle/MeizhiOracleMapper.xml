@@ -15,8 +15,8 @@
         <result column="jiancefangshi" property="jiancefangshi" />
         <result column="jiancesbmc" property="jiancesbmc" />
         <result column="jiancesbid" property="jiancesbid" />
-        <result column="assayi" property="assayi" />
-        <result column="assayt" property="assayt" />
+        <result column="assayi" property="assayI" />
+        <result column="assayt" property="assayT" />
         <result column="ngymt" property="ngymt" />
         <result column="ngymad" property="ngymad" />
         <result column="nlcfaar" property="nlcfaar" />
@@ -55,7 +55,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayi, assayt, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
+        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayI, assayT, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
         from meizhi
     </select>
 

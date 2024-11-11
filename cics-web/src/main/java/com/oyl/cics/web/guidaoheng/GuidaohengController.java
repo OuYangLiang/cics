@@ -75,6 +75,8 @@ public class GuidaohengController {
             this.pidaimeicaiyang();
         } else if (5 == id) {
             this.meizhi();
+        } else if (6 == id) {
+            this.huayandan();
         }
         log.info("DataPullingJob Ended...");
         return RestResult.ok(null);

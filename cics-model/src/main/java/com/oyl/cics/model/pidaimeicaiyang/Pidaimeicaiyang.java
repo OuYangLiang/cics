@@ -103,6 +103,11 @@ public class Pidaimeicaiyang {
     private String xtscjlT;
 
     /**
+     * 数据上传方式
+     */
+    private String sjscfs;
+
+    /**
      * 上报状态
      */
     private UploadStatus uploadStatus;
