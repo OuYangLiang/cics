@@ -3,32 +3,32 @@
 <mapper namespace="com.oyl.cics.impl.qichecheng.QichechengOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
-        <result column="mxdocno" property="zmxdocNo" />
-        <result column="sejdw" property="sejdw" />
-        <result column="sejdwid" property="sejdwid" />
-        <result column="ssjdw" property="ssjdw" />
-        <result column="ssjdwid" property="ssjdwid" />
-        <result column="sitename" property="sitename" />
-        <result column="sitebm" property="sitebm" />
+        <result column="zmxdocno" property="zmxdocNo" />
+        <result column="ssejdw" property="ssejdw" />
+        <result column="ssejdwid" property="ssejdwid" />
+        <result column="sssjdw" property="sssjdw" />
+        <result column="sssjdwid" property="sssjdwid" />
+        <result column="zsitename" property="zsitename" />
+        <result column="zsitebm" property="zsitebm" />
         <result column="name1" property="name1" />
-        <result column="kunnr" property="kunnr" />
-        <result column="ykuangdianmc" property="ykuangdianmc" />
-        <result column="ykuangdianbm" property="ykuangdianbm" />
-        <result column="eitanlaiyuan" property="eitanlaiyuan" />
-        <result column="eitanlaiyuanbm" property="eitanlaiyuanbm" />
-        <result column="eizhong" property="eizhong" />
-        <result column="eizhongbm" property="eizhongbm" />
-        <result column="begini" property="beginI" />
-        <result column="begint" property="beginT" />
-        <result column="endi" property="endI" />
-        <result column="endt" property="endT" />
-        <result column="meng" property="meng" />
-        <result column="iliangdanwei" property="iliangdanwei" />
-        <result column="heshu" property="heshu" />
-        <result column="ongpiaozhong" property="ongpiaozhong" />
-        <result column="ongmaozhong" property="ongmaozhong" />
-        <result column="ongpizhong" property="ongpizhong" />
-        <result column="ongjingzhong" property="ongjingzhong" />
+        <result column="zkunnr" property="zkunnr" />
+        <result column="mykuangdianmc" property="mykuangdianmc" />
+        <result column="mykuangdianbm" property="mykuangdianbm" />
+        <result column="meitanlaiyuan" property="meitanlaiyuan" />
+        <result column="meitanlaiyuanbm" property="meitanlaiyuanbm" />
+        <result column="meizhong" property="meizhong" />
+        <result column="meizhongbm" property="meizhongbm" />
+        <result column="zbegini" property="zbeginI" />
+        <result column="zbegint" property="zbeginT" />
+        <result column="zendi" property="zendI" />
+        <result column="zendt" property="zendT" />
+        <result column="zmeng" property="zmeng" />
+        <result column="jiliangdanwei" property="jiliangdanwei" />
+        <result column="cheshu" property="cheshu" />
+        <result column="zongpiaozhong" property="zongpiaozhong" />
+        <result column="zongmaozhong" property="zongmaozhong" />
+        <result column="zongpizhong" property="zongpizhong" />
+        <result column="zongjingzhong" property="zongjingzhong" />
         <result column="koudunzongliang" property="koudunzongliang" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
     </resultMap>
@@ -53,7 +53,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mxdocno, sejdw, sejdwid, ssjdw, ssjdwid, sitename, sitebm, name1, kunnr, ykuangdianmc, ykuangdianbm, eitanlaiyuan, eitanlaiyuanbm, eizhong, eizhongbm, begini, begint, endi, endt, meng, iliangdanwei, heshu, ongpiaozhong, ongmaozhong, ongpizhong, ongjingzhong, koudunzongliang, sjtsdanwei
+        select zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, name1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, kongjingzhong, koudunzongliang, sjtsdanwei
         from qichecheng
     </select>
 

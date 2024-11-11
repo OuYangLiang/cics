@@ -20,8 +20,8 @@
         <result column="jiancesbid" property="jiancesbid" />
         <result column="meizhong" property="meizhong" />
         <result column="meizhongbm" property="meizhongbm" />
-        <result column="dtassayi" property="dtassayI" />
-        <result column="dtassayt" property="dtassayT" />
+        <result column="dtassayi" property="dtAssayI" />
+        <result column="dtassayt" property="dtAssayT" />
         <result column="dtduiyingml" property="dtDuiyingml" />
         <result column="dtngymt" property="dtNgymt" />
         <result column="dtngymad" property="dtNgymad" />
