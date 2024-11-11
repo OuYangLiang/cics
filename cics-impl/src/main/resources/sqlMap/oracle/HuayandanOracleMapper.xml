@@ -4,8 +4,8 @@
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.huayandan.Huayandan">
         <result column="mybs" property="mybs" />
-        <result column="dthydid" property="dthydid" />
-        <result column="dthydxh" property="dthydxh" />
+        <result column="dthydid" property="dtHydid" />
+        <result column="dthydxh" property="dtHydxh" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
         <result column="sssjdw" property="sssjdw" />
@@ -20,30 +20,30 @@
         <result column="jiancesbid" property="jiancesbid" />
         <result column="meizhong" property="meizhong" />
         <result column="meizhongbm" property="meizhongbm" />
-        <result column="dtassayi" property="dtassayi" />
-        <result column="dtassayt" property="dtassayt" />
-        <result column="dtduiyingml" property="dtduiyingml" />
-        <result column="dtngymt" property="dtngymt" />
-        <result column="dtngymad" property="dtngymad" />
-        <result column="dtnlcfaar" property="dtnlcfaar" />
-        <result column="dtngyaad" property="dtngyaad" />
-        <result column="dtnlcfad" property="dtnlcfad" />
-        <result column="dtnlcfvar" property="dtnlcfvar" />
-        <result column="dtngyvad" property="dtngyvad" />
-        <result column="dtnlcfvd" property="dtnlcfvd" />
-        <result column="dtngyvdaf" property="dtngyvdaf" />
-        <result column="dtnlcfstar" property="dtnlcfstar" />
-        <result column="dtnlcfstad" property="dtnlcfstad" />
-        <result column="dtnlcfstd" property="dtnlcfstd" />
-        <result column="dtnqgrdmj" property="dtnqgrdmj" />
-        <result column="dtnqnetarmj" property="dtnqnetarmj" />
-        <result column="dtnqnetmarkc" property="dtnqnetmarkc" />
-        <result column="dtnqbadmj" property="dtnqbadmj" />
-        <result column="dtnyshar" property="dtnyshar" />
-        <result column="dtnyshad" property="dtnyshad" />
-        <result column="dtnyshd" property="dtnyshd" />
-        <result column="dtnyhdaf" property="dtnyhdaf" />
-        <result column="dtkuaimanhui" property="dtkuaimanhui" />
+        <result column="dtassayi" property="dtassayI" />
+        <result column="dtassayt" property="dtassayT" />
+        <result column="dtduiyingml" property="dtDuiyingml" />
+        <result column="dtngymt" property="dtNgymt" />
+        <result column="dtngymad" property="dtNgymad" />
+        <result column="dtnlcfaar" property="dtNlcfaar" />
+        <result column="dtngyaad" property="dtNgyaad" />
+        <result column="dtnlcfad" property="dtNlcfad" />
+        <result column="dtnlcfvar" property="dtNlcfvar" />
+        <result column="dtngyvad" property="dtNgyvad" />
+        <result column="dtnlcfvd" property="dtNlcfvd" />
+        <result column="dtngyvdaf" property="dtNgyvdaf" />
+        <result column="dtnlcfstar" property="dtNlcfstar" />
+        <result column="dtnlcfstad" property="dtNlcfstad" />
+        <result column="dtnlcfstd" property="dtNlcfstd" />
+        <result column="dtnqgrdmj" property="dtNqgrdmj" />
+        <result column="dtnqnetarmj" property="dtNqnetarmj" />
+        <result column="dtnqnetmarkc" property="dtNqnetmarkc" />
+        <result column="dtnqbadmj" property="dtNqbadmj" />
+        <result column="dtnyshar" property="dtNyshar" />
+        <result column="dtnyshad" property="dtNyshad" />
+        <result column="dtnyshd" property="dtNyshd" />
+        <result column="dtnyhdaf" property="dtNyhdaf" />
+        <result column="dtkuaimanhui" property="dtKuaimanhui" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
     </resultMap>
 

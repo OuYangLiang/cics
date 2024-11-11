@@ -29,7 +29,7 @@
         <result column="ongmaozhong" property="ongmaozhong" />
         <result column="ongpizhong" property="ongpizhong" />
         <result column="ongjingzhong" property="ongjingzhong" />
-        <result column="oudunzongliang" property="oudunzongliang" />
+        <result column="koudunzongliang" property="koudunzongliang" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
     </resultMap>
 
@@ -53,7 +53,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mxdocno, sejdw, sejdwid, ssjdw, ssjdwid, sitename, sitebm, name1, kunnr, ykuangdianmc, ykuangdianbm, eitanlaiyuan, eitanlaiyuanbm, eizhong, eizhongbm, begini, begint, endi, endt, meng, iliangdanwei, heshu, ongpiaozhong, ongmaozhong, ongpizhong, ongjingzhong, oudunzongliang, sjtsdanwei
+        select mxdocno, sejdw, sejdwid, ssjdw, ssjdwid, sitename, sitebm, name1, kunnr, ykuangdianmc, ykuangdianbm, eitanlaiyuan, eitanlaiyuanbm, eizhong, eizhongbm, begini, begint, endi, endt, meng, iliangdanwei, heshu, ongpiaozhong, ongmaozhong, ongpizhong, ongjingzhong, koudunzongliang, sjtsdanwei
         from qichecheng
     </select>
 
