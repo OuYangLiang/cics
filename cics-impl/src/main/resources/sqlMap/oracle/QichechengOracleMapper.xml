@@ -34,7 +34,7 @@
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.qichecheng.QichechengDetail">
-        <result column="mxdocno" property="zmxdocNo" />
+        <result column="zmxdocno" property="zmxdocNo" />
         <result column="dtsortno" property="dtSortno" />
         <result column="dtchepaihao" property="dtChepaihao" />
         <result column="dtpiaozhong" property="dtPiaozhong" />
