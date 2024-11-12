@@ -1,5 +1,6 @@
 package com.oyl.cics.model.meizhi.request;
 
+import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +16,8 @@ public class SearchCondition {
     private int pageSize = 10;
 
     private String mybs;
+
+    private UploadStatus uploadStatus;
 
     public int getOffset() {
         return (page - 1) * pageSize;

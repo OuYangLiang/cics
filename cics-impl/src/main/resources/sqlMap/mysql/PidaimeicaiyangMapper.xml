@@ -72,6 +72,9 @@
             <if test="mybs != null and mybs != ''">
                 AND `mybs` like concat(#{mybs}, '%')
             </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
         </where>
         order by `mybs` desc
         limit ${offset}, ${pageSize}
@@ -83,6 +86,9 @@
         <where>
             <if test="mybs != null and mybs != ''">
                 AND `mybs` like concat(#{mybs}, '%')
+            </if>
+            <if test="uploadStatus != null">
+                AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
             </if>
         </where>
     </select>
