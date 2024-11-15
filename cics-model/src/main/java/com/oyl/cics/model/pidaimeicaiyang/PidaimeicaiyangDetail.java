@@ -10,6 +10,10 @@ public class PidaimeicaiyangDetail {
     private Long id;
 
     /**
+     * 采样单元详情-采样设备编号
+     */
+    private String dtCysbbm;
+    /**
      * 采样单元详情-初级子样量
      */
     private Double dtCjzyl;

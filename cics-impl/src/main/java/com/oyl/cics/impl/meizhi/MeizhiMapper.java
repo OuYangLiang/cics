@@ -11,7 +11,7 @@ public interface MeizhiMapper {
 
     int numOf(SearchCondition condition);
 
-    List<MeizhiDetail> queryDetails(String mybs);
+    MeizhiDetail queryDetail(String mybs);
 
     List<Meizhi> queryByKeys(long[] ids);
 
@@ -19,7 +19,7 @@ public interface MeizhiMapper {
 
     void uploadFailed(List<Meizhi> meizhis, String operator);
 
-    void removeDetails(String mybs);
+    void removeDetail(String mybs);
 
     void addDetail(MeizhiDetail detail);
 

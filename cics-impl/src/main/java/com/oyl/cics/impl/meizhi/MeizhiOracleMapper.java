@@ -8,5 +8,5 @@ import java.util.List;
 public interface MeizhiOracleMapper {
     List<Meizhi> queryRecentRecords();
 
-    List<MeizhiDetail> queryDetails(String mybs);
+    MeizhiDetail queryDetail(String mybs);
 }

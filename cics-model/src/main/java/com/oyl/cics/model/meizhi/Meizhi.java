@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
@@ -60,7 +59,7 @@ public class Meizhi {
     /**
      * 详情数据
      */
-    private List<MeizhiDetail> dtHydbhxq;
+    private MeizhiDetail dtHydbhxq;
     /**
      * 哈式可磨指数
      */
@@ -485,9 +484,7 @@ public class Meizhi {
         }
 
         if (null != this.getDtHydbhxq()) {
-            for (MeizhiDetail item : this.getDtHydbhxq()) {
-                item.setDefaultValues();
-            }
+            this.getDtHydbhxq().setDefaultValues();
         }
     }
 }

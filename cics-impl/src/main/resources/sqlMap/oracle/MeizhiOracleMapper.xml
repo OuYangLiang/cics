@@ -59,7 +59,7 @@
         from meizhi
     </select>
 
-    <select id="queryDetails" resultMap="BaseResultDetailMap">
+    <select id="queryDetail" resultMap="BaseResultDetailMap">
         select mybs, dtHyd1id, dtHyd2id, dtHyd3id, dtHyd4id, dtHyd5id, dtHyd6id, dtHyd7id, dtHyd8id
         from  meizhi_hydbhxq
         where mybs = #{arg0}

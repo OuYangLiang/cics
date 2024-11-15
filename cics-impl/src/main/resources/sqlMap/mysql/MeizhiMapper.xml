@@ -130,10 +130,11 @@
         </where>
     </select>
 
-    <select id="queryDetails" resultMap="BaseResultDetailMap">
+    <select id="queryDetail" resultMap="BaseResultDetailMap">
         select `id`, `mybs`, `dtHyd1id`, `dtHyd2id`, `dtHyd3id`, `dtHyd4id`, `dtHyd5id`, `dtHyd6id`, `dtHyd7id`, `dtHyd8id`
         from  `meizhi_detail`
         where `mybs` = #{arg0}
+        limit 1
     </select>
 
     <select id="queryByKeys" resultMap="BaseResultMap">
@@ -167,7 +168,7 @@
         </foreach>
     </update>
 
-    <delete id="removeDetails">
+    <delete id="removeDetail">
         delete from  `meizhi_detail`
         where `mybs` = #{arg0}
     </delete>

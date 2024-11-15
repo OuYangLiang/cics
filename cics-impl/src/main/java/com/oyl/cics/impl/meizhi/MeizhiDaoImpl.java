@@ -2,7 +2,6 @@ package com.oyl.cics.impl.meizhi;
 
 import com.oyl.cics.model.meizhi.Meizhi;
 import com.oyl.cics.model.meizhi.MeizhiDao;
-import com.oyl.cics.model.meizhi.MeizhiDetail;
 import com.oyl.cics.model.meizhi.request.SearchCondition;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +24,7 @@ public class MeizhiDaoImpl implements MeizhiDao {
 
         if (null != result) {
             for (Meizhi meizhi : result) {
-                meizhi.setDtHydbhxq(meizhiMapper.queryDetails(meizhi.getMybs()));
+                meizhi.setDtHydbhxq(meizhiMapper.queryDetail(meizhi.getMybs()));
             }
         }
 
@@ -42,7 +41,7 @@ public class MeizhiDaoImpl implements MeizhiDao {
         List<Meizhi> result = meizhiMapper.queryByKeys(ids);
         if (null != result) {
             for (Meizhi item : result) {
-                item.setDtHydbhxq(meizhiMapper.queryDetails(item.getMybs()));
+                item.setDtHydbhxq(meizhiMapper.queryDetail(item.getMybs()));
             }
         }
 
@@ -61,9 +60,9 @@ public class MeizhiDaoImpl implements MeizhiDao {
 
     @Override
     public void override(Meizhi meizhi) {
-        meizhiMapper.removeDetails(meizhi.getMybs());
-        for (MeizhiDetail detail : meizhi.getDtHydbhxq()) {
-            meizhiMapper.addDetail(detail);
+        meizhiMapper.removeDetail(meizhi.getMybs());
+        if (null != meizhi.getDtHydbhxq()) {
+            meizhiMapper.addDetail(meizhi.getDtHydbhxq());
         }
 
         meizhiMapper.override(meizhi);
@@ -81,8 +80,7 @@ public class MeizhiDaoImpl implements MeizhiDao {
             if (null == item.getMybs() || item.getMybs().trim().isEmpty()) {
                 continue;
             }
-            List<MeizhiDetail> details = meizhiOracleMapper.queryDetails(item.getMybs());
-            item.setDtHydbhxq(null == details ? Collections.emptyList() : details);
+            item.setDtHydbhxq(meizhiOracleMapper.queryDetail(item.getMybs()));
         }
 
         return list;
