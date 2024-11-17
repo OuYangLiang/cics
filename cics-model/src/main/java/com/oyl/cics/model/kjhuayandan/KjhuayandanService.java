@@ -32,7 +32,7 @@ public class KjhuayandanService {
             }
         }
 
-        Result result = uploader.uplaod("/api/zcwg/kjhuayandan", JsonUtil.inst.toJson(kjhuayandans));
+        Result result = uploader.uplaod("/api/zcwg/kjhuayandan", JsonUtil.inst.toJson(kjhuayandans), "G1");
         if (result.success()) {
             kjhuayandanDao.uploadSucc(kjhuayandans, operator);
         } else {
