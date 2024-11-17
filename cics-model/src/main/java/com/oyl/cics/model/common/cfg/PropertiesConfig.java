@@ -20,6 +20,7 @@ public class PropertiesConfig {
     private String mysqlDriverClass;
     private String mysqlUser;
     private String mysqlPwd;
+    private String mysqlDb;
     private String oracleUrl;
 
     public String getAppId(String group) {

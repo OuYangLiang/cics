@@ -25,7 +25,7 @@ public class DataSourceConfig {
         rlt.setDriverClass(propertiesConfig.getMysqlDriverClass());
         rlt.setUser(propertiesConfig.getMysqlUser());
         rlt.setPassword(propertiesConfig.getMysqlPwd());
-        rlt.setJdbcUrl("jdbc:mysql://localhost:3306/cics");
+        rlt.setJdbcUrl("jdbc:mysql://localhost:3306/" + propertiesConfig.getMysqlDb());
         rlt.setInitialPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMaxPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMinPoolSize(DEFAULT_POOL_SIZE);

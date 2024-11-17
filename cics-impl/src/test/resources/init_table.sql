@@ -450,7 +450,7 @@ create table if not exists `meizhi_detail` (
     `dtHyd7id`                   varchar(100),
     `dtHyd8id`                   varchar(100),
     primary key ( `id` ),
-    key ( `mybs`)
+    unique key ( `mybs`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
