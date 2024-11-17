@@ -33,12 +33,12 @@
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
         select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei
-        from meicaiyang
+        from CDRD_ZL_MEICAIYANG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
         select mybs, dtcydyxh, dtcydybm, dtcyfs, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbmc, dtcysbid, dtcydyml, dtcydycs, dtcydyds, dtcysd
-        from  meicaiyang_cydyxq
+        from  CDRD_ZL_MEICAIYANG_DETAIL
         where mybs = #{arg0}
     </select>
 

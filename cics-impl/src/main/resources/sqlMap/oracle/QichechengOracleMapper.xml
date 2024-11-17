@@ -54,12 +54,12 @@
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
         select zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, koudunzongliang, sjtsdanwei
-        from qichecheng
+        from CDRD_ZL_QICHECHENG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
         select zmxdocno, dtsortno, dtchepaihao, dtpiaozhong, dtmaozhong, dtpizhong, dtjingzhong, dtkoudunl, dtjzdate, dtjztime, dtjqdate, dtjqtime, dtjzhmc, dtjzhid, dtjqhmc, dtjqhid
-        from  qichecheng_xqsj
+        from  CDRD_ZL_QICHECHENG_DETAIL
         where zmxdocno = #{arg0}
     </select>
 

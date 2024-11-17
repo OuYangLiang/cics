@@ -56,12 +56,12 @@
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
         select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayI, assayT, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
-        from meizhi
+        from CDRD_ZL_MEIZHI
     </select>
 
     <select id="queryDetail" resultMap="BaseResultDetailMap">
         select mybs, dtHyd1id, dtHyd2id, dtHyd3id, dtHyd4id, dtHyd5id, dtHyd6id, dtHyd7id, dtHyd8id
-        from  meizhi_hydbhxq
+        from  CDRD_ZL_MEIZHI_DETAIL
         where mybs = #{arg0}
     </select>
 

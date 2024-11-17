@@ -49,7 +49,7 @@
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
         select mybs, dthydid, dthydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtassayi, dtassayt, dtduiyingml, dtngymt, dtngymad, dtnlcfaar, dtngyaad, dtnlcfad, dtnlcfvar, dtngyvad, dtnlcfvd, dtngyvdaf, dtnlcfstar, dtnlcfstad, dtnlcfstd, dtnqgrdmj, dtnqnetarmj, dtnqnetmarkc, dtnqbadmj, dtnyshar, dtnyshad, dtnyshd, dtnyhdaf, dtkuaimanhui, sjtsdanwei
-        from huayandan
+        from CDRD_ZL_HUAYANDAN
     </select>
 
 </mapper>

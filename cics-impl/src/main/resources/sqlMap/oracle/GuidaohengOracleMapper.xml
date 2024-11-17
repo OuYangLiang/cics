@@ -55,12 +55,12 @@
         shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,
         zongyingkui,  zongyingdun, zongyunsun,  duiweisj, duiweirq, to_char(yewurq, 'yyyymmdd') as yewurq,  zcmeizhong,  zcmeizhongbm, sjyxt,
         cheyuan, jltypetype,  jlhqyt,  jlhqmc, sjtsdanwei
-        from guidaoheng
+        from CDRD_ZL_GUIDADHENG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
         select zmxdocno, dtsortno, dtchehao, dtchexing, dtmaozhong, dtpizhong, dtjingzhong, dtbzdunshu, dtghsudu
-        from  guidaoheng_mcxqxx
+        from  CDRD_ZL_GUIDADHENG_DETAIL
         where zmxdocno = #{arg0}
     </select>
 
