@@ -1,6 +1,5 @@
 package com.oyl.cics.web.meicaiyang;
 
-import com.oyl.cics.model.common.utils.http.Result;
 import com.oyl.cics.model.meicaiyang.Meicaiyang;
 import com.oyl.cics.model.meicaiyang.MeicaiyangRepos;
 import com.oyl.cics.model.meicaiyang.MeicaiyangService;
@@ -34,12 +33,11 @@ public class MeicaiyangController {
     }
 
     @PostMapping("/meicaiyang/upload")
-    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+    public RestResult<Boolean> upload(@RequestBody UploadRequest request) {
         List<Meicaiyang> meicaiyangs = meicaiyangRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            Result result = meicaiyangService.upload(meicaiyangs, request.getOperator());
-            return RestResult.ok(result);
+            return RestResult.ok(meicaiyangService.upload(meicaiyangs, request.getOperator()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

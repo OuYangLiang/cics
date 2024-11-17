@@ -2,6 +2,7 @@ package com.oyl.cics.model.guidaoheng;
 
 import com.oyl.cics.model.common.utils.JsonUtil;
 import com.oyl.cics.model.common.utils.http.Result;
+import com.oyl.cics.model.shared.Grouper;
 import com.oyl.cics.model.shared.Uploader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Component
 public class GuidaohengService {
@@ -24,23 +28,31 @@ public class GuidaohengService {
     @Resource
     private Uploader uploader;
 
-    public Result upload(List<Guidaoheng> guidaohengs, String operator) throws Exception {
+    public boolean upload(List<Guidaoheng> guidaohengs, String operator) throws Exception {
 
-        if (null != guidaohengs) {
-            for (Guidaoheng item : guidaohengs) {
-                item.setDefaultValues();
+        if (null == guidaohengs) {
+            throw new IllegalArgumentException();
+        }
+
+        for (Guidaoheng item : guidaohengs) {
+            item.setDefaultValues();
+        }
+
+        Map<String, List<Guidaoheng>> map = guidaohengs.stream().collect(Collectors.groupingBy(i -> Grouper.inst.group(i.getSssjdwid())));
+
+        boolean success = true;
+        for (Map.Entry<String, List<Guidaoheng>> entry : map.entrySet()) {
+            Result result = uploader.uplaod("/api/dlhg/guidaoheng", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
+            if (result.success()) {
+                guidaohengDao.uploadSucc(entry.getValue(), operator);
+            } else {
+                success = false;
+                log.warn("上报失败，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
+                guidaohengDao.uploadFailed(entry.getValue(), operator);
             }
         }
 
-        Result result = uploader.uplaod("/api/dlhg/guidaoheng", JsonUtil.inst.toJson(guidaohengs));
-        if (result.success()) {
-            guidaohengDao.uploadSucc(guidaohengs, operator);
-        } else {
-            log.warn("上报失败，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
-            guidaohengDao.uploadFailed(guidaohengs, operator);
-        }
-
-        return result;
+        return success;
     }
 
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)

@@ -2,7 +2,6 @@ package com.oyl.cics.web.guidaoheng;
 
 import com.oyl.cics.model.common.cfg.PropertiesConfig;
 
-import com.oyl.cics.model.common.utils.http.Result;
 import com.oyl.cics.model.guidaoheng.Guidaoheng;
 import com.oyl.cics.model.guidaoheng.GuidaohengService;
 import com.oyl.cics.model.guidaoheng.request.SearchCondition;
@@ -48,12 +47,11 @@ public class GuidaohengController {
     }
 
     @PostMapping("/guidaoheng/upload")
-    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+    public RestResult<Boolean> upload(@RequestBody UploadRequest request) {
         List<Guidaoheng> guidaohengs = guidaohengRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            Result result = guidaohengService.upload(guidaohengs, request.getOperator());
-            return RestResult.ok(result);
+            return RestResult.ok(guidaohengService.upload(guidaohengs, request.getOperator()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

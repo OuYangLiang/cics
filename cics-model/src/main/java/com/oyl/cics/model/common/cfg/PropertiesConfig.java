@@ -10,11 +10,39 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 public class PropertiesConfig {
-    private String appId;
-    private String appSecret;
-    private String dataSecret;
+    private String appIdG1;
+    private String appSecretG1;
+    private String dataSecretG1;
+    private String appIdG2;
+    private String appSecretG2;
+    private String dataSecretG2;
     private String url;
     private String mysqlDriverClass;
     private String mysqlUser;
     private String mysqlPwd;
+    private String oracleUrl;
+
+    public String getAppId(String group) {
+        if ("G1".equalsIgnoreCase(group)) {
+            return this.getAppIdG1();
+        } else {
+            return this.getAppIdG2();
+        }
+    }
+
+    public String getAppSecret(String group) {
+        if ("G1".equalsIgnoreCase(group)) {
+            return this.getAppSecretG1();
+        } else {
+            return this.getAppSecretG1();
+        }
+    }
+
+    public String getDataSecret(String group) {
+        if ("G1".equalsIgnoreCase(group)) {
+            return this.getDataSecretG1();
+        } else {
+            return this.getDataSecretG1();
+        }
+    }
 }

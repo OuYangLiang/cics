@@ -1,6 +1,5 @@
 package com.oyl.cics.web.meizhi;
 
-import com.oyl.cics.model.common.utils.http.Result;
 import com.oyl.cics.model.meizhi.Meizhi;
 import com.oyl.cics.model.meizhi.MeizhiRepos;
 import com.oyl.cics.model.meizhi.MeizhiService;
@@ -34,12 +33,11 @@ public class MeizhiController {
     }
 
     @PostMapping("/meizhi/upload")
-    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+    public RestResult<Boolean> upload(@RequestBody UploadRequest request) {
         List<Meizhi> meizhis = meizhiRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            Result result = meizhiService.upload(meizhis, request.getOperator());
-            return RestResult.ok(result);
+            return RestResult.ok(meizhiService.upload(meizhis, request.getOperator()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

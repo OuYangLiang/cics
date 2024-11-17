@@ -2,6 +2,7 @@ package com.oyl.cics.model.meizhi;
 
 import com.oyl.cics.model.common.utils.JsonUtil;
 import com.oyl.cics.model.common.utils.http.Result;
+import com.oyl.cics.model.shared.Grouper;
 import com.oyl.cics.model.shared.Uploader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 public class MeizhiService {
@@ -24,23 +27,31 @@ public class MeizhiService {
     @Resource
     private Uploader uploader;
 
-    public Result upload(List<Meizhi> meizhis, String operator) throws Exception {
+    public boolean upload(List<Meizhi> meizhis, String operator) throws Exception {
 
-        if (null != meizhis) {
-            for (Meizhi item : meizhis) {
-                item.setDefaultValues();
+        if (null == meizhis) {
+            throw new IllegalArgumentException();
+        }
+
+        for (Meizhi item : meizhis) {
+            item.setDefaultValues();
+        }
+
+        Map<String, List<Meizhi>> map = meizhis.stream().collect(Collectors.groupingBy(i -> Grouper.inst.group(i.getSssjdwid())));
+
+        boolean success = true;
+        for (Map.Entry<String, List<Meizhi>> entry : map.entrySet()) {
+            Result result = uploader.uplaod("/api/dlhg/meizhi", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
+            if (result.success()) {
+                meizhiDao.uploadSucc(entry.getValue(), operator);
+            } else {
+                success = false;
+                log.warn("上报失败，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
+                meizhiDao.uploadFailed(entry.getValue(), operator);
             }
         }
 
-        Result result = uploader.uplaod("/api/dlhg/meizhi", JsonUtil.inst.toJson(meizhis));
-        if (result.success()) {
-            meizhiDao.uploadSucc(meizhis, operator);
-        } else {
-            log.warn("上报失败，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
-            meizhiDao.uploadFailed(meizhis, operator);
-        }
-
-        return result;
+        return success;
     }
 
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)

@@ -1,7 +1,5 @@
 package com.oyl.cics.web.qichecheng;
 
-import com.oyl.cics.model.common.utils.http.Result;
-import com.oyl.cics.model.guidaoheng.Guidaoheng;
 import com.oyl.cics.model.qichecheng.Qichecheng;
 import com.oyl.cics.model.qichecheng.QichechengService;
 import com.oyl.cics.model.qichecheng.request.SearchCondition;
@@ -35,12 +33,11 @@ public class QichechengController {
     }
 
     @PostMapping("/qichecheng/upload")
-    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+    public RestResult<Boolean> upload(@RequestBody UploadRequest request) {
         List<Qichecheng> qichechengs = qichechengRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            Result result = qichechengService.upload(qichechengs, request.getOperator());
-            return RestResult.ok(result);
+            return RestResult.ok(qichechengService.upload(qichechengs, request.getOperator()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -18,19 +18,19 @@ public class Uploader {
     @Resource
     private PropertiesConfig propertiesConfig;
 
-    public Result uplaod(String url, String json) throws Exception {
+    public Result uplaod(String url, String json, String group) throws Exception {
 
         String millis = Long.toString(System.currentTimeMillis());
         String nonce = RandomGenerator.inst.strs(6);
 
         Map<String, String> headers = new HashMap<>();
-        headers.put("appId", propertiesConfig.getAppId());
+        headers.put("appId", propertiesConfig.getAppId(group));
         headers.put("millis", millis);
         headers.put("nonce", nonce);
-        headers.put("sn", MD5Encryptor.inst.getMD5(propertiesConfig.getAppId() + propertiesConfig.getAppSecret() + millis + nonce).toLowerCase());
+        headers.put("sn", MD5Encryptor.inst.getMD5(propertiesConfig.getAppId(group) + propertiesConfig.getAppSecret(group) + millis + nonce).toLowerCase());
         headers.put("Content-Type", "application/json");
 
-        String encrypted = AESUtil.inst.encrypt(json, propertiesConfig.getDataSecret());
+        String encrypted = AESUtil.inst.encrypt(json, propertiesConfig.getDataSecret(group));
         String resultJson = HttpUtil.inst.request(propertiesConfig.getUrl() + url, encrypted, headers);
         return Result.fromJson(resultJson);
     }

@@ -1,6 +1,5 @@
 package com.oyl.cics.web.pidaimeicaiyang;
 
-import com.oyl.cics.model.common.utils.http.Result;
 import com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang;
 import com.oyl.cics.model.pidaimeicaiyang.PidaimeicaiyangRepos;
 import com.oyl.cics.model.pidaimeicaiyang.PidaimeicaiyangService;
@@ -34,12 +33,11 @@ public class PidaimeicaiyangController {
     }
 
     @PostMapping("/pidaimeicaiyang/upload")
-    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+    public RestResult<Boolean> upload(@RequestBody UploadRequest request) {
         List<Pidaimeicaiyang> pidaimeicaiyangs = pidaimeicaiyangRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            Result result = pidaimeicaiyangService.upload(pidaimeicaiyangs, request.getOperator());
-            return RestResult.ok(result);
+            return RestResult.ok(pidaimeicaiyangService.upload(pidaimeicaiyangs, request.getOperator()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

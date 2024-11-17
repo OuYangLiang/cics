@@ -41,7 +41,8 @@ public class DataSourceConfig {
         rlt.setDriverClass("oracle.jdbc.driver.OracleDriver");
         rlt.setUser("FMIS9999");
         rlt.setPassword("FMIS9999");
-        rlt.setJdbcUrl("jdbc:oracle:thin:@192.168.10.4:1521:XE0728");
+//        rlt.setJdbcUrl("jdbc:oracle:thin:@192.168.10.4:1521:XE0728");
+        rlt.setJdbcUrl("jdbc:oracle:thin:@" + propertiesConfig.getOracleUrl() + ":1521:XE0728");
         rlt.setInitialPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMaxPoolSize(DEFAULT_POOL_SIZE);
         rlt.setMinPoolSize(DEFAULT_POOL_SIZE);

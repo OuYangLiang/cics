@@ -1,6 +1,5 @@
 package com.oyl.cics.web.huayandan;
 
-import com.oyl.cics.model.common.utils.http.Result;
 import com.oyl.cics.model.huayandan.Huayandan;
 import com.oyl.cics.model.huayandan.HuayandanRepos;
 import com.oyl.cics.model.huayandan.HuayandanService;
@@ -34,12 +33,11 @@ public class HuayandanController {
     }
 
     @PostMapping("/huayandan/upload")
-    public RestResult<Result> upload(@RequestBody UploadRequest request) {
+    public RestResult<Boolean> upload(@RequestBody UploadRequest request) {
         List<Huayandan> huayandans = huayandanRepos.queryByKeys(Arrays.stream(request.getIds()).mapToLong(Long::longValue).toArray());
 
         try {
-            Result result = huayandanService.upload(huayandans, request.getOperator());
-            return RestResult.ok(result);
+            return RestResult.ok(huayandanService.upload(huayandans, request.getOperator()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
