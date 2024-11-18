@@ -19,6 +19,7 @@
         <result column="mybs" property="mybs" />
 <!--        <result column="dtgid" property="dtgid" />-->
         <result column="dtcydyxh" property="dtCydyxh" />
+        <result column="dtcysbbm" property="dtCysbbm" />
         <result column="dtcysbmc" property="dtCysbmc" />
         <result column="dtcyfs" property="dtCyfs" />
         <result column="dtcydybm" property="dtCydybm" />
@@ -42,7 +43,7 @@
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select mybs <!--dtgid-->, dtcydyxh, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs
+        select mybs <!--dtgid-->, dtcydyxh, dtcysbbm, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs
         from  CDRD_ZL_PIDAIMEICAIYANG_DETAIL
         where mybs = #{arg0}
     </select>

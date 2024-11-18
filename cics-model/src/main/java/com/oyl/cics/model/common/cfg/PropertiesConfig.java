@@ -35,7 +35,7 @@ public class PropertiesConfig {
         if ("G1".equalsIgnoreCase(group)) {
             return this.getAppSecretG1();
         } else {
-            return this.getAppSecretG1();
+            return this.getAppSecretG2();
         }
     }
 
@@ -43,7 +43,7 @@ public class PropertiesConfig {
         if ("G1".equalsIgnoreCase(group)) {
             return this.getDataSecretG1();
         } else {
-            return this.getDataSecretG1();
+            return this.getDataSecretG2();
         }
     }
 }

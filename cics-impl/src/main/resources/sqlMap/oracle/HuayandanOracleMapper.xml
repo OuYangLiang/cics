@@ -23,6 +23,7 @@
         <result column="dtassayi" property="dtAssayI" />
         <result column="dtassayt" property="dtAssayT" />
         <result column="dtduiyingml" property="dtDuiyingml" />
+        <result column="dtnqgradmj" property="dtNqgradmj" />
         <result column="dtngymt" property="dtNgymt" />
         <result column="dtngymad" property="dtNgymad" />
         <result column="dtnlcfaar" property="dtNlcfaar" />
@@ -48,7 +49,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, dthydid, dthydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtassayi, dtassayt, dtduiyingml, dtngymt, dtngymad, dtnlcfaar, dtngyaad, dtnlcfad, dtnlcfvar, dtngyvad, dtnlcfvd, dtngyvdaf, dtnlcfstar, dtnlcfstad, dtnlcfstd, dtnqgrdmj, dtnqnetarmj, dtnqnetmarkc, dtnqbadmj, dtnyshar, dtnyshad, dtnyshd, dtnyhdaf, dtkuaimanhui, sjtsdanwei
+        select mybs, dthydid, dthydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtassayi, dtassayt, dtduiyingml, dtnqgradmj, dtngymt, dtngymad, dtnlcfaar, dtngyaad, dtnlcfad, dtnlcfvar, dtngyvad, dtnlcfvd, dtngyvdaf, dtnlcfstar, dtnlcfstad, dtnlcfstd, dtnqgrdmj, dtnqnetarmj, dtnqnetmarkc, dtnqbadmj, dtnyshar, dtnyshad, dtnyshd, dtnyhdaf, dtkuaimanhui, sjtsdanwei
         from CDRD_ZL_HUAYANDAN
     </select>
 

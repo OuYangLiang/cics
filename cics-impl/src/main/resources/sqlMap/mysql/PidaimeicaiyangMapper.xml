@@ -136,11 +136,12 @@
     </delete>
 
     <insert id="addDetail">
-        insert into `pidaimeicaiyang_detail` (mybs <!--dtgid-->, dtcydyxh, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs)
+        insert into `pidaimeicaiyang_detail` (mybs <!--dtgid-->, dtcydyxh, dtcysbbm, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs)
         values (
         #{mybs},
         <!--#{dtgid},-->
         #{dtCydyxh},
+        #{dtCysbbm},
         #{dtCysbmc},
         #{dtCyfs},
         #{dtCydybm},

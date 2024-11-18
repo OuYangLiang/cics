@@ -165,8 +165,16 @@ public class PidaimeicaiyangDetail {
             this.dtCyetime = valTime;
         }
 
-        if (null == dtCysbmc || this.dtCysbmc.trim().isEmpty()) {
-            this.dtCysbmc = valString;
+//        if (null == dtCysbmc || this.dtCysbmc.trim().isEmpty()) {
+//            this.dtCysbmc = valString;
+//        }
+
+        if (null == dtCysbmc || dtCysbmc.trim().isEmpty()) {
+            this.dtCysbmc = "#1 皮带中部采样机";
+        }
+
+        if (null == dtCysbbm || dtCysbbm.trim().isEmpty()) {
+            this.dtCysbbm = "2042895686";
         }
 
         if (null == dtCysbid || this.dtCysbid.trim().isEmpty()) {
@@ -200,5 +208,6 @@ public class PidaimeicaiyangDetail {
         if (null == dtYijisfcs) {
             this.dtYijisfcs = valLong;
         }
+
     }
 }
