@@ -1,5 +1,6 @@
 package com.oyl.cics.web.login;
 
+import com.oyl.cics.model.common.utils.MD5Encryptor;
 import com.oyl.cics.model.user.User;
 import com.oyl.cics.model.user.UserRepos;
 import com.oyl.cics.web.common.result.RestResult;
@@ -29,7 +30,7 @@ public class LoginController {
 
         User user = userRepos.queryByUsername(loginRequest.getUsername());
 
-        if (null == user || !user.getPassword().equals(loginRequest.getPassword())) {
+        if (null == user || !user.getPassword().equals(MD5Encryptor.inst.getMD5(loginRequest.getPassword()))) {
             return RestResult.fail("1", "用户名 或 密码 不正确");
         }
 
