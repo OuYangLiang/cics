@@ -19,6 +19,7 @@ create table if not exists `employee` (
 
 create table if not exists `guidaoheng` (
     `id`                bigint          not null    auto_increment comment '主键',
+    `ywrq`              datetime        not null,
     `zmxdocNo`          varchar(100)    not null,
     `ssejdw`            varchar(100),
     `ssejdwid`          varchar(100),
@@ -83,7 +84,8 @@ create table if not exists `guidaoheng` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `zmxdocNo`)
+    unique key ( `zmxdocNo`),
+    key (`ywrq`)
 ) engine=innodb default charset=utf8;
 
 create table if not exists `guidaoheng_detail` (
@@ -115,6 +117,7 @@ create table if not exists `guidaoheng_detail` (
 
 create table if not exists `qichecheng` (
     `id`                bigint          not null    auto_increment comment '主键',
+    `ywrq`              datetime        not null,
     `zmxdocNo`          varchar(100)    not null,
     `ssejdw`            varchar(100),
     `ssejdwid`          varchar(100),
@@ -173,7 +176,8 @@ create table if not exists `qichecheng` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `zmxdocNo`)
+    unique key ( `zmxdocNo`),
+    key ( `ywrq`)
 ) engine=innodb default charset=utf8;
 
 create table if not exists `qichecheng_detail` (
@@ -210,6 +214,7 @@ create table if not exists `qichecheng_detail` (
 
 create table if not exists `meicaiyang` (
     `id`                bigint          not null    auto_increment comment '主键',
+    `ywrq`              datetime        not null,
     `mybs`              varchar(100)    not null,
     `ssejdw`            varchar(100),
     `ssejdwid`          varchar(100),
@@ -235,7 +240,8 @@ create table if not exists `meicaiyang` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `mybs`)
+    unique key ( `mybs`),
+    key (`ywrq`)
 ) engine=innodb default charset=utf8;
 
 create table if not exists `meicaiyang_detail` (
@@ -281,6 +287,7 @@ create table if not exists `meicaiyang_detail` (
 
 create table if not exists `pidaimeicaiyang` (
     `id`                         bigint          not null    auto_increment comment '主键',
+    `ywrq`              datetime        not null,
     `mybs`                       varchar(100)    not null,
     `ssejdw`                     varchar(100),
     `ssejdwid`                   varchar(100),
@@ -307,7 +314,8 @@ create table if not exists `pidaimeicaiyang` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `mybs`)
+    unique key ( `mybs`),
+    key (`ywrq`)
 ) engine=innodb default charset=utf8;
 
 
@@ -350,6 +358,7 @@ create table if not exists `pidaimeicaiyang_detail` (
 
 create table if not exists `meizhi` (
     `id`                         bigint          not null    auto_increment comment '主键',
+    `ywrq`                       datetime        not null,
     `mybs`                       varchar(100)    not null,
     `ssejdw`                     varchar(100),
     `ssejdwid`                   varchar(100),
@@ -434,7 +443,8 @@ create table if not exists `meizhi` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `mybs`)
+    unique key ( `mybs`),
+    key (`ywrq`)
 ) engine=innodb default charset=utf8;
 
 
@@ -456,6 +466,7 @@ create table if not exists `meizhi_detail` (
 
 create table if not exists `huayandan` (
     `id`                         bigint          not null    auto_increment comment '主键',
+    `ywrq`                       datetime        not null,
     `mybs`                       varchar(100)    not null,
     `dtHydid`                    varchar(100),
     `dtHydxh`                    varchar(100),
@@ -525,7 +536,8 @@ create table if not exists `huayandan` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `mybs`)
+    unique key ( `mybs`),
+    key (`ywrq`)
 ) engine=innodb default charset=utf8;
 
 
