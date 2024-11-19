@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.meizhi.MeizhiOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.meizhi.Meizhi">
+        <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
@@ -55,7 +56,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayI, assayT, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayI, assayT, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
         from CDRD_ZL_MEIZHI
     </select>
 

@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.guidaoheng.GuidaohengOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.guidaoheng.Guidaoheng">
+        <result column="ywrq" property="ywrq"/>
         <result column="zmxdocno" property="zmxdocNo"/>
         <result column="ssejdw" property="ssejdw"/>
         <result column="ssejdwid" property="ssejdwid"/>
@@ -51,7 +52,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,
+        select ywrq, zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,
         shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,
         zongyingkui,  zongyingdun, zongyunsun,  duiweisj, duiweirq, to_char(yewurq, 'yyyymmdd') as yewurq,  zcmeizhong,  zcmeizhongbm, sjyxt,
         cheyuan, jltypetype,  jlhqyt,  jlhqmc, sjtsdanwei

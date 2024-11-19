@@ -13,6 +13,8 @@ public class Qichecheng {
 
     private Long id;
 
+    private Date ywrq;
+
     /**
      * 备用字段1
      */

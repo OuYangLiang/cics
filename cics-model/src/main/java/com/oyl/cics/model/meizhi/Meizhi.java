@@ -12,6 +12,8 @@ public class Meizhi {
 
     private Long id;
 
+    private Date ywrq;
+
     /**
      * 化验日期
      */

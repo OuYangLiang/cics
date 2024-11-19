@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.qichecheng.QichechengOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
+        <result column="ywrq" property="ywrq" />
         <result column="zmxdocno" property="zmxdocNo" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
@@ -53,7 +54,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, koudunzongliang, sjtsdanwei
+        select ywrq, zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, koudunzongliang, sjtsdanwei
         from CDRD_ZL_QICHEHENG
     </select>
 

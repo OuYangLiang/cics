@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.pidaimeicaiyang.PidaimeicaiyangOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang">
+        <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
@@ -38,7 +39,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, sjscfs
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, sjscfs
         from CDRD_ZL_PIDAIMEICAIYANG
     </select>
 

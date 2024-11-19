@@ -13,6 +13,8 @@ public class Guidaoheng {
 
     private Long id;
 
+    private Date ywrq;
+
     /**
      * 明细磅单号
      */

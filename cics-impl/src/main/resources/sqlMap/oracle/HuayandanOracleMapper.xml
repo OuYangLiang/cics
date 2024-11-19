@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.huayandan.HuayandanOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.huayandan.Huayandan">
+        <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="dthydid" property="dtHydid" />
         <result column="dthydxh" property="dtHydxh" />
@@ -49,7 +50,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, dthydid, dthydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtassayi, dtassayt, dtduiyingml, dtnqgradmj, dtngymt, dtngymad, dtnlcfaar, dtngyaad, dtnlcfad, dtnlcfvar, dtngyvad, dtnlcfvd, dtngyvdaf, dtnlcfstar, dtnlcfstad, dtnlcfstd, dtnqgrdmj, dtnqnetarmj, dtnqnetmarkc, dtnqbadmj, dtnyshar, dtnyshad, dtnyshd, dtnyhdaf, dtkuaimanhui, sjtsdanwei
+        select ywrq, mybs, dthydid, dthydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtassayi, dtassayt, dtduiyingml, dtnqgradmj, dtngymt, dtngymad, dtnlcfaar, dtngyaad, dtnlcfad, dtnlcfvar, dtngyvad, dtnlcfvd, dtngyvdaf, dtnlcfstar, dtnlcfstad, dtnlcfstd, dtnqgrdmj, dtnqnetarmj, dtnqnetmarkc, dtnqbadmj, dtnyshar, dtnyshad, dtnyshd, dtnyhdaf, dtkuaimanhui, sjtsdanwei
         from CDRD_ZL_HUAYANDAN
     </select>
 

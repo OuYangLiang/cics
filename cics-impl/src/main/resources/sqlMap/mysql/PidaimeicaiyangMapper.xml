@@ -4,6 +4,7 @@
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang">
         <result column="id" property="id" />
+        <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
@@ -66,7 +67,7 @@
     </resultMap>
 
     <select id="search" resultMap="BaseResultMap">
-        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `sjscfs`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        select `id`, `ywrq`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `sjscfs`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from   `pidaimeicaiyang`
         <where>
             <if test="mybs != null and mybs != ''">
@@ -76,7 +77,7 @@
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
             </if>
         </where>
-        order by `mybs` desc
+        order by `ywrq` desc
         limit ${offset}, ${pageSize}
     </select>
 
@@ -100,7 +101,7 @@
     </select>
 
     <select id="queryByKeys" resultMap="BaseResultMap">
-        select `id`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `sjscfs`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        select `id`, `ywrq`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `sjscfs`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from   `pidaimeicaiyang`
         where `id` in
         <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
@@ -162,6 +163,7 @@
 
     <insert id="override">
         insert into `pidaimeicaiyang` (
+        `ywrq`,
         `mybs`,
         `ssejdw`,
         `ssejdwid`,
@@ -174,6 +176,7 @@
         `sjscfs`,
         `status`
         ) values (
+        #{ywrq},
         #{mybs},
         #{ssejdw},
         #{ssejdwid},
@@ -186,6 +189,7 @@
         #{sjscfs},
         0
         ) ON DUPLICATE KEY UPDATE
+        `ywrq` = #{ywrq},
         `mybs` = #{mybs},
         `ssejdw` = #{ssejdw},
         `ssejdwid` = #{ssejdwid},

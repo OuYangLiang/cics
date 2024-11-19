@@ -12,6 +12,8 @@ public class Huayandan {
 
     private Long id;
 
+    private Date ywrq;
+
     /**
      * 化验编号
      */

@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.meicaiyang.MeicaiyangOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.meicaiyang.Meicaiyang">
+        <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
@@ -32,7 +33,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei
         from CDRD_ZL_MEICAIYANG
     </select>
 

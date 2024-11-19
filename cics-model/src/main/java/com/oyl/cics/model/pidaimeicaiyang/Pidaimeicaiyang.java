@@ -13,6 +13,8 @@ public class Pidaimeicaiyang {
 
     private Long id;
 
+    private Date ywrq;
+
     /**
      * 备用字段1
      */
