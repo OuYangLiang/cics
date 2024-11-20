@@ -41,6 +41,7 @@ public class HuayandanService {
         for (Map.Entry<String, List<Huayandan>> entry : map.entrySet()) {
             Result result = uploader.uplaod("/api/dlhg/huayandan", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
             if (result.success()) {
+                log.info("上报成功，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
                 huayandanDao.uploadSucc(entry.getValue(), operator);
             } else {
                 success = false;

@@ -44,6 +44,7 @@ public class GuidaohengService {
         for (Map.Entry<String, List<Guidaoheng>> entry : map.entrySet()) {
             Result result = uploader.uplaod("/api/dlhg/guidaoheng", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
             if (result.success()) {
+                log.info("上报成功，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
                 guidaohengDao.uploadSucc(entry.getValue(), operator);
             } else {
                 success = false;

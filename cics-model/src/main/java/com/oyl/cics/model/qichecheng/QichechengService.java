@@ -43,6 +43,7 @@ public class QichechengService {
         for (Map.Entry<String, List<Qichecheng>> entry : map.entrySet()) {
             Result result = uploader.uplaod("/api/dlhg/qichecheng", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
             if (result.success()) {
+                log.info("上报成功，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
                 qichechengDao.uploadSucc(entry.getValue(), operator);
             } else {
                 success = false;

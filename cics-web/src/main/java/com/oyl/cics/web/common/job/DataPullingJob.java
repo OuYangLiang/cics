@@ -68,7 +68,7 @@ public class DataPullingJob {
     @Resource
     private HuayandanService huayandanService;
 
-    @Scheduled(cron = "0 5 * * * ?")
+    @Scheduled(cron = "0 5/35 * * * ?")
     private void configureTasks() {
         log.info("拉数任务开始执行...");
 

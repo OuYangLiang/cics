@@ -43,6 +43,7 @@ public class MeizhiService {
         for (Map.Entry<String, List<Meizhi>> entry : map.entrySet()) {
             Result result = uploader.uplaod("/api/dlhg/meizhi", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
             if (result.success()) {
+                log.info("上报成功，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
                 meizhiDao.uploadSucc(entry.getValue(), operator);
             } else {
                 success = false;

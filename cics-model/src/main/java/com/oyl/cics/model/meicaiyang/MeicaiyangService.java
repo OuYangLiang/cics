@@ -43,6 +43,7 @@ public class MeicaiyangService {
         for (Map.Entry<String, List<Meicaiyang>> entry : map.entrySet()) {
             Result result = uploader.uplaod("/api/dlhg/meicaiyang", JsonUtil.inst.toJson(entry.getValue()), entry.getKey());
             if (result.success()) {
+                log.info("上报成功，code={}, msg={}, data={}", result.getCode(), result.getMsg(), result.getData());
                 meicaiyangDao.uploadSucc(entry.getValue(), operator);
             } else {
                 success = false;

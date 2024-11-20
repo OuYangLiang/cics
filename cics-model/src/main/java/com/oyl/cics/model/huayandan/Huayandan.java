@@ -1,5 +1,6 @@
 package com.oyl.cics.model.huayandan;
 
+import com.oyl.cics.model.common.utils.DateUtil;
 import com.oyl.cics.model.shared.UploadStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -422,11 +423,11 @@ public class Huayandan {
         }
 
         if (null == xtscjlI || this.xtscjlI.trim().isEmpty()) {
-            this.xtscjlI = valDate;
+            this.xtscjlI = DateUtil.inst.date();
         }
 
         if (null == xtscjlT || this.xtscjlT.trim().isEmpty()) {
-            this.xtscjlT = valTime;
+            this.xtscjlT = DateUtil.inst.time();
         }
 
     }
