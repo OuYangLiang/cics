@@ -21,16 +21,16 @@ public class SearchCondition {
 
     private String mykuangdianmc;
 
-    private String[] yewurqRange;
-
     private UploadStatus uploadStatus;
 
-    public String getYewurqRangeStart() {
-        return null == yewurqRange || yewurqRange.length == 0 ? null : yewurqRange[0];
+    private String[] ywrqRange;
+
+    public String getYwrqRangeStart() {
+        return null == ywrqRange || ywrqRange.length == 0 ? null : ywrqRange[0] + " 00:00:00";
     }
 
-    public String getYewurqRangeEnd() {
-        return null == yewurqRange || yewurqRange.length == 0 ? null : yewurqRange[1];
+    public String getYwrqRangeEnd() {
+        return null == ywrqRange || ywrqRange.length == 0 ? null : ywrqRange[1] + " 23:59:59";
     }
 
     public int getOffset() {

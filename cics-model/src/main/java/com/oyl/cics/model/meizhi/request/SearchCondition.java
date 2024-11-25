@@ -19,6 +19,16 @@ public class SearchCondition {
 
     private UploadStatus uploadStatus;
 
+    private String[] ywrqRange;
+
+    public String getYwrqRangeStart() {
+        return null == ywrqRange || ywrqRange.length == 0 ? null : ywrqRange[0] + " 00:00:00";
+    }
+
+    public String getYwrqRangeEnd() {
+        return null == ywrqRange || ywrqRange.length == 0 ? null : ywrqRange[1] + " 23:59:59";
+    }
+
     public int getOffset() {
         return (page - 1) * pageSize;
     }

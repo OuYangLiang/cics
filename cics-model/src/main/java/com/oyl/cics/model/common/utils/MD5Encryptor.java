@@ -30,7 +30,7 @@ public enum MD5Encryptor {
     }
 
     public static void main(String[] args) {
-        String input = "8585636";
+        String input = "pwd123";
         String md5Hash = MD5Encryptor.inst.getMD5(input);
         System.out.println("MD5 hash of '" + input + "' is: " + md5Hash);
     }

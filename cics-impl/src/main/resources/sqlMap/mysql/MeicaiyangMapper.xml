@@ -79,6 +79,9 @@
             <if test="uploadStatus != null">
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
             </if>
+            <if test="ywrqRangeStart != null and ywrqRangeEnd != null">
+                AND `ywrq` between #{ywrqRangeStart} and #{ywrqRangeEnd}
+            </if>
         </where>
         order by `ywrq` desc
         limit ${offset}, ${pageSize}
@@ -93,6 +96,9 @@
             </if>
             <if test="uploadStatus != null">
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
+            </if>
+            <if test="ywrqRangeStart != null and ywrqRangeEnd != null">
+                AND `ywrq` between #{ywrqRangeStart} and #{ywrqRangeEnd}
             </if>
         </where>
     </select>

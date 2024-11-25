@@ -109,8 +109,8 @@
             <if test="mykuangdianmc != null and mykuangdianmc != ''">
                 AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
             </if>
-            <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
-                AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
+            <if test="ywrqRangeStart != null and ywrqRangeEnd != null">
+                AND `ywrq` between #{ywrqRangeStart} and #{ywrqRangeEnd}
             </if>
             <if test="uploadStatus != null">
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
@@ -133,8 +133,8 @@
             <if test="mykuangdianmc != null and mykuangdianmc != ''">
                 AND `mykuangdianmc` like concat(#{mykuangdianmc}, '%')
             </if>
-            <if test="yewurqRangeStart != null and yewurqRangeEnd != null">
-                AND `yewurq` between #{yewurqRangeStart} and #{yewurqRangeEnd}
+            <if test="ywrqRangeStart != null and ywrqRangeEnd != null">
+                AND `ywrq` between #{ywrqRangeStart} and #{ywrqRangeEnd}
             </if>
             <if test="uploadStatus != null">
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
