@@ -21,6 +21,8 @@ public class SearchCondition {
 
     private String[] ywrqRange;
 
+    private String group;
+
     public String getYwrqRangeStart() {
         return null == ywrqRange || ywrqRange.length == 0 ? null : ywrqRange[0] + " 00:00:00";
     }

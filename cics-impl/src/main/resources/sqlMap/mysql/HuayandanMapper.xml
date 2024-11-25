@@ -82,6 +82,9 @@
             <if test="mybs != null and mybs != ''">
                 AND `mybs` like concat(#{mybs}, '%')
             </if>
+            <if test="group != null and group != ''">
+                AND `mybs` like concat(#{group}, '%')
+            </if>
             <if test="uploadStatus != null">
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
             </if>
@@ -99,6 +102,9 @@
         <where>
             <if test="mybs != null and mybs != ''">
                 AND `mybs` like concat(#{mybs}, '%')
+            </if>
+            <if test="group != null and group != ''">
+                AND `mybs` like concat(#{group}, '%')
             </if>
             <if test="uploadStatus != null">
                 AND `status` = #{uploadStatus, typeHandler=com.oyl.cics.impl.shared.UploadStatusTypeHandler}
