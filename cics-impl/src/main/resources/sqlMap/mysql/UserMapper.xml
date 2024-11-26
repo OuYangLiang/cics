@@ -10,6 +10,28 @@
 	<sql id="Base_Column_List">
         `id`, `username`, `password`
 	</sql>
+
+    <select id="search" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" />
+        from `user_profile`
+        <where>
+            <if test="usernamePrefix != null and usernamePrefix != ''">
+                and `username` like concat(#{usernamePrefix}, '%')
+            </if>
+        </where>
+        order by id asc
+        limit ${offset}, ${pageSize}
+    </select>
+
+    <select id="numOf" resultType="int">
+        select count(1)
+        from `user_profile`
+        <where>
+            <if test="usernamePrefix != null and usernamePrefix != ''">
+                and `username` like concat(#{usernamePrefix}, '%')
+            </if>
+        </where>
+    </select>
   
     <select id="queryByUsername" resultMap="BaseResultMap">
         select <include refid="Base_Column_List" />
@@ -17,4 +39,15 @@
         where `username` = #{arg0}
         limit 1
     </select>
+
+    <insert id="create" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into `user_profile`(
+        `username`,
+        `password`
+        )
+        values (
+            #{username},
+            #{password}
+        )
+    </insert>
 </mapper>
