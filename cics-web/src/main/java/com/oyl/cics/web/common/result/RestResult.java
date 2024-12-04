@@ -11,6 +11,13 @@ public class RestResult<T> {
     private String errorCode;
     private String errorMsg;
 
+    public static <T> RestResult<T> ok() {
+        RestResult<T> result = new RestResult<>();
+        result.setSuccess(true);
+
+        return result;
+    }
+
     public static <T> RestResult<T> ok(T t) {
         RestResult<T> result = new RestResult<>();
         result.setSuccess(true);

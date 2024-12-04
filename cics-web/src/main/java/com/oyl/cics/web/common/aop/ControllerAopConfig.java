@@ -57,9 +57,12 @@ public class ControllerAopConfig {
 
         try {
             return pjp.proceed();
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             log.error(e.getMessage(), e);
             return RestResult.fail("1", e.getMessage());
+        } catch(Exception e) {
+            log.error(e.getMessage(), e);
+            return RestResult.fail("2", e.getMessage());
         }
     }
 }

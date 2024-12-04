@@ -1,7 +1,9 @@
 package com.oyl.cics.web.user;
 
 
+import com.oyl.cics.model.user.User;
 import com.oyl.cics.model.user.UserRepos;
+import com.oyl.cics.model.user.request.CreateRequest;
 import com.oyl.cics.model.user.request.SearchCondition;
 import com.oyl.cics.model.user.response.SearchResult;
 import com.oyl.cics.web.common.result.RestResult;
@@ -24,5 +26,11 @@ public class UserController {
     @PostMapping("/user/search")
     public RestResult<SearchResult> search(@RequestBody SearchCondition condition) {
         return RestResult.ok(userRepos.search(condition));
+    }
+
+    @PostMapping("/user/create")
+    public RestResult<User> search(@RequestBody CreateRequest createRequest) {
+        User user = userRepos.create(createRequest);
+        return RestResult.ok(user);
     }
 }
