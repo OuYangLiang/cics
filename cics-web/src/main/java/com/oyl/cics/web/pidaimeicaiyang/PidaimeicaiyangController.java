@@ -42,4 +42,23 @@ public class PidaimeicaiyangController {
             throw new RuntimeException(e);
         }
     }
+
+    @PostMapping("/pidaimeicaiyang/sync")
+    public RestResult<Integer> sync() {
+        List<Pidaimeicaiyang> list = pidaimeicaiyangRepos.queryFromOldSystem();
+        int result = list == null ? 0 : list.size();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Pidaimeicaiyang item : list) {
+                try {
+                    pidaimeicaiyangService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                    result --;
+                }
+            }
+        }
+
+        return RestResult.ok(result);
+    }
 }

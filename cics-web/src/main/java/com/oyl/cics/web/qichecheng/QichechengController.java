@@ -42,4 +42,23 @@ public class QichechengController {
             throw new RuntimeException(e);
         }
     }
+
+    @PostMapping("/meicaiyang/sync")
+    public RestResult<Integer> sync() {
+        List<Qichecheng> list = qichechengRepos.queryFromOldSystem();
+        int result = list == null ? 0 : list.size();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Qichecheng item : list) {
+                try {
+                    qichechengService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                    result --;
+                }
+            }
+        }
+
+        return RestResult.ok(result);
+    }
 }

@@ -42,4 +42,23 @@ public class KjhuayandanController {
             throw new RuntimeException(e);
         }
     }
+
+    @PostMapping("/kjhuayandan/sync")
+    public RestResult<Integer> sync() {
+        List<Kjhuayandan> list = kjhuayandanRepos.queryFromOldSystem();
+        int result = list == null ? 0 : list.size();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Kjhuayandan item : list) {
+                try {
+                    kjhuayandanService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                    result --;
+                }
+            }
+        }
+
+        return RestResult.ok(result);
+    }
 }

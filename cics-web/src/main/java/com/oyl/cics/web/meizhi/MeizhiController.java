@@ -42,4 +42,23 @@ public class MeizhiController {
             throw new RuntimeException(e);
         }
     }
+
+    @PostMapping("/meizhi/sync")
+    public RestResult<Integer> sync() {
+        List<Meizhi> list = meizhiRepos.queryFromOldSystem();
+        int result = list == null ? 0 : list.size();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Meizhi item : list) {
+                try {
+                    meizhiService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                    result --;
+                }
+            }
+        }
+
+        return RestResult.ok(result);
+    }
 }

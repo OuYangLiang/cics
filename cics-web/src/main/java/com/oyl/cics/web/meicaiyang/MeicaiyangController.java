@@ -1,5 +1,6 @@
 package com.oyl.cics.web.meicaiyang;
 
+import com.oyl.cics.model.guidaoheng.Guidaoheng;
 import com.oyl.cics.model.meicaiyang.Meicaiyang;
 import com.oyl.cics.model.meicaiyang.MeicaiyangRepos;
 import com.oyl.cics.model.meicaiyang.MeicaiyangService;
@@ -41,5 +42,24 @@ public class MeicaiyangController {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @PostMapping("/meicaiyang/sync")
+    public RestResult<Integer> sync() {
+        List<Meicaiyang> list = meicaiyangRepos.queryFromOldSystem();
+        int result = list == null ? 0 : list.size();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Meicaiyang item : list) {
+                try {
+                    meicaiyangService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                    result --;
+                }
+            }
+        }
+
+        return RestResult.ok(result);
     }
 }

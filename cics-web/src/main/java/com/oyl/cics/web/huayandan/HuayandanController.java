@@ -42,4 +42,23 @@ public class HuayandanController {
             throw new RuntimeException(e);
         }
     }
+
+    @PostMapping("/huayandan/sync")
+    public RestResult<Integer> sync() {
+        List<Huayandan> list = huayandanRepos.queryFromOldSystem();
+        int result = list == null ? 0 : list.size();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Huayandan item : list) {
+                try {
+                    huayandanService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                    result --;
+                }
+            }
+        }
+
+        return RestResult.ok(result);
+    }
 }
