@@ -6,6 +6,9 @@ import com.oyl.cics.model.guidaoheng.GuidaohengService;
 import com.oyl.cics.model.huayandan.Huayandan;
 import com.oyl.cics.model.huayandan.HuayandanRepos;
 import com.oyl.cics.model.huayandan.HuayandanService;
+import com.oyl.cics.model.kjhuayandan.Kjhuayandan;
+import com.oyl.cics.model.kjhuayandan.KjhuayandanRepos;
+import com.oyl.cics.model.kjhuayandan.KjhuayandanService;
 import com.oyl.cics.model.meicaiyang.Meicaiyang;
 import com.oyl.cics.model.meicaiyang.MeicaiyangRepos;
 import com.oyl.cics.model.meicaiyang.MeicaiyangService;
@@ -68,6 +71,12 @@ public class DataPullingJob {
     @Resource
     private HuayandanService huayandanService;
 
+    @Resource
+    private KjhuayandanRepos kjhuayandanRepos;
+
+    @Resource
+    private KjhuayandanService kjhuayandanService;
+
     @Scheduled(cron = "0 5/35 * * * ?")
     private void configureTasks() {
         log.info("拉数任务开始执行...");
@@ -119,6 +128,16 @@ public class DataPullingJob {
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
+
+        try {
+            log.info("拉取快检化验单数据");
+            this.kjhuayandan();
+            log.info("快检化验单数据结束");
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+
+
 
         log.info("拉数任务执行结束...");
     }
@@ -200,6 +219,20 @@ public class DataPullingJob {
             for (Huayandan item : list) {
                 try {
                     huayandanService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                }
+            }
+        }
+    }
+
+    private void kjhuayandan() {
+        List<Kjhuayandan> list = kjhuayandanRepos.queryFromOldSystem();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Kjhuayandan item : list) {
+                try {
+                    kjhuayandanService.override(item);
                 } catch (Exception e) {
                     log.error(e.getMessage(), e);
                 }

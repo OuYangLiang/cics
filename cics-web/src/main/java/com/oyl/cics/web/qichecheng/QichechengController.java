@@ -43,7 +43,7 @@ public class QichechengController {
         }
     }
 
-    @PostMapping("/meicaiyang/sync")
+    @PostMapping("/qichecheng/sync")
     public RestResult<Integer> sync() {
         List<Qichecheng> list = qichechengRepos.queryFromOldSystem();
         int result = list == null ? 0 : list.size();
