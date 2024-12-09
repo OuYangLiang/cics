@@ -168,7 +168,7 @@
     </update>
 
     <insert id="override">
-        insert into `huayandan` (
+        insert into `kjhuayandan` (
         `sssjdwid`,
         `ywrq`,
         `mybs`,

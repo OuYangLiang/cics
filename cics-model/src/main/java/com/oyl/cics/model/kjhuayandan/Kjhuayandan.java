@@ -51,6 +51,7 @@ public class Kjhuayandan {
     private String avgcarbonContent;
     private String avghydrogenContent;
     private String avgvolatileMatter;
+    private String sjscfs;
     private String avgfixedCarbon;
     private String avgharmfulElementCI;
     private String avgharmfulElementP;
@@ -87,6 +88,7 @@ public class Kjhuayandan {
     private String sampleParameter1;
     private String sampleParameter2;
     private String trainNumberStop;
+    private String trainNumber;
     private String testSampleCount;
     private String reserve1;
     private String reserve2;
