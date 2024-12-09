@@ -10,6 +10,9 @@ import com.oyl.cics.model.guidaoheng.GuidaohengRepos;
 import com.oyl.cics.model.huayandan.Huayandan;
 import com.oyl.cics.model.huayandan.HuayandanRepos;
 import com.oyl.cics.model.huayandan.HuayandanService;
+import com.oyl.cics.model.kjhuayandan.Kjhuayandan;
+import com.oyl.cics.model.kjhuayandan.KjhuayandanRepos;
+import com.oyl.cics.model.kjhuayandan.KjhuayandanService;
 import com.oyl.cics.model.meicaiyang.Meicaiyang;
 import com.oyl.cics.model.meicaiyang.MeicaiyangRepos;
 import com.oyl.cics.model.meicaiyang.MeicaiyangService;
@@ -75,6 +78,8 @@ public class GuidaohengController {
             this.meizhi();
         } else if (6 == id) {
             this.huayandan();
+        } else if (7 == id) {
+            this.kjhuayandan();
         }
         log.info("DataPullingJob Ended...");
         return RestResult.ok(null);
@@ -182,6 +187,25 @@ public class GuidaohengController {
             for (Huayandan item : list) {
                 try {
                     huayandanService.override(item);
+                } catch (Exception e) {
+                    log.error(e.getMessage(), e);
+                }
+            }
+        }
+    }
+
+    @Resource
+    private KjhuayandanRepos kjhuayandanRepos;
+    @Resource
+    private KjhuayandanService kjhuayandanService;
+
+    private void kjhuayandan() {
+        List<Kjhuayandan> list = kjhuayandanRepos.queryFromOldSystem();
+        if (null != list) {
+            log.info("{} Records found.", list.size());
+            for (Kjhuayandan item : list) {
+                try {
+                    kjhuayandanService.override(item);
                 } catch (Exception e) {
                     log.error(e.getMessage(), e);
                 }

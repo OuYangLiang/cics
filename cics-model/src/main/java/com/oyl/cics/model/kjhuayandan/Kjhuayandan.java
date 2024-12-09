@@ -10,6 +10,8 @@ import java.util.Date;
 @Setter
 public class Kjhuayandan {
     private Long id;
+    private Date ywrq;
+    private String sssjdwid;
     private String mybs;
     private String dtHydid;
     private String dtHydxh;

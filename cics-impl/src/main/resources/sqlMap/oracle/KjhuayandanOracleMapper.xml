@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyl.cics.impl.kjhuayandan.KjhuayandanOracleMapper">
+
+    <resultMap id="BaseResultMap" type="com.oyl.cics.model.kjhuayandan.Kjhuayandan">
+        <result column="ywrq" property="ywrq" />
+        <result column="sssjdwid" property="sssjdwid" />
+        <result column="mybs" property="mybs" />
+        <result column="dtHydid" property="dtHydid" />
+        <result column="dtHydxh" property="dtHydxh" />
+        <result column="hyorgname" property="hyorgname" />
+        <result column="sampeldate" property="sampeldate" />
+        <result column="sampleid" property="sampleid" />
+        <result column="assayid" property="assayid" />
+        <result column="jiancejieguoyt" property="jiancejieguoyt" />
+        <result column="jiancefangshi" property="jiancefangshi" />
+        <result column="sjscfs" property="sjscfs" />
+        <result column="jiancesbmc" property="jiancesbmc" />
+        <result column="jiancesbid" property="jiancesbid" />
+        <result column="meizhong" property="meizhong" />
+        <result column="meizhongbm" property="meizhongbm" />
+        <result column="dtAssayI" property="dtAssayI" />
+        <result column="dtAssayT" property="dtAssayT" />
+        <result column="dtDuiyingml" property="dtDuiyingml" />
+        <result column="version" property="version" />
+        <result column="equipmentId" property="equipmentId" />
+        <result column="infoCount" property="infoCount" />
+        <result column="scanNumber" property="scanNumber" />
+        <result column="onLineStatus" property="onLineStatus" />
+        <result column="indexUuid" property="indexUuid" />
+        <result column="coalName" property="coalName" />
+        <result column="trainNumber" property="trainNumber" />
+        <result column="loadNumber" property="loadNumber" />
+        <result column="loadSite" property="loadSite" />
+        <result column="firstNumber" property="firstNumber" />
+        <result column="tailNumber" property="tailNumber" />
+        <result column="loadTime" property="loadTime" />
+        <result column="avglowHeatValueMj" property="avglowHeatValueMj" />
+        <result column="avghighHeatValueMj" property="avghighHeatValueMj" />
+        <result column="avglowHeatValueKcal" property="avglowHeatValueKcal" />
+        <result column="avghighHeatValueKcal" property="avghighHeatValueKcal" />
+        <result column="avgashContent" property="avgashContent" />
+        <result column="avgsulfurContent" property="avgsulfurContent" />
+        <result column="avgfullyWash" property="avgfullyWash" />
+        <result column="avgashMeltingPoint" property="avgashMeltingPoint" />
+        <result column="avgcarbonContent" property="avgcarbonContent" />
+        <result column="avghydrogenContent" property="avghydrogenContent" />
+        <result column="avgvolatileMatter" property="avgvolatileMatter" />
+        <result column="avgfixedCarbon" property="avgfixedCarbon" />
+        <result column="avgharmfulElementCI" property="avgharmfulElementCI" />
+        <result column="avgharmfulElementP" property="avgharmfulElementP" />
+        <result column="avgDryVolatileMatter" property="avgDryVolatileMatter" />
+        <result column="avgDeformationTemp" property="avgDeformationTemp" />
+        <result column="avgSofteningTemp" property="avgSofteningTemp" />
+        <result column="avgHemisphereTemp" property="avgHemisphereTemp" />
+        <result column="avgFlowTemp" property="avgFlowTemp" />
+        <result column="singleIndex" property="singleIndex" />
+        <result column="singlelowHeatValueMj" property="singlelowHeatValueMj" />
+        <result column="singlehighHeatValueMj" property="singlehighHeatValueMj" />
+        <result column="singlelowHeatValueKcal" property="singlelowHeatValueKcal" />
+        <result column="singlehighHeatValueKcal" property="singlehighHeatValueKcal" />
+        <result column="singleashContent" property="singleashContent" />
+        <result column="singlesulfurContent" property="singlesulfurContent" />
+        <result column="singlefullyWash" property="singlefullyWash" />
+        <result column="singleashMeltingPoint" property="singleashMeltingPoint" />
+        <result column="singlecarbonContent" property="singlecarbonContent" />
+        <result column="singlehydrogenContent" property="singlehydrogenContent" />
+        <result column="singlevolatileMatter" property="singlevolatileMatter" />
+        <result column="singllefixedCarbon" property="singllefixedCarbon" />
+        <result column="singleharmfulElementCI" property="singleharmfulElementCI" />
+        <result column="singleharmfulElementP" property="singleharmfulElementP" />
+        <result column="singleDryVolatileMatter" property="singleDryVolatileMatter" />
+        <result column="singleDeformationTemp" property="singleDeformationTemp" />
+        <result column="singleSofteningTemp" property="singleSofteningTemp" />
+        <result column="singleHemisphereTemp" property="singleHemisphereTemp" />
+        <result column="singleFlowTemp" property="singleFlowTemp" />
+        <result column="startTime" property="startTime" />
+        <result column="finishTime" property="finishTime" />
+        <result column="volume" property="volume" />
+        <result column="algoModel" property="algoModel" />
+        <result column="algoModelUpdateTime" property="algoModelUpdateTime" />
+        <result column="sampleParameter1" property="sampleParameter1" />
+        <result column="sampleParameter2" property="sampleParameter2" />
+        <result column="trainNumberStop" property="trainNumberStop" />
+        <result column="testSampleCount" property="testSampleCount" />
+        <result column="reserve1" property="reserve1" />
+        <result column="reserve2" property="reserve2" />
+        <result column="reserve3" property="reserve3" />
+        <result column="reserve4" property="reserve4" />
+        <result column="reserve5" property="reserve5" />
+        <result column="reserve6" property="reserve6" />
+        <result column="reserve7" property="reserve7" />
+    </resultMap>
+
+    <select id="queryRecentRecords" resultMap="BaseResultMap">
+        select ywrq, sssjdwid, mybs, dtHydid, dtHydxh, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, sjscfs, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtAssayI, dtAssayT, dtDuiyingml, version, equipmentId, infoCount, scanNumber, onLineStatus, indexUuid, coalName, trainNumber, loadNumber, loadSite, firstNumber, tailNumber, loadTime, avglowHeatValueMj, avghighHeatValueMj, avglowHeatValueKcal, avghighHeatValueKcal, avgashContent, avgsulfurContent, avgfullyWash, avgashMeltingPoint, avgcarbonContent, avghydrogenContent, avgvolatileMatter, avgfixedCarbon, avgharmfulElementCI, avgharmfulElementP, avgDryVolatileMatter, avgDeformationTemp, avgSofteningTemp, avgHemisphereTemp, avgFlowTemp, singleIndex, singlelowHeatValueMj, singlehighHeatValueMj, singlelowHeatValueKcal, singlehighHeatValueKcal, singleashContent, singlesulfurContent, singlefullyWash, singleashMeltingPoint, singlecarbonContent, singlehydrogenContent, singlevolatileMatter, singllefixedCarbon, singleharmfulElementCI, singleharmfulElementP, singleDryVolatileMatter, singleDeformationTemp, singleSofteningTemp, singleHemisphereTemp, singleFlowTemp, startTime, finishTime, volume, algoModel, algoModelUpdateTime, sampleParameter1, sampleParameter2, trainNumberStop, testSampleCount, reserve1, reserve2, reserve3, reserve4, reserve5, reserve6, reserve7
+        from CDRD_ZL_KJHUAYANDAN
+    </select>
+
+</mapper>

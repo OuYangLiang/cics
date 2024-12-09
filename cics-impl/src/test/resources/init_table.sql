@@ -543,7 +543,9 @@ create table if not exists `huayandan` (
 
 create table if not exists `kjhuayandan` (
     `id`                         bigint          not null    auto_increment comment '主键',
+    `ywrq`                       datetime        not null,
     `mybs`                       varchar(100)    not null,
+    `sssjdwid`                   varchar(100),
     `dtHydid`                    varchar(100),
     `dtHydxh`                    varchar(100),
     `hyorgname`                  varchar(100),
@@ -632,5 +634,6 @@ create table if not exists `kjhuayandan` (
     `upload_time`       datetime        comment '上报时间',
     `operator`          varchar(100)    comment '上报人',
     primary key ( `id` ),
-    unique key ( `mybs`)
+    unique key ( `mybs`),
+    key (`ywrq`)
 ) engine=innodb default charset=utf8;
