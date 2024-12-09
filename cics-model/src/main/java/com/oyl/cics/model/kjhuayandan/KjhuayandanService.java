@@ -36,7 +36,7 @@ public class KjhuayandanService {
             }
         }
 
-        Map<String, List<Kjhuayandan>> map = null;//huayandans.stream().collect(Collectors.groupingBy(i -> Grouper.inst.group(i.getSssjdwid())));
+        Map<String, List<Kjhuayandan>> map = huayandans.stream().collect(Collectors.groupingBy(i -> Grouper.inst.group(i.getSssjdwid())));
 
         boolean success = true;
         for (Map.Entry<String, List<Kjhuayandan>> entry : map.entrySet()) {
