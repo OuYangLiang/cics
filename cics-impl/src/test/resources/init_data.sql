@@ -15,3 +15,6 @@ insert into `employee` (`phone`, `employee_name`, `department`, `salary`) values
 ('18652930167', '喻敏7', '研发中心', 1900000),
 ('18652930168', '喻敏8', '研发中心', 1900000),
 ('18652930169', '喻敏9', '研发中心', 1900000);
+
+insert into `setting` (`group`, `key`, `value`) values
+('Common', 'autoUpload', 'true');

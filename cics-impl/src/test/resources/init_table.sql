@@ -1,3 +1,12 @@
+create table if not exists `setting` (
+    `id`        bigint      not null    auto_increment comment '主键',
+    `group`     varchar(32) not null    comment '分组',
+    `key`       varchar(32) not null    comment '项目',
+    `value`     varchar(100) not null   comment '值',
+    primary key ( `id` ),
+    unique key ( `group`, `key` )
+) engine=innodb default charset=utf8;
+
 create table if not exists `user_profile` (
     `id`        bigint      not null    auto_increment comment '主键',
     `username`  varchar(32) not null    comment '登录账号',

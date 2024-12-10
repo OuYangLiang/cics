@@ -3,6 +3,7 @@ package com.oyl.cics.impl.employee;
 import com.oyl.cics.model.employee.EmployeeRepos;
 import com.oyl.cics.model.employee.request.SearchCondition;
 import com.oyl.cics.model.employee.response.SearchResult;
+import com.oyl.cics.model.setting.SettingService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,14 @@ import static org.junit.Assert.*;
 public class EmployeeReposTest {
     @Resource
     private EmployeeRepos employeeRepos;
+
+    @Resource
+    private SettingService settingService;
+
+    @Test
+    public void testSetting() {
+        assertTrue(settingService.autoUpload());
+    }
 
     @Test
     public void test() {
