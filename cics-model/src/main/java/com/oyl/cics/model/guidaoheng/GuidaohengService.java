@@ -28,6 +28,15 @@ public class GuidaohengService {
     @Resource
     private Uploader uploader;
 
+    public void autoUpload() throws Exception {
+        List<Guidaoheng> guidaohengs = guidaohengDao.queryForAutoUpload();
+
+        if (guidaohengs != null && !guidaohengs.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", guidaohengs.size());
+            this.upload(guidaohengs, "System");
+        }
+    }
+
     public boolean upload(List<Guidaoheng> guidaohengs, String operator) throws Exception {
 
         if (null == guidaohengs) {

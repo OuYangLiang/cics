@@ -19,4 +19,6 @@ public interface GuidaohengDao {
     List<Guidaoheng> queryRecentRecords();
 
     void override(Guidaoheng guidaoheng);
+
+    List<Guidaoheng> queryForAutoUpload();
 }

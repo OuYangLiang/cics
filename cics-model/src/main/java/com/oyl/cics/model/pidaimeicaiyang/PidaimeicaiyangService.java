@@ -27,6 +27,14 @@ public class PidaimeicaiyangService {
     @Resource
     private Uploader uploader;
 
+    public void autoUpload() throws Exception {
+        List<Pidaimeicaiyang> pidaimeicaiyangs = pidaimeicaiyangDao.queryForAutoUpload();
+        if (null != pidaimeicaiyangs && !pidaimeicaiyangs.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", pidaimeicaiyangs.size());
+            this.upload(pidaimeicaiyangs, "System");
+        }
+    }
+
     public boolean upload(List<Pidaimeicaiyang> pidaimeicaiyangs, String operator) throws Exception {
 
         if (null == pidaimeicaiyangs) {

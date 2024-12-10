@@ -99,4 +99,16 @@ public class GuidaohengDaoImpl implements GuidaohengDao {
 
         guidaohengMapper.override(guidaoheng);
     }
+
+    @Override
+    public List<Guidaoheng> queryForAutoUpload() {
+        List<Guidaoheng> result = guidaohengMapper.queryForAutoUpload();
+        if (null != result) {
+            for (Guidaoheng guidaoheng : result) {
+                guidaoheng.setDtData(guidaohengMapper.queryDetails(guidaoheng.getZmxdocNo()));
+            }
+        }
+
+        return result;
+    }
 }

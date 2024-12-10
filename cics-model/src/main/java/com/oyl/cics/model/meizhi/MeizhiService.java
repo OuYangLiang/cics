@@ -27,6 +27,14 @@ public class MeizhiService {
     @Resource
     private Uploader uploader;
 
+    public void autoUpload() throws Exception {
+        List<Meizhi> meizhis = meizhiDao.queryForAutoUpload();
+        if (null != meizhis && !meizhis.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", meizhis.size());
+            this.upload(meizhis, "System");
+        }
+    }
+
     public boolean upload(List<Meizhi> meizhis, String operator) throws Exception {
 
         if (null == meizhis) {

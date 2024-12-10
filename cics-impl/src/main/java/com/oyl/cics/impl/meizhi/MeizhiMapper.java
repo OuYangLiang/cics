@@ -24,4 +24,6 @@ public interface MeizhiMapper {
     void addDetail(MeizhiDetail detail);
 
     void override(Meizhi meizhi);
+
+    List<Meizhi> queryForAutoUpload();
 }

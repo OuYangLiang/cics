@@ -18,4 +18,6 @@ public interface HuayandanDao {
     List<Huayandan> queryRecentRecords();
 
     void override(Huayandan huayandan);
+
+    List<Huayandan> queryForAutoUpload();
 }

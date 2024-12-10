@@ -27,6 +27,14 @@ public class HuayandanService {
     @Resource
     private Uploader uploader;
 
+    public void autoUpload() throws Exception {
+        List<Huayandan> huayandans = huayandanDao.queryForAutoUpload();
+        if (null != huayandans && !huayandans.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", huayandans.size());
+            this.upload(huayandans, "System");
+        }
+    }
+
     public boolean upload(List<Huayandan> huayandans, String operator) throws Exception {
 
         if (null != huayandans) {

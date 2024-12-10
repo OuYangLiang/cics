@@ -18,4 +18,6 @@ public interface MeizhiDao {
     List<Meizhi> queryRecentRecords();
 
     void override(Meizhi meizhi);
+
+    List<Meizhi> queryForAutoUpload();
 }

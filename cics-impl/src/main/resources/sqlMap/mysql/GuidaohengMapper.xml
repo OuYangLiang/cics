@@ -96,6 +96,12 @@
         <!--<result column="shrq" property="shrq"/>-->
     </resultMap>
 
+    <select id="queryForAutoUpload" resultMap="BaseResultMap">
+        select `id`, `ywrq`, `zmxdocNo`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zczhandian`,  `zczhandianbm`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`, `zname1`,  `zkunnr`,  `vtext`,  `vkorg`, `shouchehao`,  `weichehao`,  `cheshu`, `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`, `wgmgys`, `sjyxt`,  `cheyuan`, `yundanhaoyundanhao`, `jltypetype`,  `jlhqyt`,  `jlhqmc`, `jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`, `sjtsdanwei`, `xtscjlI`,  `xtscjlT`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`, `status`, `upload_time`, `operator`
+        from   `guidaoheng`
+        where `status` = 0 or `status` = 2
+    </select>
+
     <select id="search" resultMap="BaseResultMap">
         select `id`, `ywrq`, `zmxdocNo`,  `ssejdw`,  `ssejdwid`,  `sssjdw`,  `sssjdwid`,  `zczhandian`,  `zczhandianbm`,  `zccheci`,  `chexing`,  `mykuangdianmc`,  `mykuangdianbm`,  `meitanlaiyuan`,  `meitanlaiyuanbm`, `zname1`,  `zkunnr`,  `vtext`,  `vkorg`, `shouchehao`,  `weichehao`,  `cheshu`, `jiliangdanwei`,  `zongpiaozhong`,  `zongmaozhong`,  `zongpizhong`,  `zongjingzhong`,  `koudunzongliang`,  `jiesuanmeiliang`,  `zongyingkui`,  `zongyingdun`,  `zongkuidun`,  `zongyunsun`,  `duiweisj`,  `duiweirq`,  `yewurq`,  `zcmeizhong`,  `zcmeizhongbm`, `wgmgys`, `sjyxt`,  `cheyuan`, `yundanhaoyundanhao`, `jltypetype`,  `jlhqyt`,  `jlhqmc`, `jlhqmcid`,  `daozhan`,  `fazhan`,  `zhongdao`, `sjtsdanwei`, `xtscjlI`,  `xtscjlT`,  `byzd1`,  `byzd2`,  `byzd3`,  `byzd4`,  `byzd5`,  `byzd6`,  `byzd7`,  `byzd8`,  `byzd9`,  `byzd10`, `status`, `upload_time`, `operator`
         from   `guidaoheng`

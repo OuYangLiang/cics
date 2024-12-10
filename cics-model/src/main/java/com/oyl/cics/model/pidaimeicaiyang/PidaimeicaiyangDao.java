@@ -18,4 +18,6 @@ public interface PidaimeicaiyangDao {
     List<Pidaimeicaiyang> queryRecentRecords();
 
     void override(Pidaimeicaiyang pidaimeicaiyang);
+
+    List<Pidaimeicaiyang> queryForAutoUpload();
 }

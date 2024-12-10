@@ -19,4 +19,6 @@ public interface HuayandanMapper {
     void uploadFailed(List<Huayandan> huayandans, String operator);
 
     void override(Huayandan huayandan);
+
+    List<Huayandan> queryForAutoUpload();
 }

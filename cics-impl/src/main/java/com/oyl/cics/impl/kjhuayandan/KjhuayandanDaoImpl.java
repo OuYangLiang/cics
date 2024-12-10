@@ -6,6 +6,7 @@ import com.oyl.cics.model.kjhuayandan.request.SearchCondition;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -45,6 +46,11 @@ public class KjhuayandanDaoImpl implements KjhuayandanDao {
     @Override
     public void override(Kjhuayandan kjhuayandan) {
         kjhuayandanMapper.override(kjhuayandan);
+    }
+
+    @Override
+    public List<Kjhuayandan> queryForAutoUpload() {
+        return kjhuayandanMapper.queryForAutoUpload();
     }
 
     @Override

@@ -69,6 +69,18 @@ public class MeizhiDaoImpl implements MeizhiDao {
     }
 
     @Override
+    public List<Meizhi> queryForAutoUpload() {
+        List<Meizhi> result = meizhiMapper.queryForAutoUpload();
+        if (null != result) {
+            for (Meizhi item : result) {
+                item.setDtHydbhxq(meizhiMapper.queryDetail(item.getMybs()));
+            }
+        }
+
+        return result;
+    }
+
+    @Override
     public List<Meizhi> queryRecentRecords() {
         List<Meizhi> list = meizhiOracleMapper.queryRecentRecords();
 

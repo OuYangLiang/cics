@@ -24,4 +24,6 @@ public interface QichechengMapper {
     void addDetail(QichechengDetail detail);
 
     void override(Qichecheng qichecheng);
+
+    List<Qichecheng> queryForAutoUpload();
 }

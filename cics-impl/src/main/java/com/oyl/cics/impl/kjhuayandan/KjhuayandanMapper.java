@@ -17,4 +17,6 @@ public interface KjhuayandanMapper {
     void uploadFailed(List<Kjhuayandan> kjhuayandans, String operator);
 
     void override(Kjhuayandan kjhuayandan);
+
+    List<Kjhuayandan> queryForAutoUpload();
 }

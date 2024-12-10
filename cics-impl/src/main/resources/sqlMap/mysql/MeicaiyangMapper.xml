@@ -69,6 +69,12 @@
         <result column="dtCydyreserve5" property="dtCydyreserve5" />
     </resultMap>
 
+    <select id="queryForAutoUpload" resultMap="BaseResultMap">
+        select `id`, `ywrq`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, <!--`sjscfs`,--> `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        from   `meicaiyang`
+        where `status` = 0 or `status` = 2
+    </select>
+
     <select id="search" resultMap="BaseResultMap">
         select `id`, `ywrq`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `cypml`, `cydysl`, `sjyxt`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, <!--`sjscfs`,--> `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from   `meicaiyang`

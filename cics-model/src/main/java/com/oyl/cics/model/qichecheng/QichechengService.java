@@ -27,6 +27,14 @@ public class QichechengService {
     @Resource
     private Uploader uploader;
 
+    public void autoUpload() throws Exception {
+        List<Qichecheng> qichechengs = qichechengDao.queryForAutoUpload();
+        if (null != qichechengs && !qichechengs.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", qichechengs.size());
+            this.upload(qichechengs, "System");
+        }
+    }
+
     public boolean upload(List<Qichecheng> qichechengs, String operator) throws Exception {
 
         if (null == qichechengs) {

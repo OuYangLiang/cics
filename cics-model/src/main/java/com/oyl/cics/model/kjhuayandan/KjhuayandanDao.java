@@ -18,4 +18,6 @@ public interface KjhuayandanDao {
     List<Kjhuayandan> queryRecentRecords();
 
     void override(Kjhuayandan huayandan);
+
+    List<Kjhuayandan> queryForAutoUpload();
 }

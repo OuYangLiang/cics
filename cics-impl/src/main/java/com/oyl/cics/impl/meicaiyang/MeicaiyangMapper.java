@@ -24,4 +24,6 @@ public interface MeicaiyangMapper {
     void addDetail(MeicaiyangDetail detail);
 
     void override(Meicaiyang meicaiyang);
+
+    List<Meicaiyang> queryForAutoUpload();
 }

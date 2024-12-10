@@ -24,4 +24,6 @@ public interface PidaimeicaiyangMapper {
     void addDetail(PidaimeicaiyangDetail detail);
 
     void override(Pidaimeicaiyang pidaimeicaiyang);
+
+    List<Pidaimeicaiyang> queryForAutoUpload();
 }

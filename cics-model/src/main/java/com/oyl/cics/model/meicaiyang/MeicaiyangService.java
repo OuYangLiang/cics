@@ -27,6 +27,14 @@ public class MeicaiyangService {
     @Resource
     private Uploader uploader;
 
+    public void autoUpload() throws Exception {
+        List<Meicaiyang> meicaiyangs = meicaiyangDao.queryForAutoUpload();
+        if (null != meicaiyangs && !meicaiyangs.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", meicaiyangs.size());
+            this.upload(meicaiyangs, "System");
+        }
+    }
+
     public boolean upload(List<Meicaiyang> meicaiyangs, String operator) throws Exception {
 
         if (null == meicaiyangs) {

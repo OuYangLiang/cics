@@ -69,6 +69,17 @@ public class PidaimeicaiyangDaoImpl implements PidaimeicaiyangDao {
     }
 
     @Override
+    public List<Pidaimeicaiyang> queryForAutoUpload() {
+        List<Pidaimeicaiyang> result = pidaimeicaiyangMapper.queryForAutoUpload();
+        if (null != result) {
+            for (Pidaimeicaiyang item : result) {
+                item.setDtCydy(pidaimeicaiyangMapper.queryDetails(item.getMybs()));
+            }
+        }
+        return result;
+    }
+
+    @Override
     public List<Pidaimeicaiyang> queryRecentRecords() {
         List<Pidaimeicaiyang> list = pidaimeicaiyangOracleMapper.queryRecentRecords();
 

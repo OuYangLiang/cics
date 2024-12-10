@@ -18,4 +18,6 @@ public interface QichechengDao {
     List<Qichecheng> queryRecentRecords();
 
     void override(Qichecheng qichecheng);
+
+    List<Qichecheng> queryForAutoUpload();
 }

@@ -103,6 +103,12 @@
         <result column="dtHyd8id" property="dtHyd8id" />
     </resultMap>
 
+    <select id="queryForAutoUpload" resultMap="BaseResultMap">
+        select `id`, `ywrq`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `upload_status`, `upload_time`, `operator`
+        from   `meizhi`
+        where `status` = 0 or `status` = 2
+    </select>
+
     <select id="search" resultMap="BaseResultMap">
         select `id`, `ywrq`, `mybs`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hypml`, `meizhong`, `meizhongbm`, `hyorgname`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `assayI`, `assayT`, `ngymt`, `ngymad`, `nlcfaar`, `ngyaad`, `nlcfad`, `nlcfvar`, `ngyvad`, `nlcfvd`, `ngyvdaf`, `nlcfstar`, `nlcfstad`, `nlcfstd`, `nqgrdmj`, `nqnetarmj`, `nqnetmarkc`, `nqbadmj`, `nqgradmj`, `nqgradkc`, `nqgrdkc`, `nqgrarmj`, `bondindex`, `nhrDt`, `nhrSt`, `nhrHt`, `nhrFt`, `nymqcrc`, `nyshar`, `nyshad`, `nyshd`, `nyhdaf`, `nyscad`, `nyscd`, `nycdaf`, `hgi`, `nysfcad`, `nyshfcd`, `mhcfAlo`, `mhcfCao`, `mhcfMgo`, `mhcfSo`, `mhcfTio`, `mhcfPo`, `mhcfKo`, `mhcfNao`, `mhcfSio`, `mhcfFeo`, `zcdanhao`, `xiecheid`, `loadStartNo`, `loadEndNo`, `bzId`, `status`, `kuaimanhui`, `wtdh`, `czrq`, `zsbh`, `beizhu`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `hydsl`, `upload_status`, `upload_time`, `operator`
         from   `meizhi`

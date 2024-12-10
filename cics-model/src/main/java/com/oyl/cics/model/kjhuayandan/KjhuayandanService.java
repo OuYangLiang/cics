@@ -28,15 +28,23 @@ public class KjhuayandanService {
     @Resource
     private Uploader uploader;
 
-    public boolean upload(List<Kjhuayandan> huayandans, String operator) throws Exception {
+    public void autoUpload() throws Exception {
+        List<Kjhuayandan> kjhuayandans = kjhuayandanDao.queryForAutoUpload();
+        if (null != kjhuayandans && !kjhuayandans.isEmpty()) {
+            log.info("拉取{}条数据，准备自动上传", kjhuayandans.size());
+            this.upload(kjhuayandans, "System");
+        }
+    }
 
-        if (null != huayandans) {
-            for (Kjhuayandan item : huayandans) {
+    public boolean upload(List<Kjhuayandan> kjhuayandans, String operator) throws Exception {
+
+        if (null != kjhuayandans) {
+            for (Kjhuayandan item : kjhuayandans) {
                 item.setDefaultValues();
             }
         }
 
-        Map<String, List<Kjhuayandan>> map = huayandans.stream().collect(Collectors.groupingBy(i -> Grouper.inst.group(i.getSssjdwid())));
+        Map<String, List<Kjhuayandan>> map = kjhuayandans.stream().collect(Collectors.groupingBy(i -> Grouper.inst.group(i.getSssjdwid())));
 
         boolean success = true;
         for (Map.Entry<String, List<Kjhuayandan>> entry : map.entrySet()) {

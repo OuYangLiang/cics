@@ -24,4 +24,6 @@ public interface GuidaohengMapper {
     void addDetail(GuidaohengDetail detail);
 
     void override(Guidaoheng guidaoheng);
+
+    List<Guidaoheng> queryForAutoUpload();
 }

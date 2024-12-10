@@ -69,6 +69,17 @@ public class MeicaiyangDaoImpl implements MeicaiyangDao {
     }
 
     @Override
+    public List<Meicaiyang> queryForAutoUpload() {
+        List<Meicaiyang> result = meicaiyangMapper.queryForAutoUpload();
+        if (null != result) {
+            for (Meicaiyang item : result) {
+                item.setDtCydy(meicaiyangMapper.queryDetails(item.getMybs()));
+            }
+        }
+        return result;
+    }
+
+    @Override
     public List<Meicaiyang> queryRecentRecords() {
         List<Meicaiyang> list = meicaiyangOracleMapper.queryRecentRecords();
 

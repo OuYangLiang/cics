@@ -18,4 +18,6 @@ public interface MeicaiyangDao {
     List<Meicaiyang> queryRecentRecords();
 
     void override(Meicaiyang meicaiyang);
+
+    List<Meicaiyang> queryForAutoUpload();
 }

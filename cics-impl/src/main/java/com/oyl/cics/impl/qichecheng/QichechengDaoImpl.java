@@ -89,4 +89,16 @@ public class QichechengDaoImpl implements QichechengDao {
 
         qichechengMapper.override(qichecheng);
     }
+
+    @Override
+    public List<Qichecheng> queryForAutoUpload() {
+        List<Qichecheng> result = qichechengMapper.queryForAutoUpload();
+        if (null != result) {
+            for (Qichecheng qichecheng : result) {
+                qichecheng.setDtData(qichechengMapper.queryDetails(qichecheng.getZmxdocNo()));
+            }
+        }
+
+        return result;
+    }
 }
