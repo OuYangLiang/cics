@@ -39,7 +39,7 @@ public class AutoUploadJob {
     @Resource
     private SettingService settingService;
 
-    @Scheduled(cron = "0 0 8 * * ?")
+    @Scheduled(cron = "0 0 4 * * ?")
     private void configureTasks() {
 
         if (!settingService.autoUpload()) {
@@ -72,7 +72,7 @@ public class AutoUploadJob {
             log.error(e.getMessage(), e);
         }
 
-        try {
+        /*try {
             meizhiService.autoUpload();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -88,7 +88,7 @@ public class AutoUploadJob {
             kjhuayandanService.autoUpload();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        }
+        }*/
 
         log.info("自动上传任务执行结束");
     }
