@@ -1,6 +1,7 @@
 package com.oyl.cics.model.user;
 import com.oyl.cics.model.common.utils.MD5Encryptor;
 import com.oyl.cics.model.common.validation.ValidParam;
+import com.oyl.cics.model.user.request.RemoveRequest;
 import com.oyl.cics.model.user.request.SearchCondition;
 import com.oyl.cics.model.user.response.SearchResult;
 import com.oyl.cics.model.user.request.CreateRequest;
@@ -48,5 +49,10 @@ public class UserRepos {
 
         request.setPassword(MD5Encryptor.inst.getMD5(request.getPassword().trim()));
         return userDao.create(request);
+    }
+
+    @ValidParam
+    public void remove(@Valid RemoveRequest request) {
+        userDao.remove(request.getUserId());
     }
 }

@@ -13,4 +13,6 @@ public interface UserMapper {
     int numOf(SearchCondition condition);
 
     List<User> search(SearchCondition condition);
+
+    void remove(long userId);
 }

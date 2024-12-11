@@ -50,4 +50,9 @@
             #{password}
         )
     </insert>
+
+    <delete id="remove">
+        delete from `user_profile`
+        where `id` = #{param1}
+    </delete>
 </mapper>

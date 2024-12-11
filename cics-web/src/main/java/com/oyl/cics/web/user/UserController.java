@@ -4,6 +4,7 @@ package com.oyl.cics.web.user;
 import com.oyl.cics.model.user.User;
 import com.oyl.cics.model.user.UserRepos;
 import com.oyl.cics.model.user.request.CreateRequest;
+import com.oyl.cics.model.user.request.RemoveRequest;
 import com.oyl.cics.model.user.request.SearchCondition;
 import com.oyl.cics.model.user.response.SearchResult;
 import com.oyl.cics.web.common.result.RestResult;
@@ -32,8 +33,14 @@ public class UserController {
     }
 
     @PostMapping("/user/create")
-    public RestResult<User> search(@RequestBody @Valid @NotNull(message = "请求对象不能为空") CreateRequest createRequest, BindingResult bindingResult) {
+    public RestResult<User> create(@RequestBody @Valid @NotNull(message = "请求对象不能为空") CreateRequest createRequest, BindingResult bindingResult) {
         User user = userRepos.create(createRequest);
         return RestResult.ok(user);
+    }
+
+    @PostMapping("/user/remove")
+    public RestResult<Void> remove(@RequestBody @Valid @NotNull(message = "请求对象不能为空") RemoveRequest request, BindingResult bindingResult) {
+        userRepos.remove(request);
+        return RestResult.ok();
     }
 }

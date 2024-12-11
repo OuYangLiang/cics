@@ -39,4 +39,9 @@ public class UserDaoImpl implements UserDao {
         return userMapper.search(condition);
     }
 
+    @Override
+    public void remove(long userId) {
+        userMapper.remove(userId);
+    }
+
 }
