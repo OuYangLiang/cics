@@ -14,4 +14,8 @@ public class SettingService {
 
         return Boolean.parseBoolean(val);
     }
+
+    public void setAutoUpload(boolean val) {
+        settingDao.set("Common", "autoUpload", Boolean.toString(val));
+    }
 }

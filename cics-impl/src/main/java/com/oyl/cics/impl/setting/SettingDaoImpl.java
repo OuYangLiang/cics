@@ -14,4 +14,9 @@ public class SettingDaoImpl implements SettingDao {
     public String query(String group, String key) {
         return settingMapper.query(group, key);
     }
+
+    @Override
+    public void set(String group, String key, String value) {
+        settingMapper.set(group, key, value);
+    }
 }

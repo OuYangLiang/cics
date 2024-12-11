@@ -10,4 +10,10 @@
         limit 1
     </select>
 
+    <update id="set">
+        update `setting` set
+        `value` = #{param3}
+        where `group` = #{param1} and `key` = #{param2}
+    </update>
+
 </mapper>

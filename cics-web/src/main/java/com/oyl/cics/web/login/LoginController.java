@@ -26,8 +26,6 @@ public class LoginController {
     @RequestMapping(path="/login")
     public RestResult<String> login(@RequestBody @Valid LoginRequest loginRequest, BindingResult bindingResult) {
 
-        log.info("Login method called with username [{}] and password[{}]", loginRequest.getUsername(), loginRequest.getPassword());
-
         User user = userRepos.queryByUsername(loginRequest.getUsername());
 
         if (null == user || !user.getPassword().equals(MD5Encryptor.inst.getMD5(loginRequest.getPassword()))) {
