@@ -6,7 +6,7 @@ import com.google.gson.GsonBuilder;
 public enum JsonUtil {
     inst;
 
-    private final Gson gson = new GsonBuilder().create();
+    private final Gson gson = new GsonBuilder().serializeNulls().create();
 
     public String toJson(Object obj) {
         return gson.toJson(obj);
