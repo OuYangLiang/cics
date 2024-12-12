@@ -3,6 +3,7 @@
 <mapper namespace="com.oyl.cics.impl.pidaimeicaiyang.PidaimeicaiyangOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.pidaimeicaiyang.Pidaimeicaiyang">
+        <result column="id" property="id" />
         <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="ssejdw" property="ssejdw" />
@@ -13,38 +14,61 @@
         <result column="cydysl" property="cydysl" />
         <result column="sjyxt" property="sjyxt" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="xtscjlI" property="xtscjlI" />
+        <result column="xtscjlT" property="xtscjlT" />
         <result column="sjscfs" property="sjscfs" />
+        <result column="byzd1" property="byzd1" />
+        <result column="byzd2" property="byzd2" />
+        <result column="byzd3" property="byzd3" />
+        <result column="byzd4" property="byzd4" />
+        <result column="byzd5" property="byzd5" />
+        <result column="byzd6" property="byzd6" />
+        <result column="byzd7" property="byzd7" />
+        <result column="byzd8" property="byzd8" />
+        <result column="byzd9" property="byzd9" />
+        <result column="byzd10" property="byzd10" />
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.pidaimeicaiyang.PidaimeicaiyangDetail">
         <result column="mybs" property="mybs" />
-<!--        <result column="dtgid" property="dtgid" />-->
-        <result column="dtcydyxh" property="dtCydyxh" />
-        <result column="dtcysbbm" property="dtCysbbm" />
-        <result column="dtcysbmc" property="dtCysbmc" />
-        <result column="dtcyfs" property="dtCyfs" />
-        <result column="dtcydybm" property="dtCydybm" />
-        <result column="dtcysdate" property="dtCysdate" />
-        <result column="dtcystime" property="dtCystime" />
-        <result column="dtcyedate" property="dtCyedate" />
-        <result column="dtcyetime" property="dtCyetime" />
-        <result column="dtcysbid" property="dtCysbid" />
-        <result column="dtcydyml" property="dtCydyml" />
-        <result column="dtcyjgsj" property="dtCyjgsj" />
-        <result column="dtcjzyl" property="dtCjzyl" />
-        <result column="dtyijisfsj" property="dtYijisfsj" />
-        <result column="dtyijisfjg" property="dtYijisfjg" />
-        <result column="dtyijisfcysj" property="dtYijisfcysj" />
-        <result column="dtyijisfcs" property="dtYijisfcs" />
-    </resultMap>
+        <result column="dtCydyxh" property="dtCydyxh" />
+        <result column="dtCysbbm" property="dtCysbbm" />
+        <result column="dtCyfs" property="dtCyfs" />
+        <result column="dtCydybm" property="dtCydybm" />
+        <result column="dtCysdate" property="dtCysdate" />
+        <result column="dtCystime" property="dtCystime" />
+        <result column="dtCyedate" property="dtCyedate" />
+        <result column="dtCyetime" property="dtCyetime" />
+        <result column="dtCysbmc" property="dtCysbmc" />
+        <result column="dtCysbid" property="dtCysbid" />
+        <result column="dtCydyml" property="dtCydyml" />
+        <result column="dtCyjgsj" property="dtCyjgsj" />
+        <result column="dtCjzyl" property="dtCjzyl" />
+        <result column="dtYijisfsj" property="dtYijisfsj" />
+        <result column="dtYijisfjg" property="dtYijisfjg" />
+        <result column="dtYijisfcysj" property="dtYijisfcysj" />
+        <result column="dtYijisfcs" property="dtYijisfcs" />
+        <result column="dtErjisfsj" property="dtErjisfsj" />
+        <result column="dtErjisfjg" property="dtErjisfjg" />
+        <result column="dtErjisfcysj" property="dtErjisfcysj" />
+        <result column="dtErjisfcs" property="dtErjisfcs" />
+        <result column="dtCyzl" property="dtCyzl" />
+        <result column="dtLytongshu" property="dtLytongshu" />
+        <result column="dtYlzl" property="dtYlzl" />
+        <result column="dtCydyreserve1" property="dtCydyreserve1" />
+        <result column="dtCydyreserve2" property="dtCydyreserve2" />
+        <result column="dtCydyreserve3" property="dtCydyreserve3" />
+        <result column="dtCydyreserve4" property="dtCydyreserve4" />
+        <result column="dtCydyreserve5" property="dtCydyreserve5" />
+    </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, sjscfs
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, xtscjlI, xtscjlT, sjscfs, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
         from CDRD_ZL_PIDAIMEICAIYANG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select mybs <!--dtgid-->, dtcydyxh, dtcysbbm, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs
+        select mybs, dtCydyxh, dtCysbbm, dtCyfs, dtCydybm, dtCysdate, dtCystime, dtCyedate, dtCyetime, dtCysbmc, dtCysbid, dtCydyml, dtCyjgsj, dtCjzyl, dtYijisfsj, dtYijisfjg, dtYijisfcysj, dtYijisfcs, dtErjisfsj, dtErjisfjg, dtErjisfcysj, dtErjisfcs, dtCyzl, dtLytongshu, dtYlzl, dtCydyreserve1, dtCydyreserve2, dtCydyreserve3, dtCydyreserve4, dtCydyreserve5
         from  CDRD_ZL_PIDAIMEICAIYANG_DETAIL
         where mybs = #{arg0}
     </select>

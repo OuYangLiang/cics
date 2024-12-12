@@ -13,32 +13,64 @@
         <result column="cydysl" property="cydysl" />
         <result column="sjyxt" property="sjyxt" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="xtscjlI" property="xtscjlI" />
+        <result column="xtscjlT" property="xtscjlT" />
+        <!--        <result column="sjscfs" property="sjscfs" />-->
+        <result column="byzd1" property="byzd1" />
+        <result column="byzd2" property="byzd2" />
+        <result column="byzd3" property="byzd3" />
+        <result column="byzd4" property="byzd4" />
+        <result column="byzd5" property="byzd5" />
+        <result column="byzd6" property="byzd6" />
+        <result column="byzd7" property="byzd7" />
+        <result column="byzd8" property="byzd8" />
+        <result column="byzd9" property="byzd9" />
+        <result column="byzd10" property="byzd10" />
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.meicaiyang.MeicaiyangDetail">
         <result column="mybs" property="mybs" />
-        <result column="dtcydyxh" property="dtCydyxh" />
-        <result column="dtcydybm" property="dtCydybm" />
-        <result column="dtcyfs" property="dtCyfs" />
-        <result column="dtcysdate" property="dtCysdate" />
-        <result column="dtcystime" property="dtCystime" />
-        <result column="dtcyedate" property="dtCyedate" />
-        <result column="dtcyetime" property="dtCyetime" />
-        <result column="dtcysbmc" property="dtCysbmc" />
-        <result column="dtcysbid" property="dtCysbid" />
-        <result column="dtcydyml" property="dtCydyml" />
-        <result column="dtcydycs" property="dtCydycs" />
-        <result column="dtcydyds" property="dtCydyds" />
-        <result column="dtcysd" property="dtCysd" />
-    </resultMap>
+        <result column="dtCydyxh" property="dtCydyxh" />
+        <result column="dtCydybm" property="dtCydybm" />
+        <result column="dtCyfs" property="dtCyfs" />
+        <result column="dtCyquyu" property="dtCyquyu" />
+        <result column="dtCysdate" property="dtCysdate" />
+        <result column="dtCystime" property="dtCystime" />
+        <result column="dtCyedate" property="dtCyedate" />
+        <result column="dtCyetime" property="dtCyetime" />
+        <result column="dtCysbmc" property="dtCysbmc" />
+        <result column="dtCysbid" property="dtCysbid" />
+        <result column="dtCydyml" property="dtCydyml" />
+        <result column="dtCydycs" property="dtCydycs" />
+        <result column="dtCydyds" property="dtCydyds" />
+        <result column="dtRengongcyzl" property="dtRengongcyzl" />
+        <result column="dtCysd" property="dtCysd" />
+        <result column="dtCjzyl" property="dtCjzyl" />
+        <result column="dtYijisfsj" property="dtYijisfsj" />
+        <result column="dtYijisfjg" property="dtYijisfjg" />
+        <result column="dtYijisfcysj" property="dtYijisfcysj" />
+        <result column="dtYijisfcs" property="dtYijisfcs" />
+        <result column="dtErjisfsj" property="dtErjisfsj" />
+        <result column="dtErjisfjg" property="dtErjisfjg" />
+        <result column="dtErjisfcysj" property="dtErjisfcysj" />
+        <result column="dtErjisfcs" property="dtErjisfcs" />
+        <result column="dtCyzl" property="dtCyzl" />
+        <result column="dtLytonshu" property="dtLytonshu" />
+        <result column="dtLyzl" property="dtLyzl" />
+        <result column="dtCydyreserve1" property="dtCydyreserve1" />
+        <result column="dtCydyreserve2" property="dtCydyreserve2" />
+        <result column="dtCydyreserve3" property="dtCydyreserve3" />
+        <result column="dtCydyreserve4" property="dtCydyreserve4" />
+        <result column="dtCydyreserve5" property="dtCydyreserve5" />
+    </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, xtscjlI, xtscjlT, <!--sjscfs,--> byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
         from CDRD_ZL_MEICAIYANG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select mybs, dtcydyxh, dtcydybm, dtcyfs, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbmc, dtcysbid, dtcydyml, dtcydycs, dtcydyds, dtcysd
+        select mybs, dtCydyxh, dtCydybm, dtCyfs, dtCyquyu, dtCysdate, dtCystime, dtCyedate, dtCyetime, dtCysbmc, dtCysbid, dtCydyml, dtCydycs, dtCydyds, dtRengongcyzl, dtCysd, dtCjzyl, dtYijisfsj, dtYijisfjg, dtYijisfcysj, dtYijisfcs, dtErjisfsj, dtErjisfjg, dtErjisfcysj, dtErjisfcs, dtCyzl, dtLytonshu, dtLyzl, dtCydyreserve1, dtCydyreserve2, dtCydyreserve3, dtCydyreserve4, dtCydyreserve5
         from  CDRD_ZL_MEICAIYANG_DETAIL
         where mybs = #{arg0}
     </select>

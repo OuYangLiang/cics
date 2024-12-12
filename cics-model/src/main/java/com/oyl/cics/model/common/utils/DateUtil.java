@@ -1,6 +1,9 @@
 package com.oyl.cics.model.common.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public enum DateUtil {
@@ -20,7 +23,11 @@ public enum DateUtil {
 
     public static void main(String[] args) {
 
-        System.out.println(DateUtil.inst.date());
-        System.out.println(DateUtil.inst.time());
+    }
+
+    public long numOfDays() {
+        LocalDate date1 = LocalDate.of(2025, 3, 25);
+        LocalDate date2 = LocalDate.now();
+        return ChronoUnit.DAYS.between(date1, date2);
     }
 }

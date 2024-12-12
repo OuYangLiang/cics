@@ -155,19 +155,18 @@
     </delete>
 
     <insert id="addDetail">
-        insert into `pidaimeicaiyang_detail` (mybs <!--dtgid-->, dtcydyxh, dtcysbbm, dtcysbmc, dtcyfs, dtcydybm, dtcysdate, dtcystime, dtcyedate, dtcyetime, dtcysbid, dtcydyml, dtcyjgsj, dtcjzyl, dtyijisfsj, dtyijisfjg, dtyijisfcysj, dtyijisfcs)
+        insert into `pidaimeicaiyang_detail` (`mybs`, `dtCydyxh`, `dtCysbbm`, `dtCyfs`, `dtCydybm`, `dtCysdate`, `dtCystime`, `dtCyedate`, `dtCyetime`, `dtCysbmc`, `dtCysbid`, `dtCydyml`, `dtCyjgsj`, `dtCjzyl`, `dtYijisfsj`, `dtYijisfjg`, `dtYijisfcysj`, `dtYijisfcs`, `dtErjisfsj`, `dtErjisfjg`, `dtErjisfcysj`, `dtErjisfcs`, `dtCyzl`, `dtLytongshu`, `dtYlzl`, `dtCydyreserve1`, `dtCydyreserve2`, `dtCydyreserve3`, `dtCydyreserve4`, `dtCydyreserve5`)
         values (
         #{mybs},
-        <!--#{dtgid},-->
         #{dtCydyxh},
         #{dtCysbbm},
-        #{dtCysbmc},
         #{dtCyfs},
         #{dtCydybm},
         #{dtCysdate},
         #{dtCystime},
         #{dtCyedate},
         #{dtCyetime},
+        #{dtCysbmc},
         #{dtCysbid},
         #{dtCydyml},
         #{dtCyjgsj},
@@ -175,7 +174,19 @@
         #{dtYijisfsj},
         #{dtYijisfjg},
         #{dtYijisfcysj},
-        #{dtYijisfcs}
+        #{dtYijisfcs},
+        #{dtErjisfsj},
+        #{dtErjisfjg},
+        #{dtErjisfcysj},
+        #{dtErjisfcs},
+        #{dtCyzl},
+        #{dtLytongshu},
+        #{dtYlzl},
+        #{dtCydyreserve1},
+        #{dtCydyreserve2},
+        #{dtCydyreserve3},
+        #{dtCydyreserve4},
+        #{dtCydyreserve5}
         )
     </insert>
 
@@ -191,7 +202,19 @@
         `cydysl`,
         `sjyxt`,
         `sjtsdanwei`,
+        `xtscjlI`,
+        `xtscjlT`,
         `sjscfs`,
+        `byzd1`,
+        `byzd2`,
+        `byzd3`,
+        `byzd4`,
+        `byzd5`,
+        `byzd6`,
+        `byzd7`,
+        `byzd8`,
+        `byzd9`,
+        `byzd10`,
         `status`
         ) values (
         #{ywrq},
@@ -204,7 +227,19 @@
         #{cydysl},
         #{sjyxt},
         #{sjtsdanwei},
+        #{xtscjlI},
+        #{xtscjlT},
         #{sjscfs},
+        #{byzd1},
+        #{byzd2},
+        #{byzd3},
+        #{byzd4},
+        #{byzd5},
+        #{byzd6},
+        #{byzd7},
+        #{byzd8},
+        #{byzd9},
+        #{byzd10},
         0
         ) ON DUPLICATE KEY UPDATE
         `ywrq` = #{ywrq},
@@ -217,6 +252,18 @@
         `cydysl` = #{cydysl},
         `sjyxt` = #{sjyxt},
         `sjtsdanwei` = #{sjtsdanwei},
-        `sjscfs` = #{sjscfs}
+        `xtscjlI` = #{xtscjlI},
+        `xtscjlT` = #{xtscjlT},
+        `sjscfs` = #{sjscfs},
+        `byzd1` = #{byzd1},
+        `byzd2` = #{byzd2},
+        `byzd3` = #{byzd3},
+        `byzd4` = #{byzd4},
+        `byzd5` = #{byzd5},
+        `byzd6` = #{byzd6},
+        `byzd7` = #{byzd7},
+        `byzd8` = #{byzd8},
+        `byzd9` = #{byzd9},
+        `byzd10` = #{byzd10}
     </insert>
 </mapper>

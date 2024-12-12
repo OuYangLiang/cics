@@ -16,8 +16,8 @@
         <result column="jiancefangshi" property="jiancefangshi" />
         <result column="jiancesbmc" property="jiancesbmc" />
         <result column="jiancesbid" property="jiancesbid" />
-        <result column="assayi" property="assayI" />
-        <result column="assayt" property="assayT" />
+        <result column="assayI" property="assayI" />
+        <result column="assayT" property="assayT" />
         <result column="ngymt" property="ngymt" />
         <result column="ngymad" property="ngymad" />
         <result column="nlcfaar" property="nlcfaar" />
@@ -34,29 +34,72 @@
         <result column="nqnetarmj" property="nqnetarmj" />
         <result column="nqnetmarkc" property="nqnetmarkc" />
         <result column="nqbadmj" property="nqbadmj" />
+        <result column="nqgradmj" property="nqgradmj" />
+        <result column="nqgradkc" property="nqgradkc" />
+        <result column="nqgrdkc" property="nqgrdkc" />
+        <result column="nqgrarmj" property="nqgrarmj" />
+        <result column="bondindex" property="bondindex" />
+        <result column="nhrDt" property="nhrDt" />
+        <result column="nhrSt" property="nhrSt" />
+        <result column="nhrHt" property="nhrHt" />
+        <result column="nhrFt" property="nhrFt" />
+        <result column="nymqcrc" property="nymqcrc" />
         <result column="nyshar" property="nyshar" />
         <result column="nyshad" property="nyshad" />
         <result column="nyshd" property="nyshd" />
         <result column="nyhdaf" property="nyhdaf" />
+        <result column="nyscad" property="nyscad" />
+        <result column="nyscd" property="nyscd" />
+        <result column="nycdaf" property="nycdaf" />
+        <result column="hgi" property="hgi" />
+        <result column="nysfcad" property="nysfcad" />
+        <result column="nyshfcd" property="nyshfcd" />
+        <result column="mhcfAlo" property="mhcfAlo" />
+        <result column="mhcfCao" property="mhcfCao" />
+        <result column="mhcfMgo" property="mhcfMgo" />
+        <result column="mhcfSo" property="mhcfSo" />
+        <result column="mhcfTio" property="mhcfTio" />
+        <result column="mhcfPo" property="mhcfPo" />
+        <result column="mhcfKo" property="mhcfKo" />
+        <result column="mhcfNao" property="mhcfNao" />
+        <result column="mhcfSio" property="mhcfSio" />
+        <result column="mhcfFeo" property="mhcfFeo" />
+        <result column="zcdanhao" property="zcdanhao" />
+        <result column="xiecheid" property="xiecheid" />
+        <result column="loadStartNo" property="loadStartNo" />
+        <result column="loadEndNo" property="loadEndNo" />
+        <result column="bzId" property="bzId" />
+        <result column="status" property="status" />
         <result column="kuaimanhui" property="kuaimanhui" />
+        <result column="wtdh" property="wtdh" />
+        <result column="czrq" property="czrq" />
+        <result column="zsbh" property="zsbh" />
+        <result column="beizhu" property="beizhu" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="xtscjlI" property="xtscjlI" />
+        <result column="xtscjlT" property="xtscjlT" />
+        <result column="byzd1" property="byzd1" />
+        <result column="byzd2" property="byzd2" />
+        <result column="byzd3" property="byzd3" />
+        <result column="byzd4" property="byzd4" />
+        <result column="byzd5" property="byzd5" />
         <result column="hydsl" property="hydsl" />
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.meizhi.MeizhiDetail">
         <result column="mybs" property="mybs" />
-        <result column="dthyd1id" property="dtHyd1id" />
-        <result column="dthyd2id" property="dtHyd2id" />
-        <result column="dthyd3id" property="dtHyd3id" />
-        <result column="dthyd4id" property="dtHyd4id" />
-        <result column="dthyd5id" property="dtHyd5id" />
-        <result column="dthyd6id" property="dtHyd6id" />
-        <result column="dthyd7id" property="dtHyd7id" />
-        <result column="dthyd8id" property="dtHyd8id" />
-    </resultMap>
+        <result column="dtHyd1id" property="dtHyd1id" />
+        <result column="dtHyd2id" property="dtHyd2id" />
+        <result column="dtHyd3id" property="dtHyd3id" />
+        <result column="dtHyd4id" property="dtHyd4id" />
+        <result column="dtHyd5id" property="dtHyd5id" />
+        <result column="dtHyd6id" property="dtHyd6id" />
+        <result column="dtHyd7id" property="dtHyd7id" />
+        <result column="dtHyd8id" property="dtHyd8id" />
+    </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayI, assayT, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nyshar, nyshad, nyshd, nyhdaf, kuaimanhui, sjtsdanwei, hydsl
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, hypml, meizhong, meizhongbm, hyorgname, jiancefangshi, jiancesbmc, jiancesbid, assayI, assayT, ngymt, ngymad, nlcfaar, ngyaad, nlcfad, nlcfvar, ngyvad, nlcfvd, ngyvdaf, nlcfstar, nlcfstad, nlcfstd, nqgrdmj, nqnetarmj, nqnetmarkc, nqbadmj, nqgradmj, nqgradkc, nqgrdkc, nqgrarmj, bondindex, nhrDt, nhrSt, nhrHt, nhrFt, nymqcrc, nyshar, nyshad, nyshd, nyhdaf, nyscad, nyscd, nycdaf, hgi, nysfcad, nyshfcd, mhcfAlo, mhcfCao, mhcfMgo, mhcfSo, mhcfTio, mhcfPo, mhcfKo, mhcfNao, mhcfSio, mhcfFeo, zcdanhao, xiecheid, loadStartNo, loadEndNo, bzId, status, kuaimanhui, wtdh, czrq, zsbh, beizhu, sjtsdanwei, xtscjlI, xtscjlT, byzd1, byzd2, byzd3, byzd4, byzd5, hydsl
         from CDRD_ZL_MEIZHI
     </select>
 

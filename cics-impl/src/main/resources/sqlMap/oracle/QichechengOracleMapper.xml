@@ -3,63 +3,97 @@
 <mapper namespace="com.oyl.cics.impl.qichecheng.QichechengOracleMapper">
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
-        <result column="ywrq" property="ywrq" />
-        <result column="zmxdocno" property="zmxdocNo" />
-        <result column="ssejdw" property="ssejdw" />
-        <result column="ssejdwid" property="ssejdwid" />
-        <result column="sssjdw" property="sssjdw" />
-        <result column="sssjdwid" property="sssjdwid" />
-        <result column="zsitename" property="zsitename" />
-        <result column="zsitebm" property="zsitebm" />
-        <result column="zname1" property="zname1" />
-        <result column="zkunnr" property="zkunnr" />
-        <result column="mykuangdianmc" property="mykuangdianmc" />
-        <result column="mykuangdianbm" property="mykuangdianbm" />
-        <result column="meitanlaiyuan" property="meitanlaiyuan" />
-        <result column="meitanlaiyuanbm" property="meitanlaiyuanbm" />
-        <result column="meizhong" property="meizhong" />
-        <result column="meizhongbm" property="meizhongbm" />
-        <result column="zbegini" property="zbeginI" />
-        <result column="zbegint" property="zbeginT" />
-        <result column="zendi" property="zendI" />
-        <result column="zendt" property="zendT" />
-        <result column="zmeng" property="zmeng" />
-        <result column="jiliangdanwei" property="jiliangdanwei" />
-        <result column="cheshu" property="cheshu" />
-        <result column="zongpiaozhong" property="zongpiaozhong" />
-        <result column="zongmaozhong" property="zongmaozhong" />
-        <result column="zongpizhong" property="zongpizhong" />
-        <result column="zongjingzhong" property="zongjingzhong" />
-        <result column="koudunzongliang" property="koudunzongliang" />
-        <result column="sjtsdanwei" property="sjtsdanwei" />
+        <result column="ywrq" property="ywrq"/>
+        <result column="zmxdocNo" property="zmxdocNo"/>
+        <result column="ssejdw" property="ssejdw"/>
+        <result column="ssejdwid" property="ssejdwid"/>
+        <result column="sssjdw" property="sssjdw"/>
+        <result column="sssjdwid" property="sssjdwid"/>
+        <result column="zsitename" property="zsitename"/>
+        <result column="zsitebm" property="zsitebm"/>
+        <result column="zname1" property="zname1"/>
+        <result column="zkunnr" property="zkunnr"/>
+        <result column="mykuangdianmc" property="mykuangdianmc"/>
+        <result column="mykuangdianbm" property="mykuangdianbm"/>
+        <result column="meitanlaiyuan" property="meitanlaiyuan"/>
+        <result column="meitanlaiyuanbm" property="meitanlaiyuanbm"/>
+        <result column="meizhong" property="meizhong"/>
+        <result column="meizhongbm" property="meizhongbm"/>
+        <result column="vtext" property="vtext"/>
+        <result column="vkorg" property="vkorg"/>
+        <result column="zbeginI" property="zbeginI"/>
+        <result column="zbeginT" property="zbeginT"/>
+        <result column="zendI" property="zendI"/>
+        <result column="zendT" property="zendT"/>
+        <result column="zname1Car" property="zname1Car"/>
+        <result column="zmeng" property="zmeng"/>
+        <result column="zmengpod" property="zmengpod"/>
+        <result column="jiliangdanwei" property="jiliangdanwei"/>
+        <result column="zmasterNo" property="zmasterNo"/>
+        <result column="cheshu" property="cheshu"/>
+        <result column="zongpiaozhong" property="zongpiaozhong"/>
+        <result column="zongmaozhong" property="zongmaozhong"/>
+        <result column="zongpizhong" property="zongpizhong"/>
+        <result column="zongjingzhong" property="zongjingzhong"/>
+        <result column="zongyingkui" property="zongyingkui"/>
+        <result column="zongyingdun" property="zongyingdun"/>
+        <result column="zongkuidun" property="zongkuidun"/>
+        <result column="zongyunsun" property="zongyunsun"/>
+        <result column="koudunzongliang" property="koudunzongliang"/>
+        <result column="jiesuanmeiliang" property="jiesuanmeiliang"/>
+        <result column="jlhqyt" property="jlhqyt"/>
+        <result column="kunnr" property="kunnr"/>
+        <result column="name1" property="name1"/>
+        <result column="zjhfs" property="zjhfs"/>
+        <result column="sjtsdanwei" property="sjtsdanwei"/>
+        <result column="xtscjlI" property="xtscjlI"/>
+        <result column="xtscjlT" property="xtscjlT"/>
+        <result column="byzd1" property="byzd1"/>
+        <result column="byzd2" property="byzd2"/>
+        <result column="byzd3" property="byzd3"/>
+        <result column="byzd4" property="byzd4"/>
+        <result column="byzd5" property="byzd5"/>
+        <result column="byzd6" property="byzd6"/>
+        <result column="byzd7" property="byzd7"/>
+        <result column="byzd8" property="byzd8"/>
+        <result column="byzd9" property="byzd9"/>
+        <result column="byzd10" property="byzd10"/>
     </resultMap>
 
     <resultMap id="BaseResultDetailMap" type="com.oyl.cics.model.qichecheng.QichechengDetail">
-        <result column="zmxdocno" property="zmxdocNo" />
-        <result column="dtsortno" property="dtSortno" />
-        <result column="dtchepaihao" property="dtChepaihao" />
-        <result column="dtpiaozhong" property="dtPiaozhong" />
-        <result column="dtmaozhong" property="dtMaozhong" />
-        <result column="dtpizhong" property="dtPizhong" />
-        <result column="dtjingzhong" property="dtJingzhong" />
-        <result column="dtkoudunl" property="dtKoudunl" />
-        <result column="dtjzdate" property="dtJzdate" />
-        <result column="dtjztime" property="dtJztime" />
-        <result column="dtjqdate" property="dtJqdate" />
-        <result column="dtjqtime" property="dtJqtime" />
-        <result column="dtjzhmc" property="dtJzhmc" />
-        <result column="dtjzhid" property="dtJzhid" />
-        <result column="dtjqhmc" property="dtJqhmc" />
-        <result column="dtjqhid" property="dtJqhid" />
-    </resultMap>
+        <result column="zmxdocNo" property="zmxdocNo"/>
+        <result column="dtSortno" property="dtSortno"/>
+        <result column="dtChepaihao" property="dtChepaihao"/>
+        <result column="dtPiaozhong" property="dtPiaozhong"/>
+        <result column="dtMaozhong" property="dtMaozhong"/>
+        <result column="dtPizhong" property="dtPizhong"/>
+        <result column="dtJingzhong" property="dtJingzhong"/>
+        <result column="dtYingdun" property="dtYingdun"/>
+        <result column="dtKuidun" property="dtKuidun"/>
+        <result column="dtYunsun" property="dtYunsun"/>
+        <result column="dtKoudunl" property="dtKoudunl"/>
+        <result column="dtJzdate" property="dtJzdate"/>
+        <result column="dtJztime" property="dtJztime"/>
+        <result column="dtJqdate" property="dtJqdate"/>
+        <result column="dtJqtime" property="dtJqtime"/>
+        <result column="dtJzhmc" property="dtJzhmc"/>
+        <result column="dtJzhid" property="dtJzhid"/>
+        <result column="dtJqhmc" property="dtJqhmc"/>
+        <result column="dtJqhid" property="dtJqhid"/>
+        <result column="dtReserve1" property="dtReserve1"/>
+        <result column="dtReserve2" property="dtReserve2"/>
+        <result column="dtReserve3" property="dtReserve3"/>
+        <result column="dtReserve4" property="dtReserve4"/>
+        <result column="dtReserve5" property="dtReserve5"/>
+    </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, zmxdocno, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, zbegini, zbegint, zendi, zendt, zmeng, jiliangdanwei, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, koudunzongliang, sjtsdanwei
+        select ywrq, zmxdocNo, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, vtext, vkorg, zbeginI, zbeginT, zendI, zendT, zname1Car, zmeng, zmengpod, jiliangdanwei, zmasterNo, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, zongyingkui, zongyingdun, zongkuidun, zongyunsun, koudunzongliang, jiesuanmeiliang, jlhqyt, kunnr, name1, zjhfs, sjtsdanwei, xtscjlI, xtscjlT, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
         from CDRD_ZL_QICHEHENG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select zmxdocno, dtsortno, dtchepaihao, dtpiaozhong, dtmaozhong, dtpizhong, dtjingzhong, dtkoudunl, dtjzdate, dtjztime, dtjqdate, dtjqtime, dtjzhmc, dtjzhid, dtjqhmc, dtjqhid
+        select zmxdocNo, dtSortno, dtChepaihao, dtPiaozhong, dtMaozhong, dtPizhong, dtJingzhong, dtYingdun, dtKuidun, dtYunsun, dtKoudunl, dtJzdate, dtJztime, dtJqdate, dtJqtime, dtJzhmc, dtJzhid, dtJqhmc, dtJqhid, dtReserve1, dtReserve2, dtReserve3, dtReserve4, dtReserve5
         from  CDRD_ZL_QICHEHENG_DETAIL
         where zmxdocno = #{arg0}
     </select>
