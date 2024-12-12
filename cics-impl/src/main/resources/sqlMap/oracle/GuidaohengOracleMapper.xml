@@ -44,7 +44,6 @@
         <result column="wgmgys" property="wgmgys"/>
         <result column="sjyxt" property="sjyxt"/>
         <result column="cheyuan" property="cheyuan"/>
-        <result column="yundanhaoyundanhao" property="yundanhaoyundanhao"/>
         <result column="jltypetype" property="jltypetype"/>
         <result column="jlhqyt" property="jlhqyt"/>
         <result column="jlhqmc" property="jlhqmc"/>
@@ -53,8 +52,6 @@
         <result column="fazhan" property="fazhan"/>
         <result column="zhongdao" property="zhongdao"/>
         <result column="sjtsdanwei" property="sjtsdanwei"/>
-        <result column="xtscjlI" property="xtscjlI"/>
-        <result column="xtscjlT" property="xtscjlT"/>
         <result column="byzd1" property="byzd1"/>
         <result column="byzd2" property="byzd2"/>
         <result column="byzd3" property="byzd3"/>
@@ -92,7 +89,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zczhandian,  zczhandianbm,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,  meitanlaiyuan,  meitanlaiyuanbm, zname1,  zkunnr,  vtext,  vkorg, shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,  zongyingkui,  zongyingdun,  zongkuidun,  zongyunsun,  duiweisj,  duiweirq,  yewurq,  zcmeizhong,  zcmeizhongbm, wgmgys, sjyxt,  cheyuan, yundanhaoyundanhao, jltypetype,  jlhqyt,  jlhqmc, jlhqmcid,  daozhan,  fazhan,  zhongdao, sjtsdanwei, xtscjlI,  xtscjlT,  byzd1,  byzd2,  byzd3,  byzd4,  byzd5,  byzd6,  byzd7,  byzd8,  byzd9,  byzd10
+        select ywrq, zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zczhandian,  zczhandianbm,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,  meitanlaiyuan,  meitanlaiyuanbm, zname1,  zkunnr,  vtext,  vkorg, shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,  zongyingkui,  zongyingdun,  zongkuidun,  zongyunsun,  duiweisj,  duiweirq,  yewurq,  zcmeizhong,  zcmeizhongbm, wgmgys, sjyxt,  cheyuan, jltypetype,  jlhqyt,  jlhqmc, jlhqmcid,  daozhan,  fazhan,  zhongdao, sjtsdanwei,  byzd1,  byzd2,  byzd3,  byzd4,  byzd5,  byzd6,  byzd7,  byzd8,  byzd9,  byzd10
         from CDRD_ZL_GUIDAOHENG
     </select>
 

@@ -14,8 +14,6 @@
         <result column="cydysl" property="cydysl" />
         <result column="sjyxt" property="sjyxt" />
         <result column="sjtsdanwei" property="sjtsdanwei" />
-        <result column="xtscjlI" property="xtscjlI" />
-        <result column="xtscjlT" property="xtscjlT" />
         <result column="sjscfs" property="sjscfs" />
         <result column="byzd1" property="byzd1" />
         <result column="byzd2" property="byzd2" />
@@ -54,7 +52,6 @@
         <result column="dtErjisfcs" property="dtErjisfcs" />
         <result column="dtCyzl" property="dtCyzl" />
         <result column="dtLytongshu" property="dtLytongshu" />
-        <result column="dtYlzl" property="dtYlzl" />
         <result column="dtCydyreserve1" property="dtCydyreserve1" />
         <result column="dtCydyreserve2" property="dtCydyreserve2" />
         <result column="dtCydyreserve3" property="dtCydyreserve3" />
@@ -63,12 +60,12 @@
     </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, xtscjlI, xtscjlT, sjscfs, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
+        select ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, sjscfs, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
         from CDRD_ZL_PIDAIMEICAIYANG
     </select>
 
     <select id="queryDetails" resultMap="BaseResultDetailMap">
-        select mybs, dtCydyxh, dtCysbbm, dtCyfs, dtCydybm, dtCysdate, dtCystime, dtCyedate, dtCyetime, dtCysbmc, dtCysbid, dtCydyml, dtCyjgsj, dtCjzyl, dtYijisfsj, dtYijisfjg, dtYijisfcysj, dtYijisfcs, dtErjisfsj, dtErjisfjg, dtErjisfcysj, dtErjisfcs, dtCyzl, dtLytongshu, dtYlzl, dtCydyreserve1, dtCydyreserve2, dtCydyreserve3, dtCydyreserve4, dtCydyreserve5
+        select mybs, dtCydyxh, dtCysbbm, dtCyfs, dtCydybm, dtCysdate, dtCystime, dtCyedate, dtCyetime, dtCysbmc, dtCysbid, dtCydyml, dtCyjgsj, dtCjzyl, dtYijisfsj, dtYijisfjg, dtYijisfcysj, dtYijisfcs, dtErjisfsj, dtErjisfjg, dtErjisfcysj, dtErjisfcs, dtCyzl, dtLytongshu, dtCydyreserve1, dtCydyreserve2, dtCydyreserve3, dtCydyreserve4, dtCydyreserve5
         from  CDRD_ZL_PIDAIMEICAIYANG_DETAIL
         where mybs = #{arg0}
     </select>

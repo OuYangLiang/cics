@@ -155,7 +155,7 @@
     </delete>
 
     <insert id="addDetail">
-        insert into `pidaimeicaiyang_detail` (`mybs`, `dtCydyxh`, `dtCysbbm`, `dtCyfs`, `dtCydybm`, `dtCysdate`, `dtCystime`, `dtCyedate`, `dtCyetime`, `dtCysbmc`, `dtCysbid`, `dtCydyml`, `dtCyjgsj`, `dtCjzyl`, `dtYijisfsj`, `dtYijisfjg`, `dtYijisfcysj`, `dtYijisfcs`, `dtErjisfsj`, `dtErjisfjg`, `dtErjisfcysj`, `dtErjisfcs`, `dtCyzl`, `dtLytongshu`, `dtYlzl`, `dtCydyreserve1`, `dtCydyreserve2`, `dtCydyreserve3`, `dtCydyreserve4`, `dtCydyreserve5`)
+        insert into `pidaimeicaiyang_detail` (`mybs`, `dtCydyxh`, `dtCysbbm`, `dtCyfs`, `dtCydybm`, `dtCysdate`, `dtCystime`, `dtCyedate`, `dtCyetime`, `dtCysbmc`, `dtCysbid`, `dtCydyml`, `dtCyjgsj`, `dtCjzyl`, `dtYijisfsj`, `dtYijisfjg`, `dtYijisfcysj`, `dtYijisfcs`, `dtErjisfsj`, `dtErjisfjg`, `dtErjisfcysj`, `dtErjisfcs`, `dtCyzl`, `dtLytongshu`, `dtCydyreserve1`, `dtCydyreserve2`, `dtCydyreserve3`, `dtCydyreserve4`, `dtCydyreserve5`)
         values (
         #{mybs},
         #{dtCydyxh},
@@ -181,7 +181,6 @@
         #{dtErjisfcs},
         #{dtCyzl},
         #{dtLytongshu},
-        #{dtYlzl},
         #{dtCydyreserve1},
         #{dtCydyreserve2},
         #{dtCydyreserve3},
@@ -202,8 +201,6 @@
         `cydysl`,
         `sjyxt`,
         `sjtsdanwei`,
-        `xtscjlI`,
-        `xtscjlT`,
         `sjscfs`,
         `byzd1`,
         `byzd2`,
@@ -227,8 +224,6 @@
         #{cydysl},
         #{sjyxt},
         #{sjtsdanwei},
-        #{xtscjlI},
-        #{xtscjlT},
         #{sjscfs},
         #{byzd1},
         #{byzd2},
@@ -252,8 +247,6 @@
         `cydysl` = #{cydysl},
         `sjyxt` = #{sjyxt},
         `sjtsdanwei` = #{sjtsdanwei},
-        `xtscjlI` = #{xtscjlI},
-        `xtscjlT` = #{xtscjlT},
         `sjscfs` = #{sjscfs},
         `byzd1` = #{byzd1},
         `byzd2` = #{byzd2},
