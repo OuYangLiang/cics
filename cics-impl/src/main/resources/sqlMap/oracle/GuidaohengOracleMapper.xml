@@ -89,7 +89,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zczhandian,  zczhandianbm,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,  meitanlaiyuan,  meitanlaiyuanbm, zname1,  zkunnr,  vtext,  vkorg, shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,  zongyingkui,  zongyingdun,  zongkuidun,  zongyunsun,  duiweisj,  duiweirq,  yewurq,  zcmeizhong,  zcmeizhongbm, wgmgys, sjyxt,  cheyuan, jltypetype,  jlhqyt,  jlhqmc, jlhqmcid,  daozhan,  fazhan,  zhongdao, sjtsdanwei,  byzd1,  byzd2,  byzd3,  byzd4,  byzd5,  byzd6,  byzd7,  byzd8,  byzd9,  byzd10
+        select ywrq, zmxdocNo,  ssejdw,  ssejdwid,  sssjdw,  sssjdwid,  zczhandian,  zczhandianbm,  zccheci,  chexing,  mykuangdianmc,  mykuangdianbm,  meitanlaiyuan,  meitanlaiyuanbm, zname1,  zkunnr,  vtext,  vkorg, shouchehao,  weichehao,  cheshu, jiliangdanwei,  zongpiaozhong,  zongmaozhong,  zongpizhong,  zongjingzhong,  koudunzongliang,  jiesuanmeiliang,  zongyingkui,  zongyingdun,  zongkuidun,  zongyunsun,  duiweisj,  duiweirq,  to_char(yewurq, 'yyyymmdd') as yewurq,  zcmeizhong,  zcmeizhongbm, wgmgys, sjyxt,  cheyuan, jltypetype,  jlhqyt,  jlhqmc, jlhqmcid,  daozhan,  fazhan,  zhongdao, sjtsdanwei,  byzd1,  byzd2,  byzd3,  byzd4,  byzd5,  byzd6,  byzd7,  byzd8,  byzd9,  byzd10
         from CDRD_ZL_GUIDAOHENG
     </select>
 
