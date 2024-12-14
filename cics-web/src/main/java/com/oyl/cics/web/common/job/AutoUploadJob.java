@@ -39,7 +39,7 @@ public class AutoUploadJob {
     @Resource
     private SettingService settingService;
 
-    @Scheduled(cron = "0 0 4 * * ?")
+    @Scheduled(cron = "0 50 23 * * ?")
     private void configureTasks() {
 
         if (!settingService.autoUpload()) {

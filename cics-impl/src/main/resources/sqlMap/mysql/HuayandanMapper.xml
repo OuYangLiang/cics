@@ -5,6 +5,7 @@
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.huayandan.Huayandan">
         <result column="id" property="id" />
         <result column="ywrq" property="ywrq" />
+        <result column="appID" property="appID"/>
         <result column="mybs" property="mybs" />
         <result column="dtHydid" property="dtHydid" />
         <result column="dtHydxh" property="dtHydxh" />
@@ -76,13 +77,13 @@
     </resultMap>
 
     <select id="queryForAutoUpload" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
         from   `huayandan`
         where `status` = 0 or `status` = 2
     </select>
 
     <select id="search" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
         from   `huayandan`
         <where>
             <if test="mybs != null and mybs != ''">
@@ -122,7 +123,7 @@
     </select>
 
     <select id="queryByKeys" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `mybs`, `dtHydid`, `dtHydxh`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `dtNgymt`, `dtNgymad`, `dtNlcfaar`, `dtNgyaad`, `dtNlcfad`, `dtNlcfvar`, `dtNgyvad`, `dtNlcfvd`, `dtNgyvdaf`, `dtNlcfstar`, `dtNlcfstad`, `dtNlcfstd`, `dtNqgrdmj`, `dtNqnetarmj`, `dtNqnetmarkc`, `dtNqbadmj`, `dtNqgradmj`, `dtNqgradkc`, `dtNqgrdkc`, `dtNqgrarmj`, `dtBondindex`, `dtNhrdt`, `dtNhrst`, `dtNhrht`, `dtNhrft`, `dtNymqcrc`, `dtNyshar`, `dtNyshad`, `dtNyshd`, `dtNyhdaf`, `dtNyscad`, `dtNyscd`, `dtNycdaf`, `dtHgi`, `dtNysfcad`, `dtNyshfcd`, `dtKuaimanhui`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `status`, `upload_time`, `operator`
         from   `huayandan`
         where `id` in
         <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
@@ -154,6 +155,7 @@
 
     <insert id="override">
         insert into `huayandan` (
+        `appID`,
         `ywrq`,
         `mybs`,
         `dtHydid`,
@@ -220,6 +222,7 @@
         `byzd5`,
         `status`
         ) values (
+        #{appID},
         #{ywrq},
         #{mybs},
         #{dtHydid},
@@ -286,6 +289,7 @@
         #{byzd5},
         0
         ) ON DUPLICATE KEY UPDATE
+        `appID` = #{appID},
         `ywrq` = #{ywrq},
         `mybs` = #{mybs},
         `dtHydid` = #{dtHydid},

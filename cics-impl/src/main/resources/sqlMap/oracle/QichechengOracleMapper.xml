@@ -4,6 +4,7 @@
 
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
         <result column="ywrq" property="ywrq"/>
+        <result column="appID" property="appID"/>
         <result column="zmxdocNo" property="zmxdocNo"/>
         <result column="ssejdw" property="ssejdw"/>
         <result column="ssejdwid" property="ssejdwid"/>
@@ -86,7 +87,7 @@
     </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select ywrq, zmxdocNo, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, vtext, vkorg, zbeginI, zbeginT, zendI, zendT, zname1Car, zmeng, zmengpod, jiliangdanwei, zmasterNo, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, zongyingkui, zongyingdun, zongkuidun, zongyunsun, koudunzongliang, jiesuanmeiliang, jlhqyt, kunnr, name1, zjhfs, sjtsdanwei, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
+        select appID, ywrq, zmxdocNo, ssejdw, ssejdwid, sssjdw, sssjdwid, zsitename, zsitebm, zname1, zkunnr, mykuangdianmc, mykuangdianbm, meitanlaiyuan, meitanlaiyuanbm, meizhong, meizhongbm, vtext, vkorg, zbeginI, zbeginT, zendI, zendT, zname1Car, zmeng, zmengpod, jiliangdanwei, zmasterNo, cheshu, zongpiaozhong, zongmaozhong, zongpizhong, zongjingzhong, zongyingkui, zongyingdun, zongkuidun, zongyunsun, koudunzongliang, jiesuanmeiliang, jlhqyt, kunnr, name1, zjhfs, sjtsdanwei, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
         from CDRD_ZL_QICHEHENG
     </select>
 

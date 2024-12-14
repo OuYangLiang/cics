@@ -5,6 +5,7 @@
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.kjhuayandan.Kjhuayandan">
         <result column="id" property="id" />
         <result column="ywrq" property="ywrq" />
+        <result column="appID" property="appID"/>
         <result column="sssjdwid" property="sssjdwid" />
         <result column="mybs" property="mybs" />
         <result column="dtHydid" property="dtHydid" />
@@ -97,13 +98,13 @@
     </resultMap>
 
     <select id="queryForAutoUpload" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `sssjdwid`, `mybs`, `dtHydid`, `dtHydxh`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `sjscfs`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `version`, `equipmentId`, `infoCount`, `scanNumber`, `onLineStatus`, `indexUuid`, `coalName`, `trainNumber`, `loadNumber`, `loadSite`, `firstNumber`, `tailNumber`, `loadTime`, `avglowHeatValueMj`, `avghighHeatValueMj`, `avglowHeatValueKcal`, `avghighHeatValueKcal`, `avgashContent`, `avgsulfurContent`, `avgfullyWash`, `avgashMeltingPoint`, `avgcarbonContent`, `avghydrogenContent`, `avgvolatileMatter`, `avgfixedCarbon`, `avgharmfulElementCI`, `avgharmfulElementP`, `avgDryVolatileMatter`, `avgDeformationTemp`, `avgSofteningTemp`, `avgHemisphereTemp`, `avgFlowTemp`, `singleIndex`, `singlelowHeatValueMj`, `singlehighHeatValueMj`, `singlelowHeatValueKcal`, `singlehighHeatValueKcal`, `singleashContent`, `singlesulfurContent`, `singlefullyWash`, `singleashMeltingPoint`, `singlecarbonContent`, `singlehydrogenContent`, `singlevolatileMatter`, `singllefixedCarbon`, `singleharmfulElementCI`, `singleharmfulElementP`, `singleDryVolatileMatter`, `singleDeformationTemp`, `singleSofteningTemp`, `singleHemisphereTemp`, `singleFlowTemp`, `startTime`, `finishTime`, `volume`, `algoModel`, `algoModelUpdateTime`, `sampleParameter1`, `sampleParameter2`, `trainNumberStop`, `testSampleCount`, `reserve1`, `reserve2`, `reserve3`, `reserve4`, `reserve5`, `reserve6`, `reserve7`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `sssjdwid`, `mybs`, `dtHydid`, `dtHydxh`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `sjscfs`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `version`, `equipmentId`, `infoCount`, `scanNumber`, `onLineStatus`, `indexUuid`, `coalName`, `trainNumber`, `loadNumber`, `loadSite`, `firstNumber`, `tailNumber`, `loadTime`, `avglowHeatValueMj`, `avghighHeatValueMj`, `avglowHeatValueKcal`, `avghighHeatValueKcal`, `avgashContent`, `avgsulfurContent`, `avgfullyWash`, `avgashMeltingPoint`, `avgcarbonContent`, `avghydrogenContent`, `avgvolatileMatter`, `avgfixedCarbon`, `avgharmfulElementCI`, `avgharmfulElementP`, `avgDryVolatileMatter`, `avgDeformationTemp`, `avgSofteningTemp`, `avgHemisphereTemp`, `avgFlowTemp`, `singleIndex`, `singlelowHeatValueMj`, `singlehighHeatValueMj`, `singlelowHeatValueKcal`, `singlehighHeatValueKcal`, `singleashContent`, `singlesulfurContent`, `singlefullyWash`, `singleashMeltingPoint`, `singlecarbonContent`, `singlehydrogenContent`, `singlevolatileMatter`, `singllefixedCarbon`, `singleharmfulElementCI`, `singleharmfulElementP`, `singleDryVolatileMatter`, `singleDeformationTemp`, `singleSofteningTemp`, `singleHemisphereTemp`, `singleFlowTemp`, `startTime`, `finishTime`, `volume`, `algoModel`, `algoModelUpdateTime`, `sampleParameter1`, `sampleParameter2`, `trainNumberStop`, `testSampleCount`, `reserve1`, `reserve2`, `reserve3`, `reserve4`, `reserve5`, `reserve6`, `reserve7`, `status`, `upload_time`, `operator`
         from   `kjhuayandan`
         where `status` = 0 or `status` = 2
     </select>
 
     <select id="search" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `sssjdwid`, `mybs`, `dtHydid`, `dtHydxh`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `sjscfs`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `version`, `equipmentId`, `infoCount`, `scanNumber`, `onLineStatus`, `indexUuid`, `coalName`, `trainNumber`, `loadNumber`, `loadSite`, `firstNumber`, `tailNumber`, `loadTime`, `avglowHeatValueMj`, `avghighHeatValueMj`, `avglowHeatValueKcal`, `avghighHeatValueKcal`, `avgashContent`, `avgsulfurContent`, `avgfullyWash`, `avgashMeltingPoint`, `avgcarbonContent`, `avghydrogenContent`, `avgvolatileMatter`, `avgfixedCarbon`, `avgharmfulElementCI`, `avgharmfulElementP`, `avgDryVolatileMatter`, `avgDeformationTemp`, `avgSofteningTemp`, `avgHemisphereTemp`, `avgFlowTemp`, `singleIndex`, `singlelowHeatValueMj`, `singlehighHeatValueMj`, `singlelowHeatValueKcal`, `singlehighHeatValueKcal`, `singleashContent`, `singlesulfurContent`, `singlefullyWash`, `singleashMeltingPoint`, `singlecarbonContent`, `singlehydrogenContent`, `singlevolatileMatter`, `singllefixedCarbon`, `singleharmfulElementCI`, `singleharmfulElementP`, `singleDryVolatileMatter`, `singleDeformationTemp`, `singleSofteningTemp`, `singleHemisphereTemp`, `singleFlowTemp`, `startTime`, `finishTime`, `volume`, `algoModel`, `algoModelUpdateTime`, `sampleParameter1`, `sampleParameter2`, `trainNumberStop`, `testSampleCount`, `reserve1`, `reserve2`, `reserve3`, `reserve4`, `reserve5`, `reserve6`, `reserve7`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `sssjdwid`, `mybs`, `dtHydid`, `dtHydxh`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `sjscfs`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `version`, `equipmentId`, `infoCount`, `scanNumber`, `onLineStatus`, `indexUuid`, `coalName`, `trainNumber`, `loadNumber`, `loadSite`, `firstNumber`, `tailNumber`, `loadTime`, `avglowHeatValueMj`, `avghighHeatValueMj`, `avglowHeatValueKcal`, `avghighHeatValueKcal`, `avgashContent`, `avgsulfurContent`, `avgfullyWash`, `avgashMeltingPoint`, `avgcarbonContent`, `avghydrogenContent`, `avgvolatileMatter`, `avgfixedCarbon`, `avgharmfulElementCI`, `avgharmfulElementP`, `avgDryVolatileMatter`, `avgDeformationTemp`, `avgSofteningTemp`, `avgHemisphereTemp`, `avgFlowTemp`, `singleIndex`, `singlelowHeatValueMj`, `singlehighHeatValueMj`, `singlelowHeatValueKcal`, `singlehighHeatValueKcal`, `singleashContent`, `singlesulfurContent`, `singlefullyWash`, `singleashMeltingPoint`, `singlecarbonContent`, `singlehydrogenContent`, `singlevolatileMatter`, `singllefixedCarbon`, `singleharmfulElementCI`, `singleharmfulElementP`, `singleDryVolatileMatter`, `singleDeformationTemp`, `singleSofteningTemp`, `singleHemisphereTemp`, `singleFlowTemp`, `startTime`, `finishTime`, `volume`, `algoModel`, `algoModelUpdateTime`, `sampleParameter1`, `sampleParameter2`, `trainNumberStop`, `testSampleCount`, `reserve1`, `reserve2`, `reserve3`, `reserve4`, `reserve5`, `reserve6`, `reserve7`, `status`, `upload_time`, `operator`
         from   `kjhuayandan`
         <where>
             <if test="mybs != null and mybs != ''">
@@ -143,7 +144,7 @@
     </select>
 
     <select id="queryByKeys" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `sssjdwid`, `mybs`, `dtHydid`, `dtHydxh`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `sjscfs`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `version`, `equipmentId`, `infoCount`, `scanNumber`, `onLineStatus`, `indexUuid`, `coalName`, `trainNumber`, `loadNumber`, `loadSite`, `firstNumber`, `tailNumber`, `loadTime`, `avglowHeatValueMj`, `avghighHeatValueMj`, `avglowHeatValueKcal`, `avghighHeatValueKcal`, `avgashContent`, `avgsulfurContent`, `avgfullyWash`, `avgashMeltingPoint`, `avgcarbonContent`, `avghydrogenContent`, `avgvolatileMatter`, `avgfixedCarbon`, `avgharmfulElementCI`, `avgharmfulElementP`, `avgDryVolatileMatter`, `avgDeformationTemp`, `avgSofteningTemp`, `avgHemisphereTemp`, `avgFlowTemp`, `singleIndex`, `singlelowHeatValueMj`, `singlehighHeatValueMj`, `singlelowHeatValueKcal`, `singlehighHeatValueKcal`, `singleashContent`, `singlesulfurContent`, `singlefullyWash`, `singleashMeltingPoint`, `singlecarbonContent`, `singlehydrogenContent`, `singlevolatileMatter`, `singllefixedCarbon`, `singleharmfulElementCI`, `singleharmfulElementP`, `singleDryVolatileMatter`, `singleDeformationTemp`, `singleSofteningTemp`, `singleHemisphereTemp`, `singleFlowTemp`, `startTime`, `finishTime`, `volume`, `algoModel`, `algoModelUpdateTime`, `sampleParameter1`, `sampleParameter2`, `trainNumberStop`, `testSampleCount`, `reserve1`, `reserve2`, `reserve3`, `reserve4`, `reserve5`, `reserve6`, `reserve7`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `sssjdwid`, `mybs`, `dtHydid`, `dtHydxh`, `hyorgname`, `sampeldate`, `sampleid`, `assayid`, `jiancejieguoyt`, `jiancefangshi`, `sjscfs`, `jiancesbmc`, `jiancesbid`, `meizhong`, `meizhongbm`, `dtAssayI`, `dtAssayT`, `dtDuiyingml`, `version`, `equipmentId`, `infoCount`, `scanNumber`, `onLineStatus`, `indexUuid`, `coalName`, `trainNumber`, `loadNumber`, `loadSite`, `firstNumber`, `tailNumber`, `loadTime`, `avglowHeatValueMj`, `avghighHeatValueMj`, `avglowHeatValueKcal`, `avghighHeatValueKcal`, `avgashContent`, `avgsulfurContent`, `avgfullyWash`, `avgashMeltingPoint`, `avgcarbonContent`, `avghydrogenContent`, `avgvolatileMatter`, `avgfixedCarbon`, `avgharmfulElementCI`, `avgharmfulElementP`, `avgDryVolatileMatter`, `avgDeformationTemp`, `avgSofteningTemp`, `avgHemisphereTemp`, `avgFlowTemp`, `singleIndex`, `singlelowHeatValueMj`, `singlehighHeatValueMj`, `singlelowHeatValueKcal`, `singlehighHeatValueKcal`, `singleashContent`, `singlesulfurContent`, `singlefullyWash`, `singleashMeltingPoint`, `singlecarbonContent`, `singlehydrogenContent`, `singlevolatileMatter`, `singllefixedCarbon`, `singleharmfulElementCI`, `singleharmfulElementP`, `singleDryVolatileMatter`, `singleDeformationTemp`, `singleSofteningTemp`, `singleHemisphereTemp`, `singleFlowTemp`, `startTime`, `finishTime`, `volume`, `algoModel`, `algoModelUpdateTime`, `sampleParameter1`, `sampleParameter2`, `trainNumberStop`, `testSampleCount`, `reserve1`, `reserve2`, `reserve3`, `reserve4`, `reserve5`, `reserve6`, `reserve7`, `status`, `upload_time`, `operator`
         from   `kjhuayandan`
         where `id` in
         <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
@@ -175,6 +176,7 @@
 
     <insert id="override">
         insert into `kjhuayandan` (
+        `appID`,
         `sssjdwid`,
         `ywrq`,
         `mybs`,
@@ -263,6 +265,7 @@
         `reserve7`,
         `status`
         ) values (
+        #{appID},
         #{sssjdwid},
         #{ywrq},
         #{mybs},
@@ -351,6 +354,7 @@
         #{reserve7},
         0
         ) ON DUPLICATE KEY UPDATE
+        `appID` = #{appID},
         `sssjdwid` = #{sssjdwid},
         `ywrq` = #{ywrq},
         `mybs` = #{mybs},

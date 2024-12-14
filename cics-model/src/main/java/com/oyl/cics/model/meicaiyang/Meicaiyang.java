@@ -16,6 +16,8 @@ public class Meicaiyang {
 
     private Date ywrq;
 
+    private String appID;
+
     /**
      * 备用字段1
      */

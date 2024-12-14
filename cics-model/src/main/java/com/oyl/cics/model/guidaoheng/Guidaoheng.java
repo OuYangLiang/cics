@@ -16,6 +16,8 @@ public class Guidaoheng {
 
     private Date ywrq;
 
+    private String appID;
+
     /**
      * 明细磅单号
      */

@@ -11,6 +11,7 @@ import java.util.Date;
 public class Kjhuayandan {
     private Long id;
     private Date ywrq;
+    private String appID;
     private String sssjdwid;
     private String mybs;
     private String dtHydid;

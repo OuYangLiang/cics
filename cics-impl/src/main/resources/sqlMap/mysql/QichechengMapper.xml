@@ -5,6 +5,7 @@
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.qichecheng.Qichecheng">
         <result column="id" property="id"/>
         <result column="ywrq" property="ywrq"/>
+        <result column="appID" property="appID"/>
         <result column="zmxdocNo" property="zmxdocNo"/>
         <result column="ssejdw" property="ssejdw"/>
         <result column="ssejdwid" property="ssejdwid"/>
@@ -93,13 +94,13 @@
     </resultMap>
 
     <select id="queryForAutoUpload" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from `qichecheng`
         where `status` = 0 or `status` = 2
     </select>
 
     <select id="search" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from `qichecheng`
         <where>
             <if test="zmxdocNo != null and zmxdocNo != ''">
@@ -152,7 +153,7 @@
     </select>
 
     <select id="queryByKeys" resultMap="BaseResultMap">
-        select `id`, `ywrq`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
+        select `id`, `appID`, `ywrq`, `zmxdocNo`, `ssejdw`, `ssejdwid`, `sssjdw`, `sssjdwid`, `zsitename`, `zsitebm`, `zname1`, `zkunnr`, `mykuangdianmc`, `mykuangdianbm`, `meitanlaiyuan`, `meitanlaiyuanbm`, `meizhong`, `meizhongbm`, `vtext`, `vkorg`, `zbeginI`, `zbeginT`, `zendI`, `zendT`, `zname1Car`, `zmeng`, `zmengpod`, `jiliangdanwei`, `zmasterNo`, `cheshu`, `zongpiaozhong`, `zongmaozhong`, `zongpizhong`, `zongjingzhong`, `zongyingkui`, `zongyingdun`, `zongkuidun`, `zongyunsun`, `koudunzongliang`, `jiesuanmeiliang`, `jlhqyt`, `kunnr`, `name1`, `zjhfs`, `sjtsdanwei`, `xtscjlI`, `xtscjlT`, `byzd1`, `byzd2`, `byzd3`, `byzd4`, `byzd5`, `byzd6`, `byzd7`, `byzd8`, `byzd9`, `byzd10`, `status`, `upload_time`, `operator`
         from   `qichecheng`
         where `id` in
         <foreach item="id" index="index" collection="array" open="(" separator="," close=")">
@@ -219,6 +220,7 @@
 
     <insert id="override">
         insert into `qichecheng` (
+        `appID`,
         `ywrq`,
         `zmxdocNo`,
         `ssejdw`,
@@ -274,6 +276,7 @@
         `byzd10`,
         `status`
         ) values (
+        #{appID},
         #{ywrq},
         #{zmxdocNo},
         #{ssejdw},
@@ -329,6 +332,7 @@
         #{byzd10},
         0
         ) ON DUPLICATE KEY UPDATE
+        `appID` = #{appID},
         `ywrq` = #{ywrq},
         `zmxdocNo` = #{zmxdocNo},
         `ssejdw` = #{ssejdw},

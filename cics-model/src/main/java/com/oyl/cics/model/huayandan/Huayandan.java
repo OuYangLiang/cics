@@ -15,6 +15,8 @@ public class Huayandan {
 
     private Date ywrq;
 
+    private String appID;
+
     /**
      * 化验编号
      */

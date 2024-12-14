@@ -15,6 +15,8 @@ public class Meizhi {
 
     private Date ywrq;
 
+    private String appID;
+
     /**
      * 化验日期
      */

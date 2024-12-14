@@ -16,6 +16,8 @@ public class Pidaimeicaiyang {
 
     private Date ywrq;
 
+    private String appID;
+
     /**
      * 备用字段1
      */
