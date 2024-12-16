@@ -18,6 +18,8 @@ public class Guidaoheng {
 
     private String appID;
 
+    private String sjscfs;
+
     /**
      * 明细磅单号
      */

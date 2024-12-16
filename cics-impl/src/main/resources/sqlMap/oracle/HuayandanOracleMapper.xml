@@ -6,6 +6,7 @@
         <result column="id" property="id" />
         <result column="ywrq" property="ywrq" />
         <result column="appID" property="appID"/>
+        <result column="sjscfs" property="sjscfs"/>
         <result column="mybs" property="mybs" />
         <result column="dtHydid" property="dtHydid" />
         <result column="dtHydxh" property="dtHydxh" />
@@ -75,7 +76,7 @@
     </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select appID, ywrq, mybs, dtHydid, dtHydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtAssayI, dtAssayT, dtDuiyingml, dtNgymt, dtNgymad, dtNlcfaar, dtNgyaad, dtNlcfad, dtNlcfvar, dtNgyvad, dtNlcfvd, dtNgyvdaf, dtNlcfstar, dtNlcfstad, dtNlcfstd, dtNqgrdmj, dtNqnetarmj, dtNqnetmarkc, dtNqbadmj, dtNqgradmj, dtNqgradkc, dtNqgrdkc, dtNqgrarmj, dtBondindex, dtNhrdt, dtNhrst, dtNhrht, dtNhrft, dtNymqcrc, dtNyshar, dtNyshad, dtNyshd, dtNyhdaf, dtNyscad, dtNyscd, dtNycdaf, dtHgi, dtNysfcad, dtNyshfcd, dtKuaimanhui, sjtsdanwei, byzd1, byzd2, byzd3, byzd4, byzd5
+        select sjscfs, appID, ywrq, mybs, dtHydid, dtHydxh, ssejdw, ssejdwid, sssjdw, sssjdwid, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtAssayI, dtAssayT, dtDuiyingml, dtNgymt, dtNgymad, dtNlcfaar, dtNgyaad, dtNlcfad, dtNlcfvar, dtNgyvad, dtNlcfvd, dtNgyvdaf, dtNlcfstar, dtNlcfstad, dtNlcfstd, dtNqgrdmj, dtNqnetarmj, dtNqnetmarkc, dtNqbadmj, dtNqgradmj, dtNqgradkc, dtNqgrdkc, dtNqgrarmj, dtBondindex, dtNhrdt, dtNhrst, dtNhrht, dtNhrft, dtNymqcrc, dtNyshar, dtNyshad, dtNyshd, dtNyhdaf, dtNyscad, dtNyscd, dtNycdaf, dtHgi, dtNysfcad, dtNyshfcd, dtKuaimanhui, sjtsdanwei, byzd1, byzd2, byzd3, byzd4, byzd5
         from CDRD_ZL_HUAYANDAN
     </select>
 

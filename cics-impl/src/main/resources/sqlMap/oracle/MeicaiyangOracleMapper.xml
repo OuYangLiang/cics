@@ -6,6 +6,7 @@
         <result column="ywrq" property="ywrq" />
         <result column="mybs" property="mybs" />
         <result column="appID" property="appID"/>
+        <result column="sjscfs" property="sjscfs"/>
         <result column="ssejdw" property="ssejdw" />
         <result column="ssejdwid" property="ssejdwid" />
         <result column="sssjdw" property="sssjdw" />
@@ -63,7 +64,7 @@
     </resultMap> 
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select appID, ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
+        select sjscfs, appID, ywrq, mybs, ssejdw, ssejdwid, sssjdw, sssjdwid, cypml, cydysl, sjyxt, sjtsdanwei, byzd1, byzd2, byzd3, byzd4, byzd5, byzd6, byzd7, byzd8, byzd9, byzd10
         from CDRD_ZL_MEICAIYANG
     </select>
 

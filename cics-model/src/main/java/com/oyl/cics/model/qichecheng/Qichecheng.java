@@ -18,6 +18,8 @@ public class Qichecheng {
 
     private String appID;
 
+    private String sjscfs;
+
     /**
      * 备用字段1
      */

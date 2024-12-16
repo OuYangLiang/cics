@@ -17,6 +17,8 @@ public class Meizhi {
 
     private String appID;
 
+    private String sjscfs;
+
     /**
      * 化验日期
      */

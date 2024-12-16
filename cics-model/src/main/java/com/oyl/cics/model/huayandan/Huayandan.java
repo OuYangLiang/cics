@@ -17,6 +17,8 @@ public class Huayandan {
 
     private String appID;
 
+    private String sjscfs;
+
     /**
      * 化验编号
      */
