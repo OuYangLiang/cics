@@ -12,6 +12,9 @@ public class Kjhuayandan {
     private Long id;
     private Date ywrq;
     private String appID;
+    private String ssejdw;
+    private String ssejdwid;
+    private String sssjdw;
     private String sssjdwid;
     private String mybs;
     private String dtHydid;

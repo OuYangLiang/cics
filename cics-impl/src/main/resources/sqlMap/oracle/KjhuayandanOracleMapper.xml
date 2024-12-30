@@ -5,6 +5,9 @@
     <resultMap id="BaseResultMap" type="com.oyl.cics.model.kjhuayandan.Kjhuayandan">
         <result column="ywrq" property="ywrq" />
         <result column="appID" property="appID"/>
+        <result column="ssejdw" property="ssejdw" />
+        <result column="ssejdwid" property="ssejdwid" />
+        <result column="sssjdw" property="sssjdw" />
         <result column="sssjdwid" property="sssjdwid" />
         <result column="mybs" property="mybs" />
         <result column="dtHydid" property="dtHydid" />
@@ -93,7 +96,7 @@
     </resultMap>
 
     <select id="queryRecentRecords" resultMap="BaseResultMap">
-        select appID, ywrq, sssjdwid, mybs, dtHydid, dtHydxh, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, sjscfs, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtAssayI, dtAssayT, dtDuiyingml, version, infoCount, scanNumber, onLineStatus, indexUuid, coalName, trainNumber, loadNumber, loadSite, firstNumber, tailNumber, loadTime, avglowHeatValueMj, avghighHeatValueMj, avglowHeatValueKcal, avghighHeatValueKcal, avgashContent, avgsulfurContent, avgfullyWash, avgashMeltingPoint, avgcarbonContent, avghydrogenContent, avgvolatileMatter, avgfixedCarbon, avgharmfulElementCI, avgharmfulElementP, avgDryVolatileMatter, avgDeformationTemp, avgSofteningTemp, avgHemisphereTemp, avgFlowTemp, singleIndex, singlelowHeatValueMj, singlehighHeatValueMj, singlelowHeatValueKcal, singlehighHeatValueKcal, singleashContent, singlesulfurContent, singlefullyWash, singleashMeltingPoint, singlecarbonContent, singlehydrogenContent, singlevolatileMatter, singllefixedCarbon, singleharmfulElementCI, singleharmfulElementP, singleDryVolatileMatter, singleDeformationTemp, singleSofteningTemp, singleHemisphereTemp, singleFlowTemp, startTime, finishTime, volume, algoModel, algoModelUpdateTime, sampleParameter1, sampleParameter2, trainNumberStop, testSampleCount, reserve1, reserve2, reserve3, reserve4, reserve5, reserve6, reserve7
+        select appID, ywrq, ssejdw, ssejdwid, sssjdw, sssjdwid, mybs, dtHydid, dtHydxh, hyorgname, sampeldate, sampleid, assayid, jiancejieguoyt, jiancefangshi, sjscfs, jiancesbmc, jiancesbid, meizhong, meizhongbm, dtAssayI, dtAssayT, dtDuiyingml, version, infoCount, scanNumber, onLineStatus, indexUuid, coalName, trainNumber, loadNumber, loadSite, firstNumber, tailNumber, loadTime, avglowHeatValueMj, avghighHeatValueMj, avglowHeatValueKcal, avghighHeatValueKcal, avgashContent, avgsulfurContent, avgfullyWash, avgashMeltingPoint, avgcarbonContent, avghydrogenContent, avgvolatileMatter, avgfixedCarbon, avgharmfulElementCI, avgharmfulElementP, avgDryVolatileMatter, avgDeformationTemp, avgSofteningTemp, avgHemisphereTemp, avgFlowTemp, singleIndex, singlelowHeatValueMj, singlehighHeatValueMj, singlelowHeatValueKcal, singlehighHeatValueKcal, singleashContent, singlesulfurContent, singlefullyWash, singleashMeltingPoint, singlecarbonContent, singlehydrogenContent, singlevolatileMatter, singllefixedCarbon, singleharmfulElementCI, singleharmfulElementP, singleDryVolatileMatter, singleDeformationTemp, singleSofteningTemp, singleHemisphereTemp, singleFlowTemp, startTime, finishTime, volume, algoModel, algoModelUpdateTime, sampleParameter1, sampleParameter2, trainNumberStop, testSampleCount, reserve1, reserve2, reserve3, reserve4, reserve5, reserve6, reserve7
         from CDRD_ZL_KJHUAYANDAN
     </select>
 

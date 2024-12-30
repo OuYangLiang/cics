@@ -30,11 +30,6 @@ public class ControllerAopConfig {
     @Around("controller()")
     public Object aroundController(final ProceedingJoinPoint pjp) throws Throwable {
 
-        long n = DateUtil.inst.numOfDays();
-        if (n > 0) {
-            TimeUnit.SECONDS.sleep(n);
-        }
-
         ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         assert attrs != null;
         HttpServletRequest request = attrs.getRequest();
